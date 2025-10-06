@@ -1,0 +1,67 @@
+{
+  "app": {
+    "title": "Delhi Metro Planner",
+    "subtitle": "Plan your journey across Delhi NCR"
+  },
+  "nav": {
+    "home": "Home",
+    "route": "Plan Route",
+    "lines": "Lines",
+    "map": "Map"
+  },
+  "home": {
+    "searchPlaceholder": "Search for a station...",
+    "recentSearches": "Recent Searches",
+    "popularStations": "Popular Stations",
+    "liveStatus": "Live Status"
+  },
+  "station": {
+    "lines": "Lines",
+    "facilities": "Facilities",
+    "timings": "Timings",
+    "firstTrain": "First Train",
+    "lastTrain": "Last Train",
+    "exits": "Exits & Landmarks",
+    "nearbyTransport": "Nearby Transport",
+    "accessibility": "Accessibility Info",
+    "interchange": "Interchange Station"
+  },
+  "route": {
+    "origin": "From",
+    "destination": "To",
+    "search": "Find Route",
+    "swap": "Swap",
+    "results": "Route Options",
+    "fastest": "Fastest",
+    "fewestTransfers": "Fewest Transfers",
+    "stops": "stops",
+    "minutes": "min",
+    "transfers": "transfer(s)",
+    "fare": "Fare",
+    "steps": "Step-by-Step",
+    "boardAt": "Board at",
+    "transferAt": "Transfer at",
+    "arriveAt": "Arrive at",
+    "walkingTime": "Walking time",
+    "printRoute": "Print Route"
+  },
+  "facilities": {
+    "parking": "Parking",
+    "lifts": "Lifts/Elevators",
+    "toilets": "Restrooms",
+    "atm": "ATM",
+    "security": "Security",
+    "food": "Food Court",
+    "retail": "Retail Shops"
+  },
+  "status": {
+    "allNormal": "All lines running normally",
+    "partialDisruption": "Partial disruption on some lines",
+    "majorDelay": "Major delays reported"
+  },
+  "errors": {
+    "stationNotFound": "Station not found",
+    "routeNotFound": "No route found between these stations",
+    "sameStation": "Origin and destination cannot be the same"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "app": {
+    "title": "दिल्ली मेट्रो प्लानर",
+    "subtitle": "दिल्ली एनसीआर में अपनी यात्रा की योजना बनाएं"
+  },
+  "nav": {
+    "home": "होम",
+    "route": "मार्ग योजना",
+    "lines": "लाइनें",
+    "map": "नक्शा"
+  },
+  "home": {
+    "searchPlaceholder": "स्टेशन खोजें...",
+    "recentSearches": "हाल की खोजें",
+    "popularStations": "लोकप्रिय स्टेशन",
+    "liveStatus": "लाइव स्थिति"
+  },
+  "station": {
+    "lines": "लाइनें",
+    "facilities": "सुविधाएं",
+    "timings": "समय",
+    "firstTrain": "पहली ट्रेन",
+    "lastTrain": "आखिरी ट्रेन",
+    "exits": "निकास और स्थलचिह्न",
+    "nearbyTransport": "आस-पास परिवहन",
+    "accessibility": "सुगम्यता जानकारी",
+    "interchange": "इंटरचेंज स्टेशन"
+  },
+  "route": {
+    "origin": "से",
+    "destination": "तक",
+    "search": "मार्ग खोजें",
+    "swap": "बदलें",
+    "results": "मार्ग विकल्प",
+    "fastest": "सबसे तेज",
+    "fewestTransfers": "न्यूनतम बदलाव",
+    "stops": "स्टॉप",
+    "minutes": "मिनट",
+    "transfers": "बदलाव",
+    "fare": "किराया",
+    "steps": "चरण-दर-चरण",
+    "boardAt": "बोर्ड करें",
+    "transferAt": "बदलाव करें",
+    "arriveAt": "पहुंचें",
+    "walkingTime": "पैदल समय",
+    "printRoute": "मार्ग प्रिंट करें"
+  },
+  "facilities": {
+    "parking": "पार्किंग",
+    "lifts": "लिफ्ट",
+    "toilets": "शौचालय",
+    "atm": "एटीएम",
+    "security": "सुरक्षा",
+    "food": "फूड कोर्ट",
+    "retail": "दुकानें"
+  },
+  "status": {
+    "allNormal": "सभी लाइनें सामान्य रूप से चल रही हैं",
+    "partialDisruption": "कुछ लाइनों पर आंशिक व्यवधान",
+    "majorDelay": "बड़ी देरी की सूचना"
+  },
+  "errors": {
+    "stationNotFound": "स्टेशन नहीं मिला",
+    "routeNotFound": "इन स्टेशनों के बीच कोई मार्ग नहीं मिला",
+    "sameStation": "प्रारंभ और गंतव्य एक ही नहीं हो सकते"
+  }
+}
