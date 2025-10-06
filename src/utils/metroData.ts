@@ -6,7 +6,7 @@ export async function loadMetroData(): Promise<MetroData> {
   if (cachedData) return cachedData;
 
   try {
-    const response = await fetch('/data/demo-stations.json');
+    const response = await fetch('/data/delhi-metro-data.json');
     if (!response.ok) throw new Error('Failed to load metro data');
     
     cachedData = await response.json();
