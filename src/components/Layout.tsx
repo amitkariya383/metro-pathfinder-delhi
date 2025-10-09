@@ -72,7 +72,7 @@ export function Layout({ children }: LayoutProps) {
       </nav>
 
       {/* Desktop Navigation Sidebar */}
-      <nav className="hidden md:block fixed left-0 top-[73px] bottom-0 w-64 border-r bg-card p-4 z-40">
+      <nav className="hidden md:block fixed left-0 top-[73px] bottom-0 w-64 border-r bg-card p-4 z-40 overflow-hidden">
         <div className="flex flex-col gap-2">
           {navItems.map(({ path, icon: Icon, label }) => {
             const isActive = location.pathname === path;
