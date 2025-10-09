@@ -45,7 +45,7 @@ export function Layout({ children }: LayoutProps) {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 md:ml-64 overflow-x-hidden">
+      <main className="flex-1 md:ml-64 md:pr-4 overflow-x-hidden">
         {children}
       </main>
 

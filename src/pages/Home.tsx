@@ -77,7 +77,7 @@ export default function Home() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8 md:ml-64 pb-24 md:pb-8">
+    <div className="container mx-auto px-4 py-8 pb-24 md:pb-8">
       {/* Hero Section */}
       <div className="mb-8">
         <div className="max-w-2xl mx-auto">
