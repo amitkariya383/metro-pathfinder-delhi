@@ -41,7 +41,7 @@ export function Layout({ children }: LayoutProps) {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1">
+      <main className="flex-1 md:ml-64">
         {children}
       </main>
 
