@@ -21,18 +21,18 @@ export function Layout({ children }: LayoutProps) {
   ];
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen bg-background flex flex-col overflow-x-hidden">
       {/* Header */}
       <header className="border-b bg-card sticky top-0 z-50 shadow-sm">
-        <div className="container mx-auto px-4 py-4">
+        <div className="container mx-auto px-4 py-4 max-w-full">
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center gap-2">
-              <div className="h-10 w-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
+              <div className="h-10 w-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center shrink-0">
                 <TramFront className="h-6 w-6 text-white" />
               </div>
-              <div>
-                <h1 className="text-xl font-bold text-foreground">{t('app.title')}</h1>
-                <p className="text-xs text-muted-foreground">{t('app.subtitle')}</p>
+              <div className="min-w-0">
+                <h1 className="text-xl font-bold text-foreground truncate">{t('app.title')}</h1>
+                <p className="text-xs text-muted-foreground truncate">{t('app.subtitle')}</p>
               </div>
             </Link>
             <LanguageToggle />
@@ -41,7 +41,7 @@ export function Layout({ children }: LayoutProps) {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 md:ml-64">
+      <main className="flex-1 md:ml-64 overflow-x-hidden">
         {children}
       </main>
 
