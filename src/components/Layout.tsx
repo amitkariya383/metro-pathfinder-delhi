@@ -25,7 +25,7 @@ export function Layout({ children }: LayoutProps) {
       {/* Header */}
       <header className="border-b bg-card sticky top-0 z-50 shadow-sm">
         <div className="container mx-auto px-4 py-4 max-w-full">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-center relative">
             <Link to="/" className="flex items-center gap-2">
               <div className="h-10 w-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center shrink-0">
                 <TramFront className="h-6 w-6 text-white" />
@@ -35,7 +35,9 @@ export function Layout({ children }: LayoutProps) {
                 <p className="text-xs text-muted-foreground truncate">{t('app.subtitle')}</p>
               </div>
             </Link>
-            <LanguageToggle />
+            <div className="absolute right-0">
+              <LanguageToggle />
+            </div>
           </div>
         </div>
       </header>
