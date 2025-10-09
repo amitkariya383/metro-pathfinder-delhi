@@ -111,7 +111,7 @@ export default function RoutePlanner() {
   const currentRoute = routes[selectedRoute];
 
   return (
-    <div className="container mx-auto px-4 py-6 md:ml-64 pb-24 md:pb-8">
+    <div className="container mx-auto px-4 py-6 pb-24 md:pb-8">
       <h1 className="text-3xl font-bold mb-6">{t('nav.route')}</h1>
 
       {/* Search Section */}
