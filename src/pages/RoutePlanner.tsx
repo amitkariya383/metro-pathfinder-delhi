@@ -256,39 +256,54 @@ export default function RoutePlanner() {
                           </span>
                           <LineBadge line={segment.line} />
                         </div>
-                        <div className="space-y-2">
+                         <div className="space-y-1">
                           {segment.stations.map((stationId, stationIndex) => {
                             const station = getStationById(metroData.stations, stationId);
                             if (!station) return null;
 
                             const isFirst = stationIndex === 0;
                             const isLast = stationIndex === segment.stations.length - 1;
+                            const isIntermediate = !isFirst && !isLast;
 
                             return (
-                              <div key={stationId} className="flex items-center gap-3">
+                              <div key={stationId} className="flex items-center gap-3 py-1">
                                 <div className="flex flex-col items-center">
                                   <div
-                                    className={`w-3 h-3 rounded-full ${
-                                      isFirst || isLast ? 'bg-accent' : 'bg-muted-foreground'
+                                    className={`w-3 h-3 rounded-full border-2 ${
+                                      isFirst || isLast 
+                                        ? 'bg-accent border-accent' 
+                                        : 'bg-background border-muted-foreground'
                                     }`}
                                   />
                                   {!isLast && (
-                                    <div className="w-0.5 h-8 bg-muted-foreground" />
+                                    <div className="w-0.5 h-6 bg-muted-foreground/50" />
                                   )}
                                 </div>
                                 <div className="flex-1">
                                   <button
                                     onClick={() => navigate(`/station/${stationId}`)}
-                                    className="text-left hover:text-primary transition-colors"
+                                    className={`text-left hover:text-primary transition-colors ${
+                                      isFirst || isLast ? 'font-semibold text-base' : 'text-sm text-muted-foreground'
+                                    }`}
                                   >
                                     {i18n.language === 'hi' ? station.nameHi : station.name}
                                   </button>
-                                  {station.isInterchange && !isLast && (
-                                    <div className="text-xs text-muted-foreground">
-                                      Interchange available
+                                  {station.isInterchange && (
+                                    <div className="text-xs text-muted-foreground mt-0.5">
+                                      {isIntermediate ? '↔ ' : ''}Interchange available
+                                    </div>
+                                  )}
+                                  {isIntermediate && (
+                                    <div className="text-xs text-muted-foreground/60">
+                                      via {segment.line} Line
                                     </div>
                                   )}
                                 </div>
+                                {(isFirst || isLast) && (
+                                  <div className="text-xs text-accent font-medium px-2 py-0.5 bg-accent/10 rounded">
+                                    {isFirst ? t('route.boardAt').split(' ')[0] : 'Exit'}
+                                  </div>
+                                )}
                               </div>
                             );
                           })}
