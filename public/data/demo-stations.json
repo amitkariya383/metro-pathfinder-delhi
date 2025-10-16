@@ -159,6 +159,520 @@
       "nearbyTransport": ["Bus 764", "Auto Stand"]
     },
     {
+      "id": "SB",
+      "name": "Samaypur Badli",
+      "nameHi": "समयपुर बादली",
+      "lines": ["Yellow"],
+      "lat": 28.7987,
+      "lng": 77.1399,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:30",
+      "lastTrain": "23:30",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Samaypur Badli Village", "distance": 200},
+        {"name": "Exit 2", "landmark": "Rohini Sector 35", "distance": 400}
+      ],
+      "nearbyTransport": ["Bus 936", "Auto Stand"]
+    },
+    {
+      "id": "RS1819",
+      "name": "Rohini Sector 18-19",
+      "nameHi": "रोहिणी सेक्टर 18-19",
+      "lines": ["Yellow"],
+      "lat": 28.7434,
+      "lng": 77.1168,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:32",
+      "lastTrain": "23:32",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Unity Mall", "distance": 200},
+        {"name": "Exit 2", "landmark": "Sector 19 Market", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 801", "Bus 936"]
+    },
+    {
+      "id": "JH",
+      "name": "Jahangirpuri",
+      "nameHi": "जहांगीरपुरी",
+      "lines": ["Yellow"],
+      "lat": 28.7288,
+      "lng": 77.1646,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm", "security"],
+      "firstTrain": "05:36",
+      "lastTrain": "23:36",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Jahangirpuri Market", "distance": 100},
+        {"name": "Exit 2", "landmark": "H Block", "distance": 300}
+      ],
+      "nearbyTransport": ["Bus 879", "Bus 923", "Auto Stand"]
+    },
+    {
+      "id": "ADN",
+      "name": "Adarsh Nagar",
+      "nameHi": "आदर्श नगर",
+      "lines": ["Yellow"],
+      "lat": 28.7130,
+      "lng": 77.1733,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:38",
+      "lastTrain": "23:38",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Adarsh Nagar Market", "distance": 150},
+        {"name": "Exit 2", "landmark": "Ashok Vihar", "distance": 400}
+      ],
+      "nearbyTransport": ["Bus 831", "Auto Stand"]
+    },
+    {
+      "id": "AZP",
+      "name": "Azadpur",
+      "nameHi": "आजादपुर",
+      "lines": ["Yellow", "Pink"],
+      "lat": 28.7043,
+      "lng": 77.1760,
+      "isInterchange": true,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:40",
+      "lastTrain": "23:40",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Azadpur Mandi", "distance": 300},
+        {"name": "Exit 2", "landmark": "Model Town", "distance": 500}
+      ],
+      "nearbyTransport": ["Bus 822", "Bus 901", "Auto Stand"]
+    },
+    {
+      "id": "MT",
+      "name": "Model Town",
+      "nameHi": "मॉडल टाउन",
+      "lines": ["Yellow"],
+      "lat": 28.6989,
+      "lng": 77.1913,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "security"],
+      "firstTrain": "05:42",
+      "lastTrain": "23:42",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Model Town Market", "distance": 200},
+        {"name": "Exit 2", "landmark": "Punjab Engineering College", "distance": 400}
+      ],
+      "nearbyTransport": ["Bus 811", "Auto Stand"]
+    },
+    {
+      "id": "GTB",
+      "name": "Guru Teg Bahadur Nagar",
+      "nameHi": "गुरु तेग बहादुर नगर",
+      "lines": ["Yellow"],
+      "lat": 28.6924,
+      "lng": 77.2066,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:44",
+      "lastTrain": "23:44",
+      "exits": [
+        {"name": "Exit 1", "landmark": "GTB Nagar Market", "distance": 150},
+        {"name": "Exit 2", "landmark": "Kingsway Camp", "distance": 300}
+      ],
+      "nearbyTransport": ["Bus 805", "Auto Stand"]
+    },
+    {
+      "id": "VV",
+      "name": "Vishwavidyalaya",
+      "nameHi": "विश्वविद्यालय",
+      "lines": ["Yellow"],
+      "lat": 28.6880,
+      "lng": 77.2152,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "security"],
+      "firstTrain": "05:46",
+      "lastTrain": "23:46",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Delhi University North Campus", "distance": 200},
+        {"name": "Exit 2", "landmark": "Hindu College", "distance": 400}
+      ],
+      "nearbyTransport": ["Bus 211", "Auto Stand"]
+    },
+    {
+      "id": "VS",
+      "name": "Vidhan Sabha",
+      "nameHi": "विधान सभा",
+      "lines": ["Yellow"],
+      "lat": 28.6845,
+      "lng": 77.2239,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "security"],
+      "firstTrain": "05:48",
+      "lastTrain": "23:48",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Delhi Vidhan Sabha", "distance": 100},
+        {"name": "Exit 2", "landmark": "Tis Hazari Court", "distance": 500}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "CL",
+      "name": "Civil Lines",
+      "nameHi": "सिविल लाइंस",
+      "lines": ["Yellow"],
+      "lat": 28.6775,
+      "lng": 77.2232,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:50",
+      "lastTrain": "23:50",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Civil Lines Area", "distance": 150},
+        {"name": "Exit 2", "landmark": "Delhi University", "distance": 600}
+      ],
+      "nearbyTransport": ["Bus 111", "Auto Stand"]
+    },
+    {
+      "id": "CW",
+      "name": "Chawri Bazar",
+      "nameHi": "चावड़ी बाजार",
+      "lines": ["Yellow", "Violet"],
+      "lat": 28.6485,
+      "lng": 77.2260,
+      "isInterchange": true,
+      "facilities": ["lifts", "toilets", "security"],
+      "firstTrain": "05:18",
+      "lastTrain": "23:48",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Chawri Bazar Market", "distance": 100},
+        {"name": "Exit 2", "landmark": "Nai Sarak", "distance": 300}
+      ],
+      "nearbyTransport": ["Cycle Rickshaw", "E-Rickshaw"]
+    },
+    {
+      "id": "PC",
+      "name": "Patel Chowk",
+      "nameHi": "पटेल चौक",
+      "lines": ["Yellow"],
+      "lat": 28.6239,
+      "lng": 77.2086,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "atm", "security"],
+      "firstTrain": "05:12",
+      "lastTrain": "23:52",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Patel Chowk Market", "distance": 100},
+        {"name": "Exit 2", "landmark": "Parliament Street", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 620", "Auto Stand"]
+    },
+    {
+      "id": "CS",
+      "name": "Central Secretariat",
+      "nameHi": "सेंट्रल सेक्रेटेरिएट",
+      "lines": ["Yellow", "Violet"],
+      "lat": 28.6152,
+      "lng": 77.2097,
+      "isInterchange": true,
+      "facilities": ["parking", "lifts", "toilets", "atm", "security"],
+      "firstTrain": "05:10",
+      "lastTrain": "23:54",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Udyog Bhawan", "distance": 150},
+        {"name": "Exit 2", "landmark": "Rail Bhawan", "distance": 200},
+        {"name": "Exit 3", "landmark": "National Stadium", "distance": 400}
+      ],
+      "nearbyTransport": ["Bus 620", "Bus 615"]
+    },
+    {
+      "id": "UB",
+      "name": "Udyog Bhawan",
+      "nameHi": "उद्योग भवन",
+      "lines": ["Yellow"],
+      "lat": 28.6108,
+      "lng": 77.2078,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:12",
+      "lastTrain": "23:52",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Udyog Bhawan", "distance": 50},
+        {"name": "Exit 2", "landmark": "Lok Nayak Bhawan", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 620"]
+    },
+    {
+      "id": "LKM",
+      "name": "Lok Kalyan Marg",
+      "nameHi": "लोक कल्याण मार्ग",
+      "lines": ["Yellow"],
+      "lat": 28.6045,
+      "lng": 77.2051,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "security"],
+      "firstTrain": "05:14",
+      "lastTrain": "23:50",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Khan Market", "distance": 300},
+        {"name": "Exit 2", "landmark": "Safdarjung Road", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 615", "Auto Stand"]
+    },
+    {
+      "id": "JB",
+      "name": "Jor Bagh",
+      "nameHi": "जोर बाग",
+      "lines": ["Yellow"],
+      "lat": 28.5903,
+      "lng": 77.2075,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:16",
+      "lastTrain": "23:48",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Jor Bagh Market", "distance": 200},
+        {"name": "Exit 2", "landmark": "Lodhi Garden", "distance": 600}
+      ],
+      "nearbyTransport": ["Bus 620", "Auto Stand"]
+    },
+    {
+      "id": "INA",
+      "name": "Dilli Haat - INA",
+      "nameHi": "दिल्ली हाट - आईएनए",
+      "lines": ["Yellow"],
+      "lat": 28.5743,
+      "lng": 77.2092,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm", "security"],
+      "firstTrain": "05:18",
+      "lastTrain": "23:46",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Dilli Haat INA", "distance": 100},
+        {"name": "Exit 2", "landmark": "INA Market", "distance": 200},
+        {"name": "Exit 3", "landmark": "South Campus DU", "distance": 400}
+      ],
+      "nearbyTransport": ["Bus 615", "Bus 620", "Auto Stand"]
+    },
+    {
+      "id": "AIIMS",
+      "name": "AIIMS",
+      "nameHi": "एम्स",
+      "lines": ["Yellow"],
+      "lat": 28.5678,
+      "lng": 77.2078,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm", "security"],
+      "firstTrain": "05:20",
+      "lastTrain": "23:44",
+      "exits": [
+        {"name": "Exit 1", "landmark": "AIIMS Hospital", "distance": 100},
+        {"name": "Exit 2", "landmark": "Ansari Nagar", "distance": 300}
+      ],
+      "nearbyTransport": ["Bus 615", "Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "GP",
+      "name": "Green Park",
+      "nameHi": "ग्रीन पार्क",
+      "lines": ["Yellow"],
+      "lat": 28.5598,
+      "lng": 77.2063,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "atm"],
+      "firstTrain": "05:22",
+      "lastTrain": "23:42",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Green Park Market", "distance": 150},
+        {"name": "Exit 2", "landmark": "Yusuf Sarai", "distance": 400}
+      ],
+      "nearbyTransport": ["Bus 615", "Auto Stand"]
+    },
+    {
+      "id": "HK",
+      "name": "Hauz Khas",
+      "nameHi": "हौज खास",
+      "lines": ["Yellow", "Magenta"],
+      "lat": 28.5434,
+      "lng": 77.2066,
+      "isInterchange": true,
+      "facilities": ["parking", "lifts", "toilets", "atm", "security", "retail"],
+      "firstTrain": "05:24",
+      "lastTrain": "23:40",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Hauz Khas Village", "distance": 200},
+        {"name": "Exit 2", "landmark": "IIT Delhi", "distance": 600},
+        {"name": "Exit 3", "landmark": "Deer Park", "distance": 400}
+      ],
+      "nearbyTransport": ["Bus 615", "Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "MN",
+      "name": "Malviya Nagar",
+      "nameHi": "मालवीय नगर",
+      "lines": ["Yellow"],
+      "lat": 28.5284,
+      "lng": 77.2046,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "atm"],
+      "firstTrain": "05:26",
+      "lastTrain": "23:38",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Malviya Nagar Market", "distance": 200},
+        {"name": "Exit 2", "landmark": "Shivalik Colony", "distance": 300}
+      ],
+      "nearbyTransport": ["Bus 615", "Auto Stand"]
+    },
+    {
+      "id": "SK",
+      "name": "Saket",
+      "nameHi": "साकेत",
+      "lines": ["Yellow"],
+      "lat": 28.5205,
+      "lng": 77.2034,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm", "retail"],
+      "firstTrain": "05:28",
+      "lastTrain": "23:36",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Select City Walk Mall", "distance": 300},
+        {"name": "Exit 2", "landmark": "Saket District Centre", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 615", "Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "QM",
+      "name": "Qutub Minar",
+      "nameHi": "कुतुब मीनार",
+      "lines": ["Yellow"],
+      "lat": 28.5125,
+      "lng": 77.1853,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:30",
+      "lastTrain": "23:34",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Qutub Minar", "distance": 800},
+        {"name": "Exit 2", "landmark": "Mehrauli", "distance": 400}
+      ],
+      "nearbyTransport": ["Bus 505", "Auto Stand"]
+    },
+    {
+      "id": "CP",
+      "name": "Chhatarpur",
+      "nameHi": "छतरपुर",
+      "lines": ["Yellow"],
+      "lat": 28.5062,
+      "lng": 77.1750,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:32",
+      "lastTrain": "23:32",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Chhatarpur Temple", "distance": 300},
+        {"name": "Exit 2", "landmark": "Chhatarpur Village", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 505", "Auto Stand"]
+    },
+    {
+      "id": "SP",
+      "name": "Sultanpur",
+      "nameHi": "सुल्तानपुर",
+      "lines": ["Yellow"],
+      "lat": 28.4994,
+      "lng": 77.1617,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:34",
+      "lastTrain": "23:30",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Sultanpur Village", "distance": 200},
+        {"name": "Exit 2", "landmark": "MG Road", "distance": 400}
+      ],
+      "nearbyTransport": ["Bus 505", "Auto Stand"]
+    },
+    {
+      "id": "GH",
+      "name": "Ghitorni",
+      "nameHi": "घिटोरनी",
+      "lines": ["Yellow"],
+      "lat": 28.4931,
+      "lng": 77.1495,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:36",
+      "lastTrain": "23:28",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Ghitorni Border", "distance": 150},
+        {"name": "Exit 2", "landmark": "NH-48", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 511", "Auto Stand"]
+    },
+    {
+      "id": "AR",
+      "name": "Arjangarh",
+      "nameHi": "अर्जनगढ़",
+      "lines": ["Yellow"],
+      "lat": 28.4807,
+      "lng": 77.1252,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:38",
+      "lastTrain": "23:26",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Arjangarh Village", "distance": 200},
+        {"name": "Exit 2", "landmark": "Gurgaon Border", "distance": 300}
+      ],
+      "nearbyTransport": ["Bus 511", "Auto Stand"]
+    },
+    {
+      "id": "SGP",
+      "name": "Sikandarpur",
+      "nameHi": "सिकंदरपुर",
+      "lines": ["Yellow"],
+      "lat": 28.4816,
+      "lng": 77.0946,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm", "security"],
+      "firstTrain": "05:40",
+      "lastTrain": "23:24",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Sikandarpur Village", "distance": 150},
+        {"name": "Exit 2", "landmark": "MG Road", "distance": 400}
+      ],
+      "nearbyTransport": ["Bus 512", "Auto Stand"]
+    },
+    {
+      "id": "MGR",
+      "name": "MG Road",
+      "nameHi": "एमजी रोड",
+      "lines": ["Yellow"],
+      "lat": 28.4821,
+      "lng": 77.0877,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm", "security", "retail"],
+      "firstTrain": "05:42",
+      "lastTrain": "23:22",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Ambience Mall", "distance": 300},
+        {"name": "Exit 2", "landmark": "Bristol Hotel", "distance": 200},
+        {"name": "Exit 3", "landmark": "DLF Phase 1", "distance": 400}
+      ],
+      "nearbyTransport": ["Bus 512", "Bus 551", "Auto Stand"]
+    },
+    {
+      "id": "IFC",
+      "name": "Iffco Chowk",
+      "nameHi": "इफको चौक",
+      "lines": ["Yellow"],
+      "lat": 28.4727,
+      "lng": 77.0726,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm", "security", "retail"],
+      "firstTrain": "05:44",
+      "lastTrain": "23:20",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Iffco Chowk Market", "distance": 100},
+        {"name": "Exit 2", "landmark": "Signature Towers", "distance": 300}
+      ],
+      "nearbyTransport": ["Bus 551", "Bus 552", "Auto Stand"]
+    },
+    {
       "id": "HZ",
       "name": "Huda City Centre",
       "nameHi": "हुडा सिटी सेंटर",
@@ -175,23 +689,6 @@
         {"name": "Exit 3", "landmark": "DLF Cyber City", "distance": 600}
       ],
       "nearbyTransport": ["Rapid Metro", "Bus 551", "Bus 552"]
-    },
-    {
-      "id": "AZ",
-      "name": "Azadpur",
-      "nameHi": "आजादपुर",
-      "lines": ["Pink"],
-      "lat": 28.7043,
-      "lng": 77.1760,
-      "isInterchange": false,
-      "facilities": ["parking", "lifts", "toilets", "atm"],
-      "firstTrain": "05:40",
-      "lastTrain": "23:40",
-      "exits": [
-        {"name": "Exit 1", "landmark": "Azadpur Mandi", "distance": 300},
-        {"name": "Exit 2", "landmark": "Model Town", "distance": 500}
-      ],
-      "nearbyTransport": ["Bus 822", "Bus 901", "Auto Stand"]
     },
     {
       "id": "GN",
@@ -1068,7 +1565,7 @@
       "name": "Yellow Line",
       "nameHi": "पीली लाइन",
       "color": "metro-yellow",
-      "stations": ["HS", "KA", "CP", "ND", "CH", "CW", "HZ"]
+      "stations": ["SB", "RS1819", "HS", "JH", "ADN", "AZP", "MT", "GTB", "VV", "VS", "CL", "KA", "CH", "CW", "ND", "CP", "PC", "CS", "UB", "LKM", "JB", "INA", "AIIMS", "GP", "HK", "MN", "SK", "QM", "CP", "SP", "GH", "AR", "SGP", "MGR", "IFC", "HZ"]
     },
     {
       "id": "Blue",
@@ -1103,14 +1600,14 @@
       "name": "Pink Line",
       "nameHi": "गुलाबी लाइन",
       "color": "metro-pink",
-      "stations": ["AZ", "RG", "AN"]
+      "stations": ["AZP", "RG", "AN"]
     },
     {
       "id": "Magenta",
       "name": "Magenta Line",
       "nameHi": "मैजेंटा लाइन",
       "color": "metro-magenta",
-      "stations": ["GN", "BA"]
+      "stations": ["GN", "BA", "HK"]
     }
   ]
 }
