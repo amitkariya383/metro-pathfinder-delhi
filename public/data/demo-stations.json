@@ -621,6 +621,23 @@
       "nearbyTransport": ["Bus 511", "Auto Stand"]
     },
     {
+      "id": "GD",
+      "name": "Guru Dronacharya",
+      "nameHi": "गुरु द्रोणाचार्य",
+      "lines": ["Yellow"],
+      "lat": 28.4820,
+      "lng": 77.1020,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets"],
+      "firstTrain": "05:39",
+      "lastTrain": "23:25",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Sector 14", "distance": 250},
+        {"name": "Exit 2", "landmark": "Guru Dronacharya Road", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 513", "Auto Stand"]
+    },
+    {
       "id": "SGP",
       "name": "Sikandarpur",
       "nameHi": "सिकंदरपुर",
@@ -1565,7 +1582,7 @@
       "name": "Yellow Line",
       "nameHi": "पीली लाइन",
       "color": "metro-yellow",
-      "stations": ["SB", "RS1819", "HS", "JH", "ADN", "AZP", "MT", "GTB", "VV", "VS", "CL", "KA", "CH", "CW", "ND", "CP", "PC", "CS", "UB", "LKM", "JB", "INA", "AIIMS", "GP", "HK", "MN", "SK", "QM", "CHP", "SP", "GH", "AR", "SGP", "MGR", "IFC", "HZ"]
+      "stations": ["SB", "RS1819", "HS", "JH", "ADN", "AZP", "MT", "GTB", "VV", "VS", "CL", "KA", "CH", "CW", "ND", "CP", "PC", "CS", "UB", "LKM", "JB", "INA", "AIIMS", "GP", "HK", "MN", "SK", "QM", "CHP", "SP", "GH", "AR", "GD", "SGP", "MGR", "IFC", "HZ"]
     },
     {
       "id": "Blue",
