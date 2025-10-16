@@ -18,21 +18,106 @@
       "nearbyTransport": ["Bus 980", "Bus 985", "Auto Stand"]
     },
     {
-      "id": "RH",
-      "name": "Rohini Sector 18-19",
-      "nameHi": "रोहिणी सेक्टर 18-19",
+      "id": "RHW",
+      "name": "Rohini West",
+      "nameHi": "रोहिणी पश्चिम",
       "lines": ["Red"],
-      "lat": 28.7434,
-      "lng": 77.1168,
+      "lat": 28.7290,
+      "lng": 77.1085,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking"],
+      "firstTrain": "05:32",
+      "lastTrain": "23:32",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Rohini West Market", "distance": 150},
+        {"name": "Exit 2", "landmark": "Sector 24", "distance": 300}
+      ],
+      "nearbyTransport": ["Bus 981", "Auto Stand"]
+    },
+    {
+      "id": "RHE",
+      "name": "Rohini East",
+      "nameHi": "रोहिणी पूर्व",
+      "lines": ["Red"],
+      "lat": 28.7250,
+      "lng": 77.1150,
       "isInterchange": false,
       "facilities": ["lifts", "toilets"],
-      "firstTrain": "05:35",
-      "lastTrain": "23:35",
+      "firstTrain": "05:34",
+      "lastTrain": "23:34",
       "exits": [
-        {"name": "Exit 1", "landmark": "Unity Mall", "distance": 200},
-        {"name": "Exit 2", "landmark": "Sector 19 Market", "distance": 150}
+        {"name": "Exit 1", "landmark": "Rohini East Market", "distance": 150},
+        {"name": "Exit 2", "landmark": "Sector 22", "distance": 300}
       ],
-      "nearbyTransport": ["Bus 801", "Bus 936"]
+      "nearbyTransport": ["Bus 982", "Auto Stand"]
+    },
+    {
+      "id": "PIT",
+      "name": "Pitampura",
+      "nameHi": "पीतमपुरा",
+      "lines": ["Red"],
+      "lat": 28.7010,
+      "lng": 77.1312,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:36",
+      "lastTrain": "23:36",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Pitampura Market", "distance": 200},
+        {"name": "Exit 2", "landmark": "Kohat Enclave", "distance": 400}
+      ],
+      "nearbyTransport": ["Bus 812", "Auto Stand"]
+    },
+    {
+      "id": "KE",
+      "name": "Kohat Enclave",
+      "nameHi": "कोहट एन्क्लेव",
+      "lines": ["Red"],
+      "lat": 28.7005,
+      "lng": 77.1460,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:38",
+      "lastTrain": "23:38",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Kohat Enclave", "distance": 100},
+        {"name": "Exit 2", "landmark": "Shalimar Bagh", "distance": 500}
+      ],
+      "nearbyTransport": ["Bus 811", "Auto Stand"]
+    },
+    {
+      "id": "NSP",
+      "name": "Netaji Subhash Place",
+      "nameHi": "नेताजी सुभाष प्लेस",
+      "lines": ["Red", "Pink"],
+      "lat": 28.6960,
+      "lng": 77.1517,
+      "isInterchange": true,
+      "facilities": ["parking", "lifts", "toilets", "atm", "security"],
+      "firstTrain": "05:40",
+      "lastTrain": "23:40",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Wazirpur Industrial Area", "distance": 300},
+        {"name": "Exit 2", "landmark": "Netaji Subhash Place Market", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 819", "Auto Stand"]
+    },
+    {
+      "id": "SHB",
+      "name": "Shalimar Bagh",
+      "nameHi": "शालीमार बाग",
+      "lines": ["Red"],
+      "lat": 28.7000,
+      "lng": 77.1640,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking"],
+      "firstTrain": "05:42",
+      "lastTrain": "23:42",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Shalimar Bagh Market", "distance": 150},
+        {"name": "Exit 2", "landmark": "Block A", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 822", "Auto Stand"]
     },
     {
       "id": "HS",
@@ -68,6 +153,176 @@
         {"name": "Exit 3", "landmark": "St. James Church", "distance": 300}
       ],
       "nearbyTransport": ["ISBT", "Bus 181", "Bus 419", "Auto Stand"]
+    },
+    {
+      "id": "TH",
+      "name": "Tis Hazari",
+      "nameHi": "तीस हजारी",
+      "lines": ["Red"],
+      "lat": 28.6678,
+      "lng": 77.2345,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "security"],
+      "firstTrain": "05:52",
+      "lastTrain": "23:52",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Tis Hazari Court", "distance": 100},
+        {"name": "Exit 2", "landmark": "Azad Market", "distance": 300}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "PB",
+      "name": "Pulbangash",
+      "nameHi": "पुलबंगश",
+      "lines": ["Red"],
+      "lat": 28.6690,
+      "lng": 77.2410,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:54",
+      "lastTrain": "23:54",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Pulbangash Market", "distance": 150},
+        {"name": "Exit 2", "landmark": "Pratap Nagar", "distance": 300}
+      ],
+      "nearbyTransport": ["Bus 106", "Auto Stand"]
+    },
+    {
+      "id": "PRN",
+      "name": "Pratap Nagar",
+      "nameHi": "प्रताप नगर",
+      "lines": ["Red"],
+      "lat": 28.6708,
+      "lng": 77.2495,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:56",
+      "lastTrain": "23:56",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Pratap Nagar Market", "distance": 100},
+        {"name": "Exit 2", "landmark": "Burari", "distance": 500}
+      ],
+      "nearbyTransport": ["Bus 402", "Auto Stand"]
+    },
+    {
+      "id": "SHN",
+      "name": "Shastri Nagar",
+      "nameHi": "शास्त्री नगर",
+      "lines": ["Red"],
+      "lat": 28.6722,
+      "lng": 77.2565,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking"],
+      "firstTrain": "05:58",
+      "lastTrain": "23:58",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Shastri Nagar Market", "distance": 150},
+        {"name": "Exit 2", "landmark": "Shakti Nagar", "distance": 400}
+      ],
+      "nearbyTransport": ["Bus 106", "Auto Stand"]
+    },
+    {
+      "id": "IL",
+      "name": "Inderlok",
+      "nameHi": "इंदरलोक",
+      "lines": ["Red", "Green"],
+      "lat": 28.6731,
+      "lng": 77.1652,
+      "isInterchange": true,
+      "facilities": ["parking", "lifts", "toilets", "atm", "security"],
+      "firstTrain": "05:30",
+      "lastTrain": "23:45",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Inderlok Market", "distance": 100},
+        {"name": "Exit 2", "landmark": "Kirti Nagar", "distance": 500}
+      ],
+      "nearbyTransport": ["Bus 804", "Auto Stand"]
+    },
+    {
+      "id": "KP",
+      "name": "Keshav Puram",
+      "nameHi": "केशव पुरम",
+      "lines": ["Red"],
+      "lat": 28.6833,
+      "lng": 77.1650,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "06:00",
+      "lastTrain": "00:00",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Keshav Puram Market", "distance": 150},
+        {"name": "Exit 2", "landmark": "Tri Nagar", "distance": 400}
+      ],
+      "nearbyTransport": ["Bus 802", "Auto Stand"]
+    },
+    {
+      "id": "KAN",
+      "name": "Kanhiya Nagar",
+      "nameHi": "कान्हिया नगर",
+      "lines": ["Red"],
+      "lat": 28.6891,
+      "lng": 77.2698,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "06:02",
+      "lastTrain": "00:02",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Kanhiya Nagar", "distance": 100},
+        {"name": "Exit 2", "landmark": "Welcome Colony", "distance": 300}
+      ],
+      "nearbyTransport": ["Bus 413", "Auto Stand"]
+    },
+    {
+      "id": "MUK",
+      "name": "Mukundpur",
+      "nameHi": "मुकुंदपुर",
+      "lines": ["Red"],
+      "lat": 28.6910,
+      "lng": 77.2795,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking"],
+      "firstTrain": "06:04",
+      "lastTrain": "00:04",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Mukundpur Village", "distance": 150},
+        {"name": "Exit 2", "landmark": "GTB Hospital", "distance": 500}
+      ],
+      "nearbyTransport": ["Bus 413", "Auto Stand"]
+    },
+    {
+      "id": "JM",
+      "name": "Jhilmil",
+      "nameHi": "झिलमिल",
+      "lines": ["Red"],
+      "lat": 28.6928,
+      "lng": 77.2880,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "06:06",
+      "lastTrain": "00:06",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Jhilmil Colony", "distance": 100},
+        {"name": "Exit 2", "landmark": "Dilshad Garden", "distance": 600}
+      ],
+      "nearbyTransport": ["Bus 417", "Auto Stand"]
+    },
+    {
+      "id": "DG",
+      "name": "Dilshad Garden",
+      "nameHi": "दिलशाद गार्डन",
+      "lines": ["Red"],
+      "lat": 28.6950,
+      "lng": 77.3050,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm", "security"],
+      "firstTrain": "06:08",
+      "lastTrain": "00:08",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Dilshad Garden Market", "distance": 150},
+        {"name": "Exit 2", "landmark": "New Seemapuri", "distance": 400}
+      ],
+      "nearbyTransport": ["Bus 417", "Bus 534", "Auto Stand"]
     },
     {
       "id": "CP",
@@ -230,7 +485,7 @@
       "id": "AZP",
       "name": "Azadpur",
       "nameHi": "आजादपुर",
-      "lines": ["Yellow", "Pink"],
+      "lines": ["Red", "Yellow", "Pink"],
       "lat": 28.7043,
       "lng": 77.1760,
       "isInterchange": true,
@@ -247,10 +502,10 @@
       "id": "MT",
       "name": "Model Town",
       "nameHi": "मॉडल टाउन",
-      "lines": ["Yellow"],
+      "lines": ["Red", "Yellow"],
       "lat": 28.6989,
       "lng": 77.1913,
-      "isInterchange": false,
+      "isInterchange": true,
       "facilities": ["lifts", "toilets", "security"],
       "firstTrain": "05:42",
       "lastTrain": "23:42",
@@ -262,12 +517,12 @@
     },
     {
       "id": "GTB",
-      "name": "Guru Teg Bahadur Nagar",
-      "nameHi": "गुरु तेग बहादुर नगर",
-      "lines": ["Yellow"],
+      "name": "GTB Nagar",
+      "nameHi": "जीटीबी नगर",
+      "lines": ["Red", "Yellow"],
       "lat": 28.6924,
       "lng": 77.2066,
-      "isInterchange": false,
+      "isInterchange": true,
       "facilities": ["lifts", "toilets"],
       "firstTrain": "05:44",
       "lastTrain": "23:44",
@@ -281,10 +536,10 @@
       "id": "VV",
       "name": "Vishwavidyalaya",
       "nameHi": "विश्वविद्यालय",
-      "lines": ["Yellow"],
+      "lines": ["Red", "Yellow"],
       "lat": 28.6880,
       "lng": 77.2152,
-      "isInterchange": false,
+      "isInterchange": true,
       "facilities": ["lifts", "toilets", "security"],
       "firstTrain": "05:46",
       "lastTrain": "23:46",
@@ -298,10 +553,10 @@
       "id": "VS",
       "name": "Vidhan Sabha",
       "nameHi": "विधान सभा",
-      "lines": ["Yellow"],
+      "lines": ["Red", "Yellow"],
       "lat": 28.6845,
       "lng": 77.2239,
-      "isInterchange": false,
+      "isInterchange": true,
       "facilities": ["lifts", "toilets", "security"],
       "firstTrain": "05:48",
       "lastTrain": "23:48",
@@ -315,10 +570,10 @@
       "id": "CL",
       "name": "Civil Lines",
       "nameHi": "सिविल लाइंस",
-      "lines": ["Yellow"],
+      "lines": ["Red", "Yellow"],
       "lat": 28.6775,
       "lng": 77.2232,
-      "isInterchange": false,
+      "isInterchange": true,
       "facilities": ["lifts", "toilets"],
       "firstTrain": "05:50",
       "lastTrain": "23:50",
@@ -763,10 +1018,10 @@
       "id": "WE",
       "name": "Welcome",
       "nameHi": "वेलकम",
-      "lines": ["Red"],
+      "lines": ["Red", "Pink"],
       "lat": 28.6713,
       "lng": 77.2769,
-      "isInterchange": false,
+      "isInterchange": true,
       "facilities": ["lifts", "toilets", "security"],
       "firstTrain": "05:25",
       "lastTrain": "23:40",
@@ -775,6 +1030,91 @@
         {"name": "Exit 2", "landmark": "Welcome Metro Depot", "distance": 400}
       ],
       "nearbyTransport": ["Bus 56", "Bus 213"]
+    },
+    {
+      "id": "TNR",
+      "name": "Trinagar",
+      "nameHi": "त्रिनगर",
+      "lines": ["Red"],
+      "lat": 28.6750,
+      "lng": 77.2850,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "06:10",
+      "lastTrain": "00:10",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Trinagar Colony", "distance": 150},
+        {"name": "Exit 2", "landmark": "Mansarovar Park", "distance": 400}
+      ],
+      "nearbyTransport": ["Bus 56", "Auto Stand"]
+    },
+    {
+      "id": "MP",
+      "name": "Mansarovar Park",
+      "nameHi": "मानसरोवर पार्क",
+      "lines": ["Red"],
+      "lat": 28.6789,
+      "lng": 77.2920,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "06:12",
+      "lastTrain": "00:12",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Mansarovar Park Market", "distance": 100},
+        {"name": "Exit 2", "landmark": "Yamuna Vihar", "distance": 500}
+      ],
+      "nearbyTransport": ["Bus 213", "Auto Stand"]
+    },
+    {
+      "id": "SHD",
+      "name": "Shahdara",
+      "nameHi": "शाहदरा",
+      "lines": ["Red"],
+      "lat": 28.6842,
+      "lng": 77.2989,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm", "security"],
+      "firstTrain": "06:14",
+      "lastTrain": "00:14",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Shahdara Market", "distance": 150},
+        {"name": "Exit 2", "landmark": "Vivek Vihar", "distance": 600}
+      ],
+      "nearbyTransport": ["Bus 213", "Bus 419", "Auto Stand"]
+    },
+    {
+      "id": "SL",
+      "name": "Seelampur",
+      "nameHi": "सीलमपुर",
+      "lines": ["Red"],
+      "lat": 28.6911,
+      "lng": 77.3067,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking"],
+      "firstTrain": "06:16",
+      "lastTrain": "00:16",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Seelampur Market", "distance": 150},
+        {"name": "Exit 2", "landmark": "Welcome Colony", "distance": 400}
+      ],
+      "nearbyTransport": ["Bus 534", "Auto Stand"]
+    },
+    {
+      "id": "SS",
+      "name": "Shaheed Sthal (New Bus Adda)",
+      "nameHi": "शहीद स्थल (न्यू बस अड्डा)",
+      "lines": ["Red"],
+      "lat": 28.6995,
+      "lng": 77.3152,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm", "security"],
+      "firstTrain": "06:18",
+      "lastTrain": "00:18",
+      "exits": [
+        {"name": "Exit 1", "landmark": "New Bus Adda", "distance": 100},
+        {"name": "Exit 2", "landmark": "Shaheed Sthal Memorial", "distance": 300}
+      ],
+      "nearbyTransport": ["Bus 534", "Bus 417", "Auto Stand"]
     },
     {
       "id": "AN",
@@ -1575,7 +1915,7 @@
       "name": "Red Line",
       "nameHi": "लाल लाइन",
       "color": "metro-red",
-      "stations": ["RV", "RH", "HS", "KA", "WE"]
+      "stations": ["RV", "RHW", "RHE", "PIT", "KE", "NSP", "SHB", "AZP", "MT", "GTB", "VV", "VS", "CL", "KA", "TH", "PB", "PRN", "SHN", "IL", "KP", "KAN", "MUK", "JM", "DG", "WE", "TNR", "MP", "SHD", "SL", "SS"]
     },
     {
       "id": "Yellow",
@@ -1596,7 +1936,7 @@
       "name": "Green Line",
       "nameHi": "हरी लाइन",
       "color": "metro-green",
-      "stations": ["DU"]
+      "stations": ["IL", "DU"]
     },
     {
       "id": "Violet",
@@ -1617,7 +1957,7 @@
       "name": "Pink Line",
       "nameHi": "गुलाबी लाइन",
       "color": "metro-pink",
-      "stations": ["AZP", "RG", "AN"]
+      "stations": ["NSP", "AZP", "WE", "RG", "AN"]
     },
     {
       "id": "Magenta",
