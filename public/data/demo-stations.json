@@ -383,10 +383,10 @@
       "id": "DU",
       "name": "Dhaula Kuan",
       "nameHi": "धौला कुआं",
-      "lines": ["Orange", "Green"],
+      "lines": ["Orange"],
       "lat": 28.5942,
       "lng": 77.1632,
-      "isInterchange": true,
+      "isInterchange": false,
       "facilities": ["parking", "lifts", "toilets", "atm", "security"],
       "firstTrain": "05:25",
       "lastTrain": "23:40",
@@ -2288,7 +2288,7 @@
       "name": "Green Line",
       "nameHi": "हरी लाइन",
       "color": "metro-green",
-      "stations": ["BHSH", "BHC", "PSRS", "TIKB", "TIKK", "GVM", "MIA", "MDKA", "RJPK", "NGLR", "NGL", "MSST", "UDN", "PRG", "PVW", "PVE", "MDP", "SJP", "PBHW", "PBH", "APM", "IL", "SRSG", "KN", "DU"]
+      "stations": ["BHSH", "BHC", "PSRS", "TIKB", "TIKK", "GVM", "MIA", "MDKA", "RJPK", "NGLR", "NGL", "MSST", "UDN", "PRG", "PVW", "PVE", "MDP", "SJP", "PBHW", "PBH", "APM", "IL", "SRSG", "KN"]
     },
     {
       "id": "Violet",
