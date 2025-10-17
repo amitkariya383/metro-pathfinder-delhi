@@ -2259,6 +2259,502 @@
         {"name": "Exit 1", "landmark": "Electronic City", "distance": 200}
       ],
       "nearbyTransport": ["Bus 311", "Auto Stand"]
+    },
+    {
+      "id": "LQ",
+      "name": "Lal Qila",
+      "nameHi": "लाल किला",
+      "lines": ["Violet"],
+      "lat": 28.6562,
+      "lng": 77.2410,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "security"],
+      "firstTrain": "05:22",
+      "lastTrain": "23:42",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Red Fort", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "JMM",
+      "name": "Jama Masjid",
+      "nameHi": "जामा मस्जिद",
+      "lines": ["Violet"],
+      "lat": 28.6507,
+      "lng": 77.2334,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "security"],
+      "firstTrain": "05:24",
+      "lastTrain": "23:40",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Jama Masjid", "distance": 150}
+      ],
+      "nearbyTransport": ["E-Rickshaw", "Auto Stand"]
+    },
+    {
+      "id": "DLG",
+      "name": "Delhi Gate",
+      "nameHi": "दिल्ली गेट",
+      "lines": ["Violet"],
+      "lat": 28.6392,
+      "lng": 77.2431,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:26",
+      "lastTrain": "23:38",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Delhi Gate", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "ITO",
+      "name": "ITO",
+      "nameHi": "आईटीओ",
+      "lines": ["Violet"],
+      "lat": 28.6289,
+      "lng": 77.2502,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:28",
+      "lastTrain": "23:36",
+      "exits": [
+        {"name": "Exit 1", "landmark": "ITO Crossing", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "JNP",
+      "name": "Janpath",
+      "nameHi": "जनपथ",
+      "lines": ["Violet"],
+      "lat": 28.6226,
+      "lng": 77.2178,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "atm"],
+      "firstTrain": "05:32",
+      "lastTrain": "23:32",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Janpath Market", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "KHM",
+      "name": "Khan Market",
+      "nameHi": "खान मार्केट",
+      "lines": ["Violet"],
+      "lat": 28.6009,
+      "lng": 77.2289,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking"],
+      "firstTrain": "05:36",
+      "lastTrain": "23:28",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Khan Market", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "JNS",
+      "name": "Jawaharlal Nehru Stadium",
+      "nameHi": "जवाहरलाल नेहरू स्टेडियम",
+      "lines": ["Violet"],
+      "lat": 28.5914,
+      "lng": 77.2335,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:38",
+      "lastTrain": "23:26",
+      "exits": [
+        {"name": "Exit 1", "landmark": "JN Stadium", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "JPR",
+      "name": "Jangpura",
+      "nameHi": "जंगपुरा",
+      "lines": ["Violet"],
+      "lat": 28.5846,
+      "lng": 77.2432,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:40",
+      "lastTrain": "23:24",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Jangpura Market", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "LJN",
+      "name": "Lajpat Nagar",
+      "nameHi": "लाजपत नगर",
+      "lines": ["Violet"],
+      "lat": 28.5677,
+      "lng": 77.2436,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm", "security"],
+      "firstTrain": "05:42",
+      "lastTrain": "23:22",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Lajpat Nagar Market", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "MLC",
+      "name": "Moolchand",
+      "nameHi": "मूलचंद",
+      "lines": ["Violet"],
+      "lat": 28.5692,
+      "lng": 77.2529,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking"],
+      "firstTrain": "05:44",
+      "lastTrain": "23:20",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Moolchand Hospital", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "KLC",
+      "name": "Kailash Colony",
+      "nameHi": "कैलाश कॉलोनी",
+      "lines": ["Violet"],
+      "lat": 28.5513,
+      "lng": 77.2422,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:46",
+      "lastTrain": "23:18",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Kailash Colony Market", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "NHP",
+      "name": "Nehru Place",
+      "nameHi": "नेहरू प्लेस",
+      "lines": ["Violet"],
+      "lat": 28.5494,
+      "lng": 77.2501,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm", "security"],
+      "firstTrain": "05:48",
+      "lastTrain": "23:16",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Nehru Place Metro", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "KKM",
+      "name": "Kalkaji Mandir",
+      "nameHi": "कालकाजी मंदिर",
+      "lines": ["Violet", "Magenta"],
+      "lat": 28.5485,
+      "lng": 77.2585,
+      "isInterchange": true,
+      "facilities": ["parking", "lifts", "toilets", "atm", "security"],
+      "firstTrain": "05:50",
+      "lastTrain": "23:14",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Kalkaji Temple", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "GVP",
+      "name": "Govind Puri",
+      "nameHi": "गोविंद पुरी",
+      "lines": ["Violet"],
+      "lat": 28.5354,
+      "lng": 77.2714,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:52",
+      "lastTrain": "23:12",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Govind Puri Market", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "HNO",
+      "name": "Harkesh Nagar Okhla",
+      "nameHi": "हरकेश नगर ओखला",
+      "lines": ["Violet"],
+      "lat": 28.5302,
+      "lng": 77.2812,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking"],
+      "firstTrain": "05:54",
+      "lastTrain": "23:10",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Harkesh Nagar", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "JAS",
+      "name": "Jasola Apollo",
+      "nameHi": "जसोला अपोलो",
+      "lines": ["Violet"],
+      "lat": 28.5283,
+      "lng": 77.2874,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:56",
+      "lastTrain": "23:08",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Apollo Hospital", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "SRV",
+      "name": "Sarita Vihar",
+      "nameHi": "सरिता विहार",
+      "lines": ["Violet"],
+      "lat": 28.5262,
+      "lng": 77.2941,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:58",
+      "lastTrain": "23:06",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Sarita Vihar Market", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "MHE",
+      "name": "Mohan Estate",
+      "nameHi": "मोहन एस्टेट",
+      "lines": ["Violet"],
+      "lat": 28.4992,
+      "lng": 77.3042,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "06:00",
+      "lastTrain": "23:04",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Mohan Estate", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "TGD",
+      "name": "Tughlakabad",
+      "nameHi": "तुगलकाबाद",
+      "lines": ["Violet"],
+      "lat": 28.5048,
+      "lng": 77.2785,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "06:02",
+      "lastTrain": "23:02",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Tughlakabad Fort", "distance": 500}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "BDB",
+      "name": "Badarpur Border",
+      "nameHi": "बदरपुर बॉर्डर",
+      "lines": ["Violet"],
+      "lat": 28.4932,
+      "lng": 77.3042,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm", "security"],
+      "firstTrain": "06:04",
+      "lastTrain": "23:00",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Badarpur Border", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "SRI",
+      "name": "Sarai",
+      "nameHi": "सराय",
+      "lines": ["Violet"],
+      "lat": 28.4815,
+      "lng": 77.3085,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "06:06",
+      "lastTrain": "22:58",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Sarai", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "NHC",
+      "name": "NHPC Chowk",
+      "nameHi": "एनएचपीसी चौक",
+      "lines": ["Violet"],
+      "lat": 28.4702,
+      "lng": 77.3128,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking"],
+      "firstTrain": "06:08",
+      "lastTrain": "22:56",
+      "exits": [
+        {"name": "Exit 1", "landmark": "NHPC Chowk", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "MWM",
+      "name": "Mewla Maharajpur",
+      "nameHi": "मेवला महाराजपुर",
+      "lines": ["Violet"],
+      "lat": 28.4605,
+      "lng": 77.3175,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "06:10",
+      "lastTrain": "22:54",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Mewla Maharajpur", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "S28F",
+      "name": "Sector-28 Faridabad",
+      "nameHi": "सेक्टर-28 फरीदाबाद",
+      "lines": ["Violet"],
+      "lat": 28.4512,
+      "lng": 77.3222,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "06:12",
+      "lastTrain": "22:52",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Sector 28 Market", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "BKM",
+      "name": "Badkal Mor",
+      "nameHi": "बड़कल मोड़",
+      "lines": ["Violet"],
+      "lat": 28.4425,
+      "lng": 77.3275,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "06:14",
+      "lastTrain": "22:50",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Badkal Mor", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "OFD",
+      "name": "Old Faridabad",
+      "nameHi": "ओल्ड फरीदाबाद",
+      "lines": ["Violet"],
+      "lat": 28.4342,
+      "lng": 77.3322,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "06:16",
+      "lastTrain": "22:48",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Old Faridabad Market", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "NCA",
+      "name": "Neelam Chowk Ajronda",
+      "nameHi": "नीलम चौक अजरोंडा",
+      "lines": ["Violet"],
+      "lat": 28.4255,
+      "lng": 77.3375,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking"],
+      "firstTrain": "06:18",
+      "lastTrain": "22:46",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Neelam Chowk", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "BTC",
+      "name": "Bata Chowk",
+      "nameHi": "बाटा चौक",
+      "lines": ["Violet"],
+      "lat": 28.4175,
+      "lng": 77.3422,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "06:20",
+      "lastTrain": "22:44",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Bata Chowk", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "ESM",
+      "name": "Escorts Mujesar",
+      "nameHi": "एस्कॉर्ट्स मुजेसर",
+      "lines": ["Violet"],
+      "lat": 28.4095,
+      "lng": 77.3475,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "06:22",
+      "lastTrain": "22:42",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Escorts Mujesar", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "SSS",
+      "name": "Sant Surdas (Sihi)",
+      "nameHi": "संत सूरदास (सिही)",
+      "lines": ["Violet"],
+      "lat": 28.4012,
+      "lng": 77.3528,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "06:24",
+      "lastTrain": "22:40",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Sant Surdas Sihi", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
+    },
+    {
+      "id": "RNS",
+      "name": "Raja Nahar Singh (Ballabhgarh)",
+      "nameHi": "राजा नाहर सिंह (बल्लभगढ़)",
+      "lines": ["Violet"],
+      "lat": 28.3925,
+      "lng": 77.3585,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm", "security"],
+      "firstTrain": "06:26",
+      "lastTrain": "22:38",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Raja Nahar Singh Ballabhgarh", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 181", "Auto Stand"]
     }
   ],
   "lines": [
@@ -2295,7 +2791,7 @@
       "name": "Violet Line",
       "nameHi": "बैंगनी लाइन",
       "color": "metro-violet",
-      "stations": ["KA", "CW", "MH", "GN"]
+      "stations": ["KA", "LQ", "JMM", "DLG", "ITO", "MH", "JNP", "CS", "KHM", "JNS", "JPR", "LJN", "MLC", "KLC", "NHP", "KKM", "GVP", "HNO", "JAS", "SRV", "MHE", "TGD", "BDB", "SRI", "NHC", "MWM", "S28F", "BKM", "OFD", "NCA", "BTC", "ESM", "SSS", "RNS"]
     },
     {
       "id": "Orange",
@@ -2316,7 +2812,7 @@
       "name": "Magenta Line",
       "nameHi": "मैजेंटा लाइन",
       "color": "metro-magenta",
-      "stations": ["GN", "BA", "HK"]
+      "stations": ["GN", "BA", "KKM", "HK"]
     }
   ]
 }
