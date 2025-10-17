@@ -1527,15 +1527,367 @@
       "id": "KN",
       "name": "Kirti Nagar",
       "nameHi": "कीर्ति नगर",
-      "lines": ["Blue"],
+      "lines": ["Blue", "Green"],
       "lat": 28.6584,
       "lng": 77.1490,
-      "isInterchange": false,
-      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "isInterchange": true,
+      "facilities": ["parking", "lifts", "toilets", "atm", "security"],
       "firstTrain": "06:12",
       "lastTrain": "00:12",
       "exits": [
         {"name": "Exit 1", "landmark": "Furniture Market", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "SRSG",
+      "name": "Satguru Ram Singh Marg",
+      "nameHi": "सतगुरु राम सिंह मार्ग",
+      "lines": ["Green"],
+      "lat": 28.6650,
+      "lng": 77.1560,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:35",
+      "lastTrain": "23:35",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Satguru Ram Singh Marg", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "APM",
+      "name": "Ashok Park Main",
+      "nameHi": "अशोक पार्क मेन",
+      "lines": ["Green"],
+      "lat": 28.6713,
+      "lng": 77.1622,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking"],
+      "firstTrain": "05:33",
+      "lastTrain": "23:37",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Ashok Park Main", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "PBH",
+      "name": "Punjabi Bagh",
+      "nameHi": "पंजाबी बाग",
+      "lines": ["Green"],
+      "lat": 28.6730,
+      "lng": 77.1310,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:31",
+      "lastTrain": "23:39",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Punjabi Bagh Market", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "PBHW",
+      "name": "Punjabi Bagh West",
+      "nameHi": "पंजाबी बाग पश्चिम",
+      "lines": ["Green"],
+      "lat": 28.6741,
+      "lng": 77.1240,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:29",
+      "lastTrain": "23:41",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Punjabi Bagh West", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "SJP",
+      "name": "Shivaji Park",
+      "nameHi": "शिवाजी पार्क",
+      "lines": ["Green"],
+      "lat": 28.6785,
+      "lng": 77.1185,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking"],
+      "firstTrain": "05:27",
+      "lastTrain": "23:43",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Shivaji Park", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "MDP",
+      "name": "Madipur",
+      "nameHi": "मादीपुर",
+      "lines": ["Green"],
+      "lat": 28.6823,
+      "lng": 77.1125,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:25",
+      "lastTrain": "23:45",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Madipur Market", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "PVE",
+      "name": "Paschim Vihar East",
+      "nameHi": "पश्चिम विहार पूर्व",
+      "lines": ["Green"],
+      "lat": 28.6865,
+      "lng": 77.1070,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:23",
+      "lastTrain": "23:47",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Paschim Vihar East Market", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "PVW",
+      "name": "Paschim Vihar West",
+      "nameHi": "पश्चिम विहार पश्चिम",
+      "lines": ["Green"],
+      "lat": 28.6905,
+      "lng": 77.1010,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:21",
+      "lastTrain": "23:49",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Paschim Vihar West", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "PRG",
+      "name": "Peera Garhi",
+      "nameHi": "पीरा गढ़ी",
+      "lines": ["Green"],
+      "lat": 28.6942,
+      "lng": 77.0930,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:19",
+      "lastTrain": "23:51",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Peera Garhi", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "UDN",
+      "name": "Udyog Nagar",
+      "nameHi": "उद्योग नगर",
+      "lines": ["Green"],
+      "lat": 28.6980,
+      "lng": 77.0860,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:17",
+      "lastTrain": "23:53",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Udyog Nagar", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "MSST",
+      "name": "Maharaja Surajmal Stadium",
+      "nameHi": "महाराजा सूरजमल स्टेडियम",
+      "lines": ["Green"],
+      "lat": 28.7015,
+      "lng": 77.0795,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:15",
+      "lastTrain": "23:55",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Surajmal Stadium", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "NGL",
+      "name": "Nangloi",
+      "nameHi": "नांगलोई",
+      "lines": ["Green"],
+      "lat": 28.6792,
+      "lng": 77.0674,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm", "security"],
+      "firstTrain": "05:13",
+      "lastTrain": "23:57",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Nangloi Market", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "NGLR",
+      "name": "Nangloi Railway Station",
+      "nameHi": "नांगलोई रेलवे स्टेशन",
+      "lines": ["Green"],
+      "lat": 28.6750,
+      "lng": 77.0620,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking"],
+      "firstTrain": "05:11",
+      "lastTrain": "23:59",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Nangloi Railway Station", "distance": 50}
+      ],
+      "nearbyTransport": ["Railway Station", "Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "RJPK",
+      "name": "Rajdhani Park",
+      "nameHi": "राजधानी पार्क",
+      "lines": ["Green"],
+      "lat": 28.6708,
+      "lng": 77.0560,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:09",
+      "lastTrain": "00:01",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Rajdhani Park", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "MDKA",
+      "name": "Mundka",
+      "nameHi": "मुंडका",
+      "lines": ["Green"],
+      "lat": 28.6836,
+      "lng": 77.0403,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm", "security"],
+      "firstTrain": "05:07",
+      "lastTrain": "00:03",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Mundka Village", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "MIA",
+      "name": "Mundka Industrial Area",
+      "nameHi": "मुंडका इंडस्ट्रियल एरिया",
+      "lines": ["Green"],
+      "lat": 28.6885,
+      "lng": 77.0290,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking"],
+      "firstTrain": "05:05",
+      "lastTrain": "00:05",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Industrial Area", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "GVM",
+      "name": "Ghevra Metro Station",
+      "nameHi": "घेवरा मेट्रो स्टेशन",
+      "lines": ["Green"],
+      "lat": 28.7935,
+      "lng": 77.0165,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:03",
+      "lastTrain": "00:07",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Ghevra", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "TIKK",
+      "name": "Tikri Kalan",
+      "nameHi": "टिकरी कलां",
+      "lines": ["Green"],
+      "lat": 28.7100,
+      "lng": 76.9985,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:01",
+      "lastTrain": "00:09",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Tikri Kalan", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "TIKB",
+      "name": "Tikri Border",
+      "nameHi": "टिकरी बॉर्डर",
+      "lines": ["Green"],
+      "lat": 28.7152,
+      "lng": 76.9810,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "04:59",
+      "lastTrain": "00:11",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Tikri Border", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "PSRS",
+      "name": "Pandit Shree Ram Sharma",
+      "nameHi": "पंडित श्री राम शर्मा",
+      "lines": ["Green"],
+      "lat": 28.7205,
+      "lng": 76.9645,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "04:57",
+      "lastTrain": "00:13",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Pandit Shree Ram Sharma", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "BHC",
+      "name": "Bahadurgarh City",
+      "nameHi": "बहादुरगढ़ सिटी",
+      "lines": ["Green"],
+      "lat": 28.6925,
+      "lng": 76.9305,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm", "security"],
+      "firstTrain": "04:55",
+      "lastTrain": "00:15",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Bahadurgarh City Centre", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "BHSH",
+      "name": "Brigadier Hoshiar Singh",
+      "nameHi": "ब्रिगेडियर होशियार सिंह",
+      "lines": ["Green"],
+      "lat": 28.6857,
+      "lng": 76.9185,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm", "security"],
+      "firstTrain": "04:53",
+      "lastTrain": "00:17",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Brigadier Hoshiar Singh", "distance": 150}
       ],
       "nearbyTransport": ["Bus 764", "Auto Stand"]
     },
@@ -1936,7 +2288,7 @@
       "name": "Green Line",
       "nameHi": "हरी लाइन",
       "color": "metro-green",
-      "stations": ["IL", "DU"]
+      "stations": ["BHSH", "BHC", "PSRS", "TIKB", "TIKK", "GVM", "MIA", "MDKA", "RJPK", "NGLR", "NGL", "MSST", "UDN", "PRG", "PVW", "PVE", "MDP", "SJP", "PBHW", "PBH", "APM", "IL", "SRSG", "KN", "DU"]
     },
     {
       "id": "Violet",
