@@ -400,10 +400,10 @@
       "id": "DW",
       "name": "Dwarka Sector 21",
       "nameHi": "द्वारका सेक्टर 21",
-      "lines": ["Blue"],
+      "lines": ["Blue", "Orange"],
       "lat": 28.5520,
       "lng": 77.0594,
-      "isInterchange": false,
+      "isInterchange": true,
       "facilities": ["parking", "lifts", "toilets", "atm"],
       "firstTrain": "05:30",
       "lastTrain": "23:30",
@@ -1201,6 +1201,40 @@
         {"name": "Exit 2", "landmark": "Terminal 3 Departures", "distance": 150}
       ],
       "nearbyTransport": ["Airport Shuttle", "Taxi Stand"]
+    },
+    {
+      "id": "SHS",
+      "name": "Shivaji Stadium",
+      "nameHi": "शिवाजी स्टेडियम",
+      "lines": ["Orange"],
+      "lat": 28.6380,
+      "lng": 77.2020,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking"],
+      "firstTrain": "05:12",
+      "lastTrain": "23:48",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Shivaji Stadium", "distance": 100},
+        {"name": "Exit 2", "landmark": "Deen Dayal Upadhyaya Marg", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 620", "Auto Stand"]
+    },
+    {
+      "id": "YDS25",
+      "name": "Yashobhoomi Dwarka Sector 25",
+      "nameHi": "यशोभूमि द्वारका सेक्टर 25",
+      "lines": ["Orange"],
+      "lat": 28.5490,
+      "lng": 77.0520,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm", "security"],
+      "firstTrain": "05:35",
+      "lastTrain": "23:25",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Yashobhoomi Convention Centre", "distance": 150},
+        {"name": "Exit 2", "landmark": "Sector 25 Market", "distance": 300}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
     },
     {
       "id": "DS8",
@@ -2798,7 +2832,7 @@
       "name": "Orange Line (Airport Express)",
       "nameHi": "नारंगी लाइन",
       "color": "metro-orange",
-      "stations": ["ND", "DU", "AP", "IG"]
+      "stations": ["ND", "SHS", "DU", "AP", "IG", "DW", "YDS25"]
     },
     {
       "id": "Pink",
