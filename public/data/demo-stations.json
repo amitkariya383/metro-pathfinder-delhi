@@ -1432,10 +1432,10 @@
       "id": "JPW",
       "name": "Janakpuri West",
       "nameHi": "जनकपुरी पश्चिम",
-      "lines": ["Blue"],
+      "lines": ["Blue", "Magenta"],
       "lat": 28.6190,
       "lng": 77.1280,
-      "isInterchange": false,
+      "isInterchange": true,
       "facilities": ["parking", "lifts", "toilets", "atm"],
       "firstTrain": "05:56",
       "lastTrain": "23:56",
@@ -1443,6 +1443,344 @@
         {"name": "Exit 1", "landmark": "Janakpuri District Centre", "distance": 300}
       ],
       "nearbyTransport": ["Bus 775", "Bus 780", "Auto Stand"]
+    },
+    {
+      "id": "OBS",
+      "name": "Okhla Bird Sanctuary",
+      "nameHi": "ओखला पक्षी अभयारण्य",
+      "lines": ["Magenta"],
+      "lat": 28.5582,
+      "lng": 77.3285,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets"],
+      "firstTrain": "05:25",
+      "lastTrain": "23:40",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Okhla Bird Sanctuary", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 311", "Auto Stand"]
+    },
+    {
+      "id": "KLK",
+      "name": "Kalindi Kunj",
+      "nameHi": "कालिंदी कुंज",
+      "lines": ["Magenta"],
+      "lat": 28.5523,
+      "lng": 77.3195,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking"],
+      "firstTrain": "05:27",
+      "lastTrain": "23:38",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Kalindi Kunj Road", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 311", "Auto Stand"]
+    },
+    {
+      "id": "JVS",
+      "name": "Jasola Vihar Shaheen Bagh",
+      "nameHi": "जसोला विहार शाहीन बाग",
+      "lines": ["Magenta"],
+      "lat": 28.5465,
+      "lng": 77.3105,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:29",
+      "lastTrain": "23:36",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Shaheen Bagh", "distance": 200},
+        {"name": "Exit 2", "landmark": "Jasola Vihar", "distance": 250}
+      ],
+      "nearbyTransport": ["Bus 433", "Auto Stand"]
+    },
+    {
+      "id": "OKV",
+      "name": "Okhla Vihar",
+      "nameHi": "ओखला विहार",
+      "lines": ["Magenta"],
+      "lat": 28.5407,
+      "lng": 77.3015,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:31",
+      "lastTrain": "23:34",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Okhla Vihar", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 433", "Auto Stand"]
+    },
+    {
+      "id": "JMI",
+      "name": "Jamia Millia Islamia",
+      "nameHi": "जामिया मिल्लिया इस्लामिया",
+      "lines": ["Magenta"],
+      "lat": 28.5349,
+      "lng": 77.2925,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:33",
+      "lastTrain": "23:32",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Jamia Millia Islamia University", "distance": 300}
+      ],
+      "nearbyTransport": ["Bus 433", "Auto Stand"]
+    },
+    {
+      "id": "SKV",
+      "name": "Sukhdev Vihar",
+      "nameHi": "सुखदेव विहार",
+      "lines": ["Magenta"],
+      "lat": 28.5291,
+      "lng": 77.2835,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking"],
+      "firstTrain": "05:35",
+      "lastTrain": "23:30",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Sukhdev Vihar Market", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 433", "Auto Stand"]
+    },
+    {
+      "id": "NSO",
+      "name": "NSIC Okhla",
+      "nameHi": "एनएसआईसी ओखला",
+      "lines": ["Magenta"],
+      "lat": 28.5410,
+      "lng": 77.2745,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:37",
+      "lastTrain": "23:28",
+      "exits": [
+        {"name": "Exit 1", "landmark": "NSIC Industrial Estate", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 433", "Auto Stand"]
+    },
+    {
+      "id": "NHE",
+      "name": "Nehru Enclave",
+      "nameHi": "नेहरू एन्क्लेव",
+      "lines": ["Magenta"],
+      "lat": 28.5375,
+      "lng": 77.2495,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:42",
+      "lastTrain": "23:24",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Nehru Enclave", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 615", "Auto Stand"]
+    },
+    {
+      "id": "GRK",
+      "name": "Greater Kailash",
+      "nameHi": "ग्रेटर कैलाश",
+      "lines": ["Magenta"],
+      "lat": 28.5316,
+      "lng": 77.2415,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:44",
+      "lastTrain": "23:22",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Greater Kailash M Block Market", "distance": 200},
+        {"name": "Exit 2", "landmark": "GK-1 N Block", "distance": 300}
+      ],
+      "nearbyTransport": ["Bus 615", "Auto Stand"]
+    },
+    {
+      "id": "CHD",
+      "name": "Chirag Delhi",
+      "nameHi": "चिराग दिल्ली",
+      "lines": ["Magenta"],
+      "lat": 28.5257,
+      "lng": 77.2335,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking"],
+      "firstTrain": "05:46",
+      "lastTrain": "23:20",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Chirag Delhi Village", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 615", "Auto Stand"]
+    },
+    {
+      "id": "PNP",
+      "name": "Panchsheel Park",
+      "nameHi": "पंचशील पार्क",
+      "lines": ["Magenta"],
+      "lat": 28.5198,
+      "lng": 77.2255,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:48",
+      "lastTrain": "23:18",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Panchsheel Park", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 615", "Auto Stand"]
+    },
+    {
+      "id": "IITD",
+      "name": "IIT Delhi",
+      "nameHi": "आईआईटी दिल्ली",
+      "lines": ["Magenta"],
+      "lat": 28.5378,
+      "lng": 77.1928,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:26",
+      "lastTrain": "23:38",
+      "exits": [
+        {"name": "Exit 1", "landmark": "IIT Delhi Main Gate", "distance": 300}
+      ],
+      "nearbyTransport": ["Bus 615", "Auto Stand"]
+    },
+    {
+      "id": "RKP",
+      "name": "R.K. Puram",
+      "nameHi": "आर.के. पुरम",
+      "lines": ["Magenta"],
+      "lat": 28.5316,
+      "lng": 77.1815,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:28",
+      "lastTrain": "23:36",
+      "exits": [
+        {"name": "Exit 1", "landmark": "R.K. Puram Sector 3", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 615", "Auto Stand"]
+    },
+    {
+      "id": "MNK",
+      "name": "Munirka",
+      "nameHi": "मुनिरका",
+      "lines": ["Magenta"],
+      "lat": 28.5254,
+      "lng": 77.1702,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking"],
+      "firstTrain": "05:30",
+      "lastTrain": "23:34",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Munirka Village", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 615", "Auto Stand"]
+    },
+    {
+      "id": "VSV",
+      "name": "Vasant Vihar",
+      "nameHi": "वसंत विहार",
+      "lines": ["Magenta"],
+      "lat": 28.5192,
+      "lng": 77.1589,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:32",
+      "lastTrain": "23:32",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Vasant Vihar", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "SHV2",
+      "name": "Shankar Vihar",
+      "nameHi": "शंकर विहार",
+      "lines": ["Magenta"],
+      "lat": 28.5130,
+      "lng": 77.1476,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:34",
+      "lastTrain": "23:30",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Shankar Vihar", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "T1IG",
+      "name": "Terminal 1 IGI Airport",
+      "nameHi": "टर्मिनल 1 आईजीआई हवाई अड्डा",
+      "lines": ["Magenta"],
+      "lat": 28.5668,
+      "lng": 77.1014,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm", "security", "food"],
+      "firstTrain": "05:10",
+      "lastTrain": "23:50",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Terminal 1 Departures", "distance": 100}
+      ],
+      "nearbyTransport": ["Airport Shuttle", "Taxi Stand"]
+    },
+    {
+      "id": "SBC",
+      "name": "Sadar Bazaar Cantonment",
+      "nameHi": "सदर बाजार कैंटोनमेंट",
+      "lines": ["Magenta"],
+      "lat": 28.5606,
+      "lng": 77.1102,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking"],
+      "firstTrain": "05:12",
+      "lastTrain": "23:48",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Sadar Bazaar Cantt", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "PLM",
+      "name": "Palam",
+      "nameHi": "पालम",
+      "lines": ["Magenta"],
+      "lat": 28.5544,
+      "lng": 77.1190,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:14",
+      "lastTrain": "23:46",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Palam Colony", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "DRP",
+      "name": "Dashrath Puri",
+      "nameHi": "दशरथ पुरी",
+      "lines": ["Magenta"],
+      "lat": 28.5482,
+      "lng": 77.1278,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking"],
+      "firstTrain": "05:16",
+      "lastTrain": "23:44",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Dashrath Puri", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
+    },
+    {
+      "id": "DBM",
+      "name": "Dabri Mor Janakpuri South",
+      "nameHi": "डाबरी मोड़ जनकपुरी साउथ",
+      "lines": ["Magenta"],
+      "lat": 28.5420,
+      "lng": 77.0866,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:18",
+      "lastTrain": "23:42",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Dabri Mor", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 764", "Auto Stand"]
     },
     {
       "id": "JPE",
@@ -3310,7 +3648,7 @@
       "name": "Magenta Line",
       "nameHi": "मैजेंटा लाइन",
       "color": "metro-magenta",
-      "stations": ["GN", "BA", "KKM", "HK"]
+      "stations": ["BA", "OBS", "KLK", "JVS", "OKV", "JMI", "SKV", "NSO", "KKM", "NHE", "GRK", "CHD", "PNP", "HK", "IITD", "RKP", "MNK", "VSV", "SHV2", "T1IG", "SBC", "PLM", "DRP", "DBM", "JPW"]
     }
   ]
 }
