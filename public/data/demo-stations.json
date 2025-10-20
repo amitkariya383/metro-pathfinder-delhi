@@ -1168,24 +1168,6 @@
       "nearbyTransport": ["Bus 311", "Aqua Line", "Auto Stand"]
     },
     {
-      "id": "CW",
-      "name": "Central Secretariat",
-      "nameHi": "सेंट्रल सचिवालय",
-      "lines": ["Yellow", "Violet"],
-      "lat": 28.6149,
-      "lng": 77.2097,
-      "isInterchange": true,
-      "facilities": ["lifts", "toilets", "atm", "security"],
-      "firstTrain": "05:15",
-      "lastTrain": "23:50",
-      "exits": [
-        {"name": "Exit 1", "landmark": "Secretariat Building", "distance": 200},
-        {"name": "Exit 2", "landmark": "Udyog Bhawan", "distance": 300},
-        {"name": "Exit 3", "landmark": "Shastri Bhawan", "distance": 400}
-      ],
-      "nearbyTransport": ["Bus 620", "Bus 630"]
-    },
-    {
       "id": "IG",
       "name": "Indira Gandhi International Airport",
       "nameHi": "इंदिरा गांधी अंतर्राष्ट्रीय हवाई अड्डा",
