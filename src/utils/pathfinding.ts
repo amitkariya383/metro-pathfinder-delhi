@@ -9,6 +9,8 @@ class MetroGraph {
   private nodes: Map<string, GraphNode> = new Map();
 
   constructor(stations: Station[], lines: Line[]) {
+    console.log('Building metro graph with', stations.length, 'stations and', lines.length, 'lines');
+    
     // Create nodes for all stations
     stations.forEach(station => {
       this.nodes.set(station.id, {
@@ -17,8 +19,11 @@ class MetroGraph {
       });
     });
 
+    console.log('Created nodes for', this.nodes.size, 'stations');
+
     // Build connections based on lines
     lines.forEach(line => {
+      console.log(`Building connections for ${line.name} (${line.id}) with ${line.stations.length} stations`);
       for (let i = 0; i < line.stations.length - 1; i++) {
         const from = line.stations[i];
         const to = line.stations[i + 1];
@@ -41,23 +46,39 @@ class MetroGraph {
             time, 
             line: line.id 
           });
+        } else {
+          console.warn(`Missing station node: ${from} or ${to} on line ${line.id}`);
         }
       }
     });
+
+    // Log some key interchange stations for debugging
+    const ndNode = this.nodes.get('ND');
+    const cpNode = this.nodes.get('CP');
+    const nanNode = this.nodes.get('NAN');
+    
+    console.log('ND (New Delhi) neighbors:', ndNode ? Array.from(ndNode.neighbors.keys()) : 'NOT FOUND');
+    console.log('CP (Rajiv Chowk) neighbors:', cpNode ? Array.from(cpNode.neighbors.keys()) : 'NOT FOUND');
+    console.log('NAN (New Ashok Nagar) neighbors:', nanNode ? Array.from(nanNode.neighbors.keys()) : 'NOT FOUND');
   }
 
   findRoutes(originId: string, destinationId: string): Route[] {
+    console.log(`Finding routes from ${originId} to ${destinationId}`);
     const routes: Route[] = [];
     
     // Find shortest path using Dijkstra's algorithm
     const shortestPath = this.dijkstra(originId, destinationId);
     if (shortestPath) {
+      console.log('Found shortest path:', shortestPath);
       routes.push(shortestPath);
+    } else {
+      console.warn('No shortest path found');
     }
 
     // Find alternative paths (different transfer points)
     const altPath = this.findAlternativePath(originId, destinationId, shortestPath);
     if (altPath) {
+      console.log('Found alternative path:', altPath);
       routes.push(altPath);
     }
 
