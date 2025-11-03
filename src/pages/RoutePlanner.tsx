@@ -35,6 +35,40 @@ export default function RoutePlanner() {
   useEffect(() => {
     loadMetroData()
       .then(data => {
+        // Check for duplicate station IDs
+        const stationIds = new Map<string, number>();
+        const duplicates: Array<{id: string, indices: number[], names: string[]}> = [];
+        
+        data.stations.forEach((station, index) => {
+          if (stationIds.has(station.id)) {
+            const firstIndex = stationIds.get(station.id)!;
+            const existing = duplicates.find(d => d.id === station.id);
+            if (existing) {
+              existing.indices.push(index);
+              existing.names.push(station.name);
+            } else {
+              duplicates.push({
+                id: station.id,
+                indices: [firstIndex, index],
+                names: [data.stations[firstIndex].name, station.name]
+              });
+            }
+          } else {
+            stationIds.set(station.id, index);
+          }
+        });
+        
+        if (duplicates.length > 0) {
+          console.error(`🔴 CRITICAL: Found ${duplicates.length} duplicate station ID(s):`);
+          duplicates.forEach(dup => {
+            console.error(`  ID "${dup.id}" appears ${dup.indices.length} times:`);
+            dup.names.forEach((name, i) => {
+              console.error(`    [${dup.indices[i]}] ${name}`);
+            });
+          });
+          console.error('⚠️ This WILL cause pathfinding to fail! Each station ID must be unique.');
+        }
+        
         setMetroData(data);
         
         // Check if there's a from parameter
