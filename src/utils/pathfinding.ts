@@ -101,6 +101,8 @@ class MetroGraph {
     }
     
     console.log(`✅ Both stations found. Origin neighbors: ${originNode.neighbors.size}, Dest neighbors: ${destNode.neighbors.size}`);
+    console.log(`Origin (${originId}) neighbors:`, Array.from(originNode.neighbors.entries()).map(([id, data]) => `${id} (${data.line})`));
+    console.log(`Destination (${destinationId}) neighbors:`, Array.from(destNode.neighbors.entries()).map(([id, data]) => `${id} (${data.line})`));
     
     const distances = new Map<string, number>();
     const previous = new Map<string, { stationId: string; line: string } | null>();
@@ -149,28 +151,43 @@ class MetroGraph {
 
       const currentDistance = distances.get(current) || 0;
       
-      if (iterations <= 3 || current === originId) {
+      if (iterations <= 5 || current === originId) {
         console.log(`Iteration ${iterations}: Processing ${current} (dist: ${currentDistance}, neighbors: ${currentNode.neighbors.size})`);
+        if (iterations === 1) {
+          console.log(`  Neighbors of ${current}:`, Array.from(currentNode.neighbors.keys()));
+        }
       }
 
+      let updatedCount = 0;
       currentNode.neighbors.forEach((neighbor, neighborId) => {
-        if (!unvisited.has(neighborId)) return;
+        if (!unvisited.has(neighborId)) {
+          if (iterations === 1) {
+            console.log(`  ⚠️ Neighbor ${neighborId} already visited`);
+          }
+          return;
+        }
 
         // Add transfer penalty if changing lines
         const prevLine = previous.get(current)?.line;
         const transferPenalty = prevLine && prevLine !== neighbor.line ? 3 : 0;
         
         const distance = currentDistance + neighbor.time + transferPenalty;
+        const oldDistance = distances.get(neighborId) || Infinity;
 
-        if (distance < (distances.get(neighborId) || Infinity)) {
+        if (distance < oldDistance) {
           distances.set(neighborId, distance);
           previous.set(neighborId, { stationId: current, line: neighbor.line });
+          updatedCount++;
           
-          if (iterations <= 3 || neighborId === destinationId) {
-            console.log(`  → Updated ${neighborId}: ${distance} (via ${neighbor.line})`);
+          if (iterations <= 5 || neighborId === destinationId) {
+            console.log(`  → Updated ${neighborId}: ${oldDistance} → ${distance} (via ${neighbor.line})`);
           }
         }
       });
+      
+      if (iterations === 1) {
+        console.log(`  ✅ Updated ${updatedCount} neighbors in first iteration`);
+      }
     }
     
     const finalDistance = distances.get(destinationId);
