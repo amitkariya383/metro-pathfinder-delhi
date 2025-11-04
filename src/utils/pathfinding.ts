@@ -128,13 +128,31 @@ class MetroGraph {
       // Find unvisited node with minimum distance
       let current: string | null = null;
       let minDistance = Infinity;
-      unvisited.forEach(id => {
-        const dist = distances.get(id) || Infinity;
-        if (dist < minDistance) {
-          minDistance = dist;
-          current = id;
-        }
-      });
+      
+      if (iterations === 1) {
+        console.log(`🔎 First iteration - finding minimum distance node from ${unvisited.size} unvisited nodes`);
+        let sampledNodes = 0;
+        unvisited.forEach(id => {
+          const dist = distances.get(id) || Infinity;
+          if (sampledNodes < 5) {
+            console.log(`  Node ${id}: distance = ${dist}`);
+            sampledNodes++;
+          }
+          if (dist < minDistance) {
+            minDistance = dist;
+            current = id;
+          }
+        });
+        console.log(`  Selected: ${current} with distance ${minDistance}`);
+      } else {
+        unvisited.forEach(id => {
+          const dist = distances.get(id) || Infinity;
+          if (dist < minDistance) {
+            minDistance = dist;
+            current = id;
+          }
+        });
+      }
 
       if (current === null) {
         console.warn(`⚠️ No reachable nodes found after ${iterations} iterations. Remaining unvisited: ${unvisited.size}`);
