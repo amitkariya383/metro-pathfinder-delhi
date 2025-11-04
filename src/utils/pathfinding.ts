@@ -69,165 +69,108 @@ class MetroGraph {
     // Find shortest path using Dijkstra's algorithm
     const shortestPath = this.dijkstra(originId, destinationId);
     if (shortestPath) {
-      console.log('Found shortest path:', shortestPath);
       routes.push(shortestPath);
     } else {
       console.warn('No shortest path found');
     }
 
     // Find alternative paths (different transfer points)
-    const altPath = this.findAlternativePath(originId, destinationId, shortestPath);
-    if (altPath) {
-      console.log('Found alternative path:', altPath);
-      routes.push(altPath);
+    if (shortestPath && shortestPath.transfers > 0) {
+      const altPath = this.findAlternativePath(originId, destinationId, shortestPath);
+      if (altPath) {
+        routes.push(altPath);
+      }
     }
 
     return routes;
   }
 
   private dijkstra(originId: string, destinationId: string): Route | null {
-    console.log(`🔍 Dijkstra: Finding path from ${originId} to ${destinationId}`);
-    
     const originNode = this.nodes.get(originId);
     const destNode = this.nodes.get(destinationId);
     
-    if (!originNode) {
-      console.error(`❌ Origin station ${originId} not found in graph`);
+    if (!originNode || !destNode) {
+      console.error('Origin or destination station not found');
       return null;
     }
-    if (!destNode) {
-      console.error(`❌ Destination station ${destinationId} not found in graph`);
-      return null;
-    }
-    
-    console.log(`✅ Both stations found. Origin neighbors: ${originNode.neighbors.size}, Dest neighbors: ${destNode.neighbors.size}`);
-    console.log(`Origin (${originId}) neighbors:`, Array.from(originNode.neighbors.entries()).map(([id, data]) => `${id} (${data.line})`));
-    console.log(`Destination (${destinationId}) neighbors:`, Array.from(destNode.neighbors.entries()).map(([id, data]) => `${id} (${data.line})`));
-    
-    const distances = new Map<string, number>();
-    const previous = new Map<string, { stationId: string; line: string } | null>();
-    const unvisited = new Set<string>();
 
-    this.nodes.forEach((_, id) => {
-      distances.set(id, Infinity);
-      previous.set(id, null);
-      unvisited.add(id);
+    const distances: { [key: string]: number } = {};
+    const previous: { [key: string]: { stationId: string; line: string } | null } = {};
+    const unvisited: Set<string> = new Set();
+
+    // Initialize all distances to infinity
+    this.nodes.forEach((_, stationId) => {
+      distances[stationId] = Infinity;
+      previous[stationId] = null;
+      unvisited.add(stationId);
     });
-    distances.set(originId, 0);
-    
-    console.log(`Initial setup: Total nodes: ${this.nodes.size}, Unvisited: ${unvisited.size}`);
-    console.log(`Origin ${originId} distance:`, distances.get(originId));
-    console.log(`Is origin in unvisited?`, unvisited.has(originId));
-    console.log(`First 5 unvisited stations:`, Array.from(unvisited).slice(0, 5));
-    
-    let iterations = 0;
+
+    // Starting point has distance 0
+    distances[originId] = 0;
 
     while (unvisited.size > 0) {
-      iterations++;
-      
-      // Find unvisited node with minimum distance
-      let current: string | null = null;
-      let minDistance = Infinity;
-      
-      if (iterations === 1) {
-        console.log(`🔎 First iteration - finding minimum distance node from ${unvisited.size} unvisited nodes`);
-        let sampledNodes = 0;
-        unvisited.forEach(id => {
-          const dist = distances.get(id) || Infinity;
-          if (sampledNodes < 5) {
-            console.log(`  Node ${id}: distance = ${dist}`);
-            sampledNodes++;
-          }
-          if (dist < minDistance) {
-            minDistance = dist;
-            current = id;
-          }
-        });
-        console.log(`  Selected: ${current} with distance ${minDistance}`);
-      } else {
-        unvisited.forEach(id => {
-          const dist = distances.get(id) || Infinity;
-          if (dist < minDistance) {
-            minDistance = dist;
-            current = id;
-          }
-        });
-      }
+      // Find the unvisited node with smallest distance
+      let currentId: string | null = null;
+      let smallestDistance = Infinity;
 
-      if (current === null) {
-        console.warn(`⚠️ No reachable nodes found after ${iterations} iterations. Remaining unvisited: ${unvisited.size}`);
-        break;
-      }
-      
-      if (current === destinationId) {
-        console.log(`✅ Reached destination in ${iterations} iterations!`);
-        break;
-      }
-      
-      unvisited.delete(current);
-
-      const currentNode = this.nodes.get(current);
-      if (!currentNode) {
-        console.warn(`⚠️ Node ${current} not found in graph`);
-        continue;
-      }
-
-      const currentDistance = distances.get(current) || 0;
-      
-      if (iterations <= 5 || current === originId) {
-        console.log(`Iteration ${iterations}: Processing ${current} (dist: ${currentDistance}, neighbors: ${currentNode.neighbors.size})`);
-        if (iterations === 1) {
-          console.log(`  Neighbors of ${current}:`, Array.from(currentNode.neighbors.keys()));
+      for (const id of unvisited) {
+        if (distances[id] < smallestDistance) {
+          smallestDistance = distances[id];
+          currentId = id;
         }
       }
 
-      let updatedCount = 0;
+      // If no node found or we reached destination, break
+      if (currentId === null || smallestDistance === Infinity) {
+        break;
+      }
+
+      if (currentId === destinationId) {
+        break;
+      }
+
+      // Remove current from unvisited
+      unvisited.delete(currentId);
+
+      const currentNode = this.nodes.get(currentId);
+      if (!currentNode) continue;
+
+      // Check all neighbors
       currentNode.neighbors.forEach((neighbor, neighborId) => {
-        if (!unvisited.has(neighborId)) {
-          if (iterations === 1) {
-            console.log(`  ⚠️ Neighbor ${neighborId} already visited`);
-          }
-          return;
-        }
+        if (!unvisited.has(neighborId)) return;
 
+        // Calculate distance to neighbor through current node
+        const currentDistance = distances[currentId!];
+        const edgeWeight = neighbor.time;
+        
         // Add transfer penalty if changing lines
-        const prevLine = previous.get(current)?.line;
+        const prevLine = previous[currentId!]?.line;
         const transferPenalty = prevLine && prevLine !== neighbor.line ? 3 : 0;
         
-        const distance = currentDistance + neighbor.time + transferPenalty;
-        const oldDistance = distances.get(neighborId) || Infinity;
+        const newDistance = currentDistance + edgeWeight + transferPenalty;
 
-        if (distance < oldDistance) {
-          distances.set(neighborId, distance);
-          previous.set(neighborId, { stationId: current, line: neighbor.line });
-          updatedCount++;
-          
-          if (iterations <= 5 || neighborId === destinationId) {
-            console.log(`  → Updated ${neighborId}: ${oldDistance} → ${distance} (via ${neighbor.line})`);
-          }
+        // If this path is shorter, update it
+        if (newDistance < distances[neighborId]) {
+          distances[neighborId] = newDistance;
+          previous[neighborId] = {
+            stationId: currentId!,
+            line: neighbor.line
+          };
         }
       });
-      
-      if (iterations === 1) {
-        console.log(`  ✅ Updated ${updatedCount} neighbors in first iteration`);
-      }
     }
-    
-    const finalDistance = distances.get(destinationId);
-    console.log(`Final destination distance: ${finalDistance === Infinity ? 'INFINITY (unreachable)' : finalDistance}`);
 
+    // Build the route from the previous map
     return this.buildRoute(originId, destinationId, previous);
   }
 
   private findAlternativePath(
     originId: string, 
     destinationId: string, 
-    avoidRoute: Route | null
+    avoidRoute: Route
   ): Route | null {
     // Simple alternative: prefer different transfer stations
-    // This is a simplified approach; a full implementation would use k-shortest paths
-    
-    if (!avoidRoute || avoidRoute.transfers === 0) return null;
+    if (avoidRoute.transfers === 0) return null;
 
     // Try finding a path that avoids the first transfer station
     const avoidStations = new Set<string>();
@@ -244,49 +187,60 @@ class MetroGraph {
     destinationId: string, 
     avoidStations: Set<string>
   ): Route | null {
-    const distances = new Map<string, number>();
-    const previous = new Map<string, { stationId: string; line: string } | null>();
-    const unvisited = new Set<string>();
+    const originNode = this.nodes.get(originId);
+    const destNode = this.nodes.get(destinationId);
+    
+    if (!originNode || !destNode) return null;
 
-    this.nodes.forEach((_, id) => {
-      if (!avoidStations.has(id) || id === originId || id === destinationId) {
-        distances.set(id, Infinity);
-        previous.set(id, null);
-        unvisited.add(id);
+    const distances: { [key: string]: number } = {};
+    const previous: { [key: string]: { stationId: string; line: string } | null } = {};
+    const unvisited: Set<string> = new Set();
+
+    this.nodes.forEach((_, stationId) => {
+      if (!avoidStations.has(stationId) || stationId === originId || stationId === destinationId) {
+        distances[stationId] = Infinity;
+        previous[stationId] = null;
+        unvisited.add(stationId);
       }
     });
-    distances.set(originId, 0);
+
+    distances[originId] = 0;
 
     while (unvisited.size > 0) {
-      let current: string | null = null;
-      let minDistance = Infinity;
-      unvisited.forEach(id => {
-        const dist = distances.get(id) || Infinity;
-        if (dist < minDistance) {
-          minDistance = dist;
-          current = id;
+      let currentId: string | null = null;
+      let smallestDistance = Infinity;
+
+      for (const id of unvisited) {
+        if (distances[id] < smallestDistance) {
+          smallestDistance = distances[id];
+          currentId = id;
         }
-      });
+      }
 
-      if (current === null || current === destinationId) break;
-      unvisited.delete(current);
+      if (currentId === null || smallestDistance === Infinity || currentId === destinationId) {
+        break;
+      }
 
-      const currentNode = this.nodes.get(current);
+      unvisited.delete(currentId);
+
+      const currentNode = this.nodes.get(currentId);
       if (!currentNode) continue;
-
-      const currentDistance = distances.get(current) || 0;
 
       currentNode.neighbors.forEach((neighbor, neighborId) => {
         if (!unvisited.has(neighborId)) return;
 
-        const prevLine = previous.get(current)?.line;
+        const currentDistance = distances[currentId!];
+        const edgeWeight = neighbor.time;
+        const prevLine = previous[currentId!]?.line;
         const transferPenalty = prevLine && prevLine !== neighbor.line ? 3 : 0;
-        
-        const distance = currentDistance + neighbor.time + transferPenalty;
+        const newDistance = currentDistance + edgeWeight + transferPenalty;
 
-        if (distance < (distances.get(neighborId) || Infinity)) {
-          distances.set(neighborId, distance);
-          previous.set(neighborId, { stationId: current, line: neighbor.line });
+        if (newDistance < distances[neighborId]) {
+          distances[neighborId] = newDistance;
+          previous[neighborId] = {
+            stationId: currentId!,
+            line: neighbor.line
+          };
         }
       });
     }
@@ -297,19 +251,29 @@ class MetroGraph {
   private buildRoute(
     originId: string,
     destinationId: string,
-    previous: Map<string, { stationId: string; line: string } | null>
+    previous: { [key: string]: { stationId: string; line: string } | null }
   ): Route | null {
     const path: { stationId: string; line: string }[] = [];
     let current = destinationId;
 
+    // Trace back from destination to origin
     while (current !== originId) {
-      const prev = previous.get(current);
-      if (!prev) return null; // No path found
+      const prev = previous[current];
+      if (!prev) {
+        // No path found
+        return null;
+      }
       
       path.unshift({ stationId: current, line: prev.line });
       current = prev.stationId;
     }
-    path.unshift({ stationId: originId, line: path[0]?.line || '' });
+
+    // Add origin with the first segment's line
+    if (path.length > 0) {
+      path.unshift({ stationId: originId, line: path[0].line });
+    } else {
+      return null;
+    }
 
     // Group by line segments
     const segments: RouteSegment[] = [];
