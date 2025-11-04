@@ -115,6 +115,11 @@ class MetroGraph {
     });
     distances.set(originId, 0);
     
+    console.log(`Initial setup: Total nodes: ${this.nodes.size}, Unvisited: ${unvisited.size}`);
+    console.log(`Origin ${originId} distance:`, distances.get(originId));
+    console.log(`Is origin in unvisited?`, unvisited.has(originId));
+    console.log(`First 5 unvisited stations:`, Array.from(unvisited).slice(0, 5));
+    
     let iterations = 0;
 
     while (unvisited.size > 0) {
