@@ -2311,6 +2311,23 @@
       "nearbyTransport": ["Bus 764", "Auto Stand"]
     },
     {
+      "id": "JHN",
+      "name": "Jhandewalan",
+      "nameHi": "झंडेवालान",
+      "lines": ["Blue"],
+      "lat": 28.6438,
+      "lng": 77.2032,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "atm"],
+      "firstTrain": "06:22",
+      "lastTrain": "00:22",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Jhandewalan Temple", "distance": 100},
+        {"name": "Exit 2", "landmark": "Rani Jhansi Road", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 764", "Bus 780", "Auto Stand"]
+    },
+    {
       "id": "BR",
       "name": "Barakhamba Road",
       "nameHi": "बाराखम्बा रोड",
@@ -3595,7 +3612,7 @@
       "name": "Blue Line",
       "nameHi": "नीली लाइन",
       "color": "metro-blue",
-      "stations": ["DW", "DS8", "DS9", "DS10", "DS11", "DS12", "DS13", "DS14", "DWK", "DM", "NW", "UNW", "UNE", "JPW", "JPE", "TN", "SN", "TG", "RG", "RMN", "MN", "KN", "SHP", "PN", "RP", "KB", "CP", "BR", "MH", "PM", "IP", "YB", "AK", "MV1", "MVE", "NAN", "N15", "N16", "NO", "BA", "GC", "NCC", "N34", "N52", "N61", "N59", "N62", "NEC"]
+      "stations": ["DW", "DS8", "DS9", "DS10", "DS11", "DS12", "DS13", "DS14", "DWK", "DM", "NW", "UNW", "UNE", "JPW", "JPE", "TN", "SN", "TG", "RG", "RMN", "MN", "KN", "SHP", "PN", "RP", "KB", "JHN", "CP", "BR", "MH", "PM", "IP", "YB", "AK", "MV1", "MVE", "NAN", "N15", "N16", "NO", "BA", "GC", "NCC", "N34", "N52", "N61", "N59", "N62", "NEC"]
     },
     {
       "id": "Green",
