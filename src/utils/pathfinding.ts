@@ -89,43 +89,57 @@ class MetroGraph {
     const originNode = this.nodes.get(originId);
     const destNode = this.nodes.get(destinationId);
     
+    console.log(`🔍 Dijkstra: Finding path from ${originId} to ${destinationId}`);
+    
     if (!originNode || !destNode) {
-      console.error('Origin or destination station not found');
+      console.error('❌ Origin or destination station not found in graph');
+      console.error(`Origin ${originId} exists:`, !!originNode);
+      console.error(`Destination ${destinationId} exists:`, !!destNode);
       return null;
     }
 
-    const distances: { [key: string]: number } = {};
-    const previous: { [key: string]: { stationId: string; line: string } | null } = {};
-    const unvisited: Set<string> = new Set();
+    console.log(`✅ Both stations found. Origin neighbors: ${originNode.neighbors.size}, Dest neighbors: ${destNode.neighbors.size}`);
+
+    const distances = new Map<string, number>();
+    const previous = new Map<string, { stationId: string; line: string } | null>();
+    const unvisited = new Set<string>();
 
     // Initialize all distances to infinity
-    this.nodes.forEach((_, stationId) => {
-      distances[stationId] = Infinity;
-      previous[stationId] = null;
+    for (const [stationId] of this.nodes) {
+      distances.set(stationId, Infinity);
+      previous.set(stationId, null);
       unvisited.add(stationId);
-    });
+    }
 
     // Starting point has distance 0
-    distances[originId] = 0;
+    distances.set(originId, 0);
 
+    console.log(`📊 Initialized: ${distances.size} stations, origin distance: ${distances.get(originId)}`);
+
+    let iterations = 0;
     while (unvisited.size > 0) {
+      iterations++;
+      
       // Find the unvisited node with smallest distance
       let currentId: string | null = null;
       let smallestDistance = Infinity;
 
       for (const id of unvisited) {
-        if (distances[id] < smallestDistance) {
-          smallestDistance = distances[id];
+        const dist = distances.get(id) ?? Infinity;
+        if (dist < smallestDistance) {
+          smallestDistance = dist;
           currentId = id;
         }
       }
 
       // If no node found or we reached destination, break
       if (currentId === null || smallestDistance === Infinity) {
+        console.log(`⚠️ Breaking at iteration ${iterations}. Current: ${currentId}, Distance: ${smallestDistance}`);
         break;
       }
 
       if (currentId === destinationId) {
+        console.log(`✅ Reached destination in ${iterations} iterations!`);
         break;
       }
 
@@ -133,32 +147,39 @@ class MetroGraph {
       unvisited.delete(currentId);
 
       const currentNode = this.nodes.get(currentId);
-      if (!currentNode) continue;
+      if (!currentNode) {
+        console.warn(`Node ${currentId} not found in graph`);
+        continue;
+      }
 
       // Check all neighbors
       currentNode.neighbors.forEach((neighbor, neighborId) => {
         if (!unvisited.has(neighborId)) return;
 
         // Calculate distance to neighbor through current node
-        const currentDistance = distances[currentId!];
+        const currentDistance = distances.get(currentId!) ?? Infinity;
         const edgeWeight = neighbor.time;
         
         // Add transfer penalty if changing lines
-        const prevLine = previous[currentId!]?.line;
+        const prevInfo = previous.get(currentId!);
+        const prevLine = prevInfo?.line;
         const transferPenalty = prevLine && prevLine !== neighbor.line ? 3 : 0;
         
         const newDistance = currentDistance + edgeWeight + transferPenalty;
 
         // If this path is shorter, update it
-        if (newDistance < distances[neighborId]) {
-          distances[neighborId] = newDistance;
-          previous[neighborId] = {
+        const neighborDistance = distances.get(neighborId) ?? Infinity;
+        if (newDistance < neighborDistance) {
+          distances.set(neighborId, newDistance);
+          previous.set(neighborId, {
             stationId: currentId!,
             line: neighbor.line
-          };
+          });
         }
       });
     }
+
+    console.log(`🏁 Finished after ${iterations} iterations. Destination distance: ${distances.get(destinationId)}`);
 
     // Build the route from the previous map
     return this.buildRoute(originId, destinationId, previous);
@@ -192,27 +213,28 @@ class MetroGraph {
     
     if (!originNode || !destNode) return null;
 
-    const distances: { [key: string]: number } = {};
-    const previous: { [key: string]: { stationId: string; line: string } | null } = {};
-    const unvisited: Set<string> = new Set();
+    const distances = new Map<string, number>();
+    const previous = new Map<string, { stationId: string; line: string } | null>();
+    const unvisited = new Set<string>();
 
-    this.nodes.forEach((_, stationId) => {
+    for (const [stationId] of this.nodes) {
       if (!avoidStations.has(stationId) || stationId === originId || stationId === destinationId) {
-        distances[stationId] = Infinity;
-        previous[stationId] = null;
+        distances.set(stationId, Infinity);
+        previous.set(stationId, null);
         unvisited.add(stationId);
       }
-    });
+    }
 
-    distances[originId] = 0;
+    distances.set(originId, 0);
 
     while (unvisited.size > 0) {
       let currentId: string | null = null;
       let smallestDistance = Infinity;
 
       for (const id of unvisited) {
-        if (distances[id] < smallestDistance) {
-          smallestDistance = distances[id];
+        const dist = distances.get(id) ?? Infinity;
+        if (dist < smallestDistance) {
+          smallestDistance = dist;
           currentId = id;
         }
       }
@@ -229,18 +251,20 @@ class MetroGraph {
       currentNode.neighbors.forEach((neighbor, neighborId) => {
         if (!unvisited.has(neighborId)) return;
 
-        const currentDistance = distances[currentId!];
+        const currentDistance = distances.get(currentId!) ?? Infinity;
         const edgeWeight = neighbor.time;
-        const prevLine = previous[currentId!]?.line;
+        const prevInfo = previous.get(currentId!);
+        const prevLine = prevInfo?.line;
         const transferPenalty = prevLine && prevLine !== neighbor.line ? 3 : 0;
         const newDistance = currentDistance + edgeWeight + transferPenalty;
 
-        if (newDistance < distances[neighborId]) {
-          distances[neighborId] = newDistance;
-          previous[neighborId] = {
+        const neighborDistance = distances.get(neighborId) ?? Infinity;
+        if (newDistance < neighborDistance) {
+          distances.set(neighborId, newDistance);
+          previous.set(neighborId, {
             stationId: currentId!,
             line: neighbor.line
-          };
+          });
         }
       });
     }
@@ -251,16 +275,18 @@ class MetroGraph {
   private buildRoute(
     originId: string,
     destinationId: string,
-    previous: { [key: string]: { stationId: string; line: string } | null }
+    previous: Map<string, { stationId: string; line: string } | null>
   ): Route | null {
     const path: { stationId: string; line: string }[] = [];
     let current = destinationId;
 
+    console.log(`🔨 Building route from ${originId} to ${destinationId}`);
+
     // Trace back from destination to origin
     while (current !== originId) {
-      const prev = previous[current];
+      const prev = previous.get(current);
       if (!prev) {
-        // No path found
+        console.error(`❌ No path found! Stopped at ${current}, no previous node`);
         return null;
       }
       
@@ -272,6 +298,7 @@ class MetroGraph {
     if (path.length > 0) {
       path.unshift({ stationId: originId, line: path[0].line });
     } else {
+      console.error(`❌ Path is empty`);
       return null;
     }
 
