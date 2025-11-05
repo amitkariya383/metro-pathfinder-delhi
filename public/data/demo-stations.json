@@ -2328,6 +2328,23 @@
       "nearbyTransport": ["Bus 764", "Bus 780", "Auto Stand"]
     },
     {
+      "id": "RKA",
+      "name": "R. K. Ashram Marg",
+      "nameHi": "आर. के. आश्रम मार्ग",
+      "lines": ["Blue"],
+      "lat": 28.6385,
+      "lng": 77.2110,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "atm"],
+      "firstTrain": "06:24",
+      "lastTrain": "00:24",
+      "exits": [
+        {"name": "Exit 1", "landmark": "R. K. Ashram", "distance": 100},
+        {"name": "Exit 2", "landmark": "Gole Market", "distance": 250}
+      ],
+      "nearbyTransport": ["Bus 764", "Bus 620", "Auto Stand"]
+    },
+    {
       "id": "BR",
       "name": "Barakhamba Road",
       "nameHi": "बाराखम्बा रोड",
@@ -3612,7 +3629,7 @@
       "name": "Blue Line",
       "nameHi": "नीली लाइन",
       "color": "metro-blue",
-      "stations": ["DW", "DS8", "DS9", "DS10", "DS11", "DS12", "DS13", "DS14", "DWK", "DM", "NW", "UNW", "UNE", "JPW", "JPE", "TN", "SN", "TG", "RG", "RMN", "MN", "KN", "SHP", "PN", "RP", "KB", "JHN", "CP", "BR", "MH", "PM", "IP", "YB", "AK", "MV1", "MVE", "NAN", "N15", "N16", "NO", "BA", "GC", "NCC", "N34", "N52", "N61", "N59", "N62", "NEC"]
+      "stations": ["DW", "DS8", "DS9", "DS10", "DS11", "DS12", "DS13", "DS14", "DWK", "DM", "NW", "UNW", "UNE", "JPW", "JPE", "TN", "SN", "TG", "RG", "RMN", "MN", "KN", "SHP", "PN", "RP", "KB", "JHN", "RKA", "CP", "BR", "MH", "PM", "IP", "YB", "AK", "MV1", "MVE", "NAN", "N15", "N16", "NO", "BA", "GC", "NCC", "N34", "N52", "N61", "N59", "N62", "NEC"]
     },
     {
       "id": "Green",
