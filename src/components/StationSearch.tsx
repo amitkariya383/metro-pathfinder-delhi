@@ -23,6 +23,11 @@ export function StationSearch({ stations, onSelect, placeholder, value = '' }: S
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
 
+  // Sync internal query state with external value prop
+  useEffect(() => {
+    setQuery(value);
+  }, [value]);
+
   useEffect(() => {
     if (query.length > 0) {
       const searchResults = searchStations(stations, query, i18n.language);
