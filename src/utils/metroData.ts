@@ -40,6 +40,7 @@ export function getLineColor(lineId: string): string {
     'Red': 'bg-metro-red',
     'Yellow': 'bg-metro-yellow',
     'Blue': 'bg-metro-blue',
+    'Blue Branch': 'bg-metro-blue',
     'Green': 'bg-metro-green',
     'Violet': 'bg-metro-violet',
     'Orange': 'bg-metro-orange',

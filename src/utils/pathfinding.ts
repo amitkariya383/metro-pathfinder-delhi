@@ -341,6 +341,7 @@ class MetroGraph {
       'Red': 'metro-red',
       'Yellow': 'metro-yellow',
       'Blue': 'metro-blue',
+      'Blue Branch': 'metro-blue',
       'Green': 'metro-green',
       'Violet': 'metro-violet',
       'Orange': 'metro-orange',
