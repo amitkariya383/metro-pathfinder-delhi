@@ -281,25 +281,33 @@ export default function RoutePlanner() {
                       </div>
                       <div className="flex-1">
                         <div className="mb-3">
-                          <div className="flex items-center gap-2 mb-1">
+                          <div className="flex items-center gap-2 mb-2">
                             <span className="font-medium">
                               {segmentIndex === 0 ? t('route.boardAt') : t('route.transferAt')}
                             </span>
-                            <LineBadge line={segment.line} />
                           </div>
                           {(() => {
                             const firstStation = getStationById(metroData.stations, segment.stations[0]);
+                            const lastStation = getStationById(metroData.stations, segment.stations[segment.stations.length - 1]);
                             const platformInfo = firstStation?.platforms?.[segment.line];
-                            if (platformInfo) {
+                            
+                            if (platformInfo && lastStation) {
                               return (
-                                <div className="text-sm text-primary font-medium mt-1 flex items-center gap-1">
-                                  <span className="bg-primary/10 px-2 py-0.5 rounded">
+                                <div className="border-2 border-border rounded-lg p-3 bg-muted/30 mb-2">
+                                  <div className="flex items-center gap-2 mb-1">
+                                    <span className="text-sm text-muted-foreground">↓</span>
+                                    <LineBadge line={segment.line} />
+                                  </div>
+                                  <div className="text-sm text-destructive font-medium mb-1">
+                                    {i18n.language === 'hi' ? 'की ओर' : 'Towards'} {i18n.language === 'hi' ? lastStation.nameHi : lastStation.name}
+                                  </div>
+                                  <div className="text-base text-destructive font-semibold">
                                     {i18n.language === 'hi' ? 'प्लेटफॉर्म' : 'Platform'} {platformInfo}
-                                  </span>
+                                  </div>
                                 </div>
                               );
                             }
-                            return null;
+                            return <LineBadge line={segment.line} />;
                           })()}
                         </div>
                          <div className="space-y-1">
