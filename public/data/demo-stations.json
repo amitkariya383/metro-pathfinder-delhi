@@ -1045,7 +1045,10 @@
         {"name": "Exit 2", "landmark": "DLF Mall of India", "distance": 500},
         {"name": "Exit 3", "landmark": "Sector 18 Market", "distance": 200}
       ],
-      "nearbyTransport": ["Bus 300", "Bus 310", "Auto Stand"]
+      "nearbyTransport": ["Bus 300", "Bus 310", "Auto Stand"],
+      "platforms": {
+        "Blue": "1"
+      }
     },
     {
       "id": "VA",
@@ -1062,7 +1065,10 @@
         {"name": "Exit 1", "landmark": "Vaishali Market", "distance": 200},
         {"name": "Exit 2", "landmark": "Indirapuram", "distance": 1000}
       ],
-      "nearbyTransport": ["Bus 301", "Bus 305", "Auto Stand"]
+      "nearbyTransport": ["Bus 301", "Bus 305", "Auto Stand"],
+      "platforms": {
+        "Blue": "1"
+      }
     },
     {
       "id": "WE",
@@ -2456,7 +2462,10 @@
       "exits": [
         {"name": "Exit 1", "landmark": "Pragati Maidan Exhibition Ground", "distance": 200}
       ],
-      "nearbyTransport": ["Bus 181", "Auto Stand"]
+      "nearbyTransport": ["Bus 181", "Auto Stand"],
+      "platforms": {
+        "Blue": "1"
+      }
     },
     {
       "id": "IP",
@@ -2472,7 +2481,10 @@
       "exits": [
         {"name": "Exit 1", "landmark": "Indraprastha Park", "distance": 150}
       ],
-      "nearbyTransport": ["Bus 181", "Auto Stand"]
+      "nearbyTransport": ["Bus 181", "Auto Stand"],
+      "platforms": {
+        "Blue": "1"
+      }
     },
     {
       "id": "YB",
@@ -2507,7 +2519,10 @@
       "exits": [
         {"name": "Exit 1", "landmark": "Akshardham Temple", "distance": 300}
       ],
-      "nearbyTransport": ["Bus 181", "Auto Stand"]
+      "nearbyTransport": ["Bus 181", "Auto Stand"],
+      "platforms": {
+        "Blue": "1"
+      }
     },
     {
       "id": "MV1",
@@ -2543,7 +2558,10 @@
       "exits": [
         {"name": "Exit 1", "landmark": "Mayur Vihar Extension Market", "distance": 200}
       ],
-      "nearbyTransport": ["Bus 300", "Auto Stand"]
+      "nearbyTransport": ["Bus 300", "Auto Stand"],
+      "platforms": {
+        "Blue": "1"
+      }
     },
     {
       "id": "NAN",
@@ -2559,7 +2577,10 @@
       "exits": [
         {"name": "Exit 1", "landmark": "New Ashok Nagar Market", "distance": 200}
       ],
-      "nearbyTransport": ["Bus 300", "Auto Stand"]
+      "nearbyTransport": ["Bus 300", "Auto Stand"],
+      "platforms": {
+        "Blue": "1"
+      }
     },
     {
       "id": "N15",
@@ -3455,7 +3476,10 @@
       "exits": [
         {"name": "Exit 1", "landmark": "Nizamuddin Railway Station", "distance": 300}
       ],
-      "nearbyTransport": ["Railway Station", "Bus 415", "Auto Stand"]
+      "nearbyTransport": ["Railway Station", "Bus 415", "Auto Stand"],
+      "platforms": {
+        "Pink": "4"
+      }
     },
     {
       "id": "MVP1",
