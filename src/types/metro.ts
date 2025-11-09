@@ -11,6 +11,7 @@ export interface Station {
   lastTrain: string;
   exits: Exit[];
   nearbyTransport: string[];
+  platforms?: Record<string, string>; // Maps line name to platform number
 }
 
 export interface Exit {

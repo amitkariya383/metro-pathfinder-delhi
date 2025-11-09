@@ -100,7 +100,11 @@
         {"name": "Exit 1", "landmark": "Wazirpur Industrial Area", "distance": 300},
         {"name": "Exit 2", "landmark": "Netaji Subhash Place Market", "distance": 150}
       ],
-      "nearbyTransport": ["Bus 819", "Auto Stand"]
+      "nearbyTransport": ["Bus 819", "Auto Stand"],
+      "platforms": {
+        "Red": "1",
+        "Pink": "2"
+      }
     },
     {
       "id": "SHB",
@@ -134,7 +138,11 @@
         {"name": "Exit 1", "landmark": "Badli Industrial Area", "distance": 400},
         {"name": "Exit 2", "landmark": "Haiderpur Village", "distance": 250}
       ],
-      "nearbyTransport": ["Bus 879", "Bus 923", "DTC Depot"]
+      "nearbyTransport": ["Bus 879", "Bus 923", "DTC Depot"],
+      "platforms": {
+        "Red": "1",
+        "Yellow": "2"
+      }
     },
     {
       "id": "KA",
@@ -152,7 +160,12 @@
         {"name": "Exit 2", "landmark": "Red Fort", "distance": 800},
         {"name": "Exit 3", "landmark": "St. James Church", "distance": 300}
       ],
-      "nearbyTransport": ["ISBT", "Bus 181", "Bus 419", "Auto Stand"]
+      "nearbyTransport": ["ISBT", "Bus 181", "Bus 419", "Auto Stand"],
+      "platforms": {
+        "Red": "1",
+        "Violet": "3",
+        "Yellow": "5"
+      }
     },
     {
       "id": "TH",
@@ -341,7 +354,11 @@
         {"name": "Exit 3", "landmark": "Janpath Market", "distance": 300},
         {"name": "Exit 4", "landmark": "Outer Circle", "distance": 200}
       ],
-      "nearbyTransport": ["Bus 181", "Bus 419", "Bus 620", "E-Rickshaw Stand"]
+      "nearbyTransport": ["Bus 181", "Bus 419", "Bus 620", "E-Rickshaw Stand"],
+      "platforms": {
+        "Blue": "1",
+        "Yellow": "3"
+      }
     },
     {
       "id": "ND",
@@ -359,7 +376,11 @@
         {"name": "Exit 2", "landmark": "Paharganj", "distance": 400},
         {"name": "Exit 3", "landmark": "Ajmeri Gate", "distance": 300}
       ],
-      "nearbyTransport": ["Railway Station", "Bus 419", "Bus 999", "Auto Stand"]
+      "nearbyTransport": ["Railway Station", "Bus 419", "Bus 999", "Auto Stand"],
+      "platforms": {
+        "Yellow": "2",
+        "Orange": "4"
+      }
     },
     {
       "id": "CH",
@@ -411,7 +432,11 @@
         {"name": "Exit 1", "landmark": "Sector 21 Market", "distance": 200},
         {"name": "Exit 2", "landmark": "DLF Phase 1", "distance": 400}
       ],
-      "nearbyTransport": ["Bus 764", "Auto Stand"]
+      "nearbyTransport": ["Bus 764", "Auto Stand"],
+      "platforms": {
+        "Blue": "1",
+        "Orange": "2"
+      }
     },
     {
       "id": "SB",
@@ -496,7 +521,12 @@
         {"name": "Exit 1", "landmark": "Azadpur Mandi", "distance": 300},
         {"name": "Exit 2", "landmark": "Model Town", "distance": 500}
       ],
-      "nearbyTransport": ["Bus 822", "Bus 901", "Auto Stand"]
+      "nearbyTransport": ["Bus 822", "Bus 901", "Auto Stand"],
+      "platforms": {
+        "Red": "1",
+        "Yellow": "2",
+        "Pink": "3"
+      }
     },
     {
       "id": "MT",
@@ -513,7 +543,11 @@
         {"name": "Exit 1", "landmark": "Model Town Market", "distance": 200},
         {"name": "Exit 2", "landmark": "Punjab Engineering College", "distance": 400}
       ],
-      "nearbyTransport": ["Bus 811", "Auto Stand"]
+      "nearbyTransport": ["Bus 811", "Auto Stand"],
+      "platforms": {
+        "Red": "1",
+        "Yellow": "2"
+      }
     },
     {
       "id": "GTB",
@@ -530,7 +564,11 @@
         {"name": "Exit 1", "landmark": "GTB Nagar Market", "distance": 150},
         {"name": "Exit 2", "landmark": "Kingsway Camp", "distance": 300}
       ],
-      "nearbyTransport": ["Bus 805", "Auto Stand"]
+      "nearbyTransport": ["Bus 805", "Auto Stand"],
+      "platforms": {
+        "Red": "1",
+        "Yellow": "2"
+      }
     },
     {
       "id": "VV",
@@ -633,7 +671,11 @@
         {"name": "Exit 2", "landmark": "Rail Bhawan", "distance": 200},
         {"name": "Exit 3", "landmark": "National Stadium", "distance": 400}
       ],
-      "nearbyTransport": ["Bus 620", "Bus 615"]
+      "nearbyTransport": ["Bus 620", "Bus 615"],
+      "platforms": {
+        "Yellow": "2",
+        "Violet": "4"
+      }
     },
     {
       "id": "UB",
@@ -754,7 +796,11 @@
         {"name": "Exit 2", "landmark": "IIT Delhi", "distance": 600},
         {"name": "Exit 3", "landmark": "Deer Park", "distance": 400}
       ],
-      "nearbyTransport": ["Bus 615", "Bus 764", "Auto Stand"]
+      "nearbyTransport": ["Bus 615", "Bus 764", "Auto Stand"],
+      "platforms": {
+        "Yellow": "1",
+        "Magenta": "2"
+      }
     },
     {
       "id": "MVN",
@@ -977,7 +1023,11 @@
         {"name": "Exit 1", "landmark": "Govind Puri Market", "distance": 150},
         {"name": "Exit 2", "landmark": "Kalkaji", "distance": 400}
       ],
-      "nearbyTransport": ["Bus 433", "Bus 501", "Auto Stand"]
+      "nearbyTransport": ["Bus 433", "Bus 501", "Auto Stand"],
+      "platforms": {
+        "Violet": "1",
+        "Magenta": "2"
+      }
     },
     {
       "id": "NO",
@@ -1029,7 +1079,11 @@
         {"name": "Exit 1", "landmark": "GTB Nagar", "distance": 300},
         {"name": "Exit 2", "landmark": "Welcome Metro Depot", "distance": 400}
       ],
-      "nearbyTransport": ["Bus 56", "Bus 213"]
+      "nearbyTransport": ["Bus 56", "Bus 213"],
+      "platforms": {
+        "Red": "1",
+        "Pink": "2"
+      }
     },
     {
       "id": "TNR",
@@ -1131,7 +1185,11 @@
         {"name": "Exit 1", "landmark": "ISBT Anand Vihar", "distance": 100},
         {"name": "Exit 2", "landmark": "Anand Vihar Railway Terminal", "distance": 300}
       ],
-      "nearbyTransport": ["ISBT", "Railway Station", "Bus 302", "Auto Stand"]
+      "nearbyTransport": ["ISBT", "Railway Station", "Bus 302", "Auto Stand"],
+      "platforms": {
+        "Blue": "1",
+        "Pink": "2"
+      }
     },
     {
       "id": "AP",
@@ -1165,7 +1223,11 @@
         {"name": "Exit 1", "landmark": "Botanical Garden", "distance": 300},
         {"name": "Exit 2", "landmark": "Noida Extension", "distance": 500}
       ],
-      "nearbyTransport": ["Bus 311", "Aqua Line", "Auto Stand"]
+      "nearbyTransport": ["Bus 311", "Aqua Line", "Auto Stand"],
+      "platforms": {
+        "Blue": "1",
+        "Magenta": "2"
+      }
     },
     {
       "id": "IG",
@@ -2374,7 +2436,11 @@
       "exits": [
         {"name": "Exit 1", "landmark": "Mandi House Circle", "distance": 100}
       ],
-      "nearbyTransport": ["Bus 181", "Auto Stand"]
+      "nearbyTransport": ["Bus 181", "Auto Stand"],
+      "platforms": {
+        "Blue": "1",
+        "Violet": "2"
+      }
     },
     {
       "id": "PM",
@@ -2422,7 +2488,10 @@
       "exits": [
         {"name": "Exit 1", "landmark": "Yamuna Bank", "distance": 150}
       ],
-      "nearbyTransport": ["Bus 181", "Auto Stand"]
+      "nearbyTransport": ["Bus 181", "Auto Stand"],
+      "platforms": {
+        "Blue": "1"
+      }
     },
     {
       "id": "AK",
@@ -2454,7 +2523,11 @@
       "exits": [
         {"name": "Exit 1", "landmark": "Mayur Vihar Phase 1 Market", "distance": 200}
       ],
-      "nearbyTransport": ["Bus 300", "Auto Stand"]
+      "nearbyTransport": ["Bus 300", "Auto Stand"],
+      "platforms": {
+        "Blue": "1",
+        "Pink": "2"
+      }
     },
     {
       "id": "MVE",

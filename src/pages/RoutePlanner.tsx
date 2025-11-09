@@ -280,11 +280,27 @@ export default function RoutePlanner() {
                         </div>
                       </div>
                       <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-2">
-                          <span className="font-medium">
-                            {segmentIndex === 0 ? t('route.boardAt') : t('route.transferAt')}
-                          </span>
-                          <LineBadge line={segment.line} />
+                        <div className="mb-3">
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="font-medium">
+                              {segmentIndex === 0 ? t('route.boardAt') : t('route.transferAt')}
+                            </span>
+                            <LineBadge line={segment.line} />
+                          </div>
+                          {(() => {
+                            const firstStation = getStationById(metroData.stations, segment.stations[0]);
+                            const platformInfo = firstStation?.platforms?.[segment.line];
+                            if (platformInfo) {
+                              return (
+                                <div className="text-sm text-primary font-medium mt-1 flex items-center gap-1">
+                                  <span className="bg-primary/10 px-2 py-0.5 rounded">
+                                    {i18n.language === 'hi' ? 'प्लेटफॉर्म' : 'Platform'} {platformInfo}
+                                  </span>
+                                </div>
+                              );
+                            }
+                            return null;
+                          })()}
                         </div>
                          <div className="space-y-1">
                           {segment.stations.map((stationId, stationIndex) => {
