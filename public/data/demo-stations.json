@@ -1054,7 +1054,7 @@
       "id": "VA",
       "name": "Vaishali",
       "nameHi": "वैशाली",
-      "lines": ["Blue"],
+      "lines": ["Blue Branch"],
       "lat": 28.6460,
       "lng": 77.3396,
       "isInterchange": false,
@@ -1067,7 +1067,7 @@
       ],
       "nearbyTransport": ["Bus 301", "Bus 305", "Auto Stand"],
       "platforms": {
-        "Blue": "1"
+        "Blue Branch": "1"
       }
     },
     {
@@ -1180,7 +1180,7 @@
       "id": "AN",
       "name": "Anand Vihar",
       "nameHi": "आनंद विहार",
-      "lines": ["Blue", "Pink"],
+      "lines": ["Blue", "Pink", "Blue Branch"],
       "lat": 28.6469,
       "lng": 77.3156,
       "isInterchange": true,
@@ -1194,7 +1194,8 @@
       "nearbyTransport": ["ISBT", "Railway Station", "Bus 302", "Auto Stand"],
       "platforms": {
         "Blue": "1",
-        "Pink": "2"
+        "Pink": "2",
+        "Blue Branch": "3"
       }
     },
     {
@@ -2490,10 +2491,10 @@
       "id": "YB",
       "name": "Yamuna Bank",
       "nameHi": "यमुना बैंक",
-      "lines": ["Blue"],
+      "lines": ["Blue", "Blue Branch"],
       "lat": 28.6290,
       "lng": 77.2650,
-      "isInterchange": false,
+      "isInterchange": true,
       "facilities": ["parking", "lifts", "toilets", "atm"],
       "firstTrain": "05:16",
       "lastTrain": "23:48",
@@ -2502,7 +2503,87 @@
       ],
       "nearbyTransport": ["Bus 181", "Auto Stand"],
       "platforms": {
-        "Blue": "1"
+        "Blue": "1",
+        "Blue Branch": "2"
+      }
+    },
+    {
+      "id": "LXN",
+      "name": "Laxmi Nagar",
+      "nameHi": "लक्ष्मी नगर",
+      "lines": ["Blue Branch"],
+      "lat": 28.6364,
+      "lng": 77.2774,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:18",
+      "lastTrain": "23:50",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Laxmi Nagar Market", "distance": 100},
+        {"name": "Exit 2", "landmark": "Vikas Marg", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 534", "Bus 419", "Auto Stand"],
+      "platforms": {
+        "Blue Branch": "1"
+      }
+    },
+    {
+      "id": "NV",
+      "name": "Nirman Vihar",
+      "nameHi": "निर्माण विहार",
+      "lines": ["Blue Branch"],
+      "lat": 28.6401,
+      "lng": 77.2915,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:20",
+      "lastTrain": "23:52",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Nirman Vihar Market", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 534", "Auto Stand"],
+      "platforms": {
+        "Blue Branch": "1"
+      }
+    },
+    {
+      "id": "PV",
+      "name": "Preet Vihar",
+      "nameHi": "प्रीत विहार",
+      "lines": ["Blue Branch"],
+      "lat": 28.6428,
+      "lng": 77.2984,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:22",
+      "lastTrain": "23:54",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Preet Vihar Market", "distance": 100},
+        {"name": "Exit 2", "landmark": "Vikas Marg", "distance": 250}
+      ],
+      "nearbyTransport": ["Bus 534", "Auto Stand"],
+      "platforms": {
+        "Blue Branch": "1"
+      }
+    },
+    {
+      "id": "KSH",
+      "name": "Kaushambi",
+      "nameHi": "कौशाम्बी",
+      "lines": ["Blue Branch"],
+      "lat": 28.6444,
+      "lng": 77.3111,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:24",
+      "lastTrain": "23:56",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Kaushambi Bus Stand", "distance": 150},
+        {"name": "Exit 2", "landmark": "Hindon River", "distance": 400}
+      ],
+      "nearbyTransport": ["Bus 300", "Auto Stand"],
+      "platforms": {
+        "Blue Branch": "1"
       }
     },
     {
@@ -3565,17 +3646,21 @@
       "id": "KKD",
       "name": "Karkarduma",
       "nameHi": "करकरडूमा",
-      "lines": ["Pink"],
-      "lat": 28.6485,
-      "lng": 77.3025,
-      "isInterchange": false,
+      "lines": ["Pink", "Blue Branch"],
+      "lat": 28.6438,
+      "lng": 77.3042,
+      "isInterchange": true,
       "facilities": ["parking", "lifts", "toilets", "atm"],
-      "firstTrain": "06:20",
-      "lastTrain": "00:20",
+      "firstTrain": "05:26",
+      "lastTrain": "23:58",
       "exits": [
         {"name": "Exit 1", "landmark": "Karkarduma Market", "distance": 150}
       ],
-      "nearbyTransport": ["Bus 415", "Auto Stand"]
+      "nearbyTransport": ["Bus 415", "Auto Stand"],
+      "platforms": {
+        "Pink": "1",
+        "Blue Branch": "2"
+      }
     },
     {
       "id": "KKDC",
@@ -3762,6 +3847,13 @@
       "nameHi": "मैजेंटा लाइन",
       "color": "metro-magenta",
       "stations": ["BA", "OBS", "KLK", "JVS", "OKV", "JMI", "SKV", "NSO", "KKM", "NHE", "GRK", "CHD", "PNP", "HK", "IITD", "RKP", "MNK", "VSV", "SHV2", "T1IG", "SBC", "PLM", "DRP", "DBM", "JPW"]
+    },
+    {
+      "id": "Blue Branch",
+      "name": "Blue Line Branch (Vaishali)",
+      "nameHi": "ब्लू लाइन शाखा (वैशाली)",
+      "color": "metro-blue",
+      "stations": ["YB", "LXN", "NV", "PV", "KKD", "AN", "KSH", "VA"]
     }
   ]
 }
