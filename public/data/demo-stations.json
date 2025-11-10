@@ -942,10 +942,10 @@
       "id": "SGP",
       "name": "Sikandarpur",
       "nameHi": "सिकंदरपुर",
-      "lines": ["Yellow"],
+      "lines": ["Yellow", "Rapid"],
       "lat": 28.4816,
       "lng": 77.0946,
-      "isInterchange": false,
+      "isInterchange": true,
       "facilities": ["parking", "lifts", "toilets", "atm", "security"],
       "firstTrain": "05:40",
       "lastTrain": "23:24",
@@ -953,7 +953,11 @@
         {"name": "Exit 1", "landmark": "Sikandarpur Village", "distance": 150},
         {"name": "Exit 2", "landmark": "MG Road", "distance": 400}
       ],
-      "nearbyTransport": ["Bus 512", "Auto Stand"]
+      "nearbyTransport": ["Bus 512", "Auto Stand"],
+      "platforms": {
+        "Yellow": "1",
+        "Rapid": "2"
+      }
     },
     {
       "id": "MGR",
@@ -3789,6 +3793,205 @@
         {"name": "Exit 1", "landmark": "Shiv Vihar", "distance": 100}
       ],
       "nearbyTransport": ["Bus 415", "Auto Stand"]
+    },
+    {
+      "id": "S5556",
+      "name": "Sector 55-56",
+      "nameHi": "सेक्टर 55-56",
+      "lines": ["Rapid"],
+      "lat": 28.4198,
+      "lng": 77.0875,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking"],
+      "firstTrain": "06:00",
+      "lastTrain": "23:00",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Sector 55", "distance": 100},
+        {"name": "Exit 2", "landmark": "Sector 56", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 501", "Auto Stand"],
+      "platforms": {
+        "Rapid": "1"
+      }
+    },
+    {
+      "id": "S54C",
+      "name": "Sector 54 Chowk",
+      "nameHi": "सेक्टर 54 चौक",
+      "lines": ["Rapid"],
+      "lat": 28.4265,
+      "lng": 77.0910,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "06:02",
+      "lastTrain": "23:02",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Sector 54 Market", "distance": 120},
+        {"name": "Exit 2", "landmark": "Golf Course Road", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 502", "Auto Stand"],
+      "platforms": {
+        "Rapid": "1"
+      }
+    },
+    {
+      "id": "S5354",
+      "name": "Sector 53-54",
+      "nameHi": "सेक्टर 53-54",
+      "lines": ["Rapid"],
+      "lat": 28.4332,
+      "lng": 77.0945,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "atm"],
+      "firstTrain": "06:04",
+      "lastTrain": "23:04",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Sector 53", "distance": 100},
+        {"name": "Exit 2", "landmark": "Sector 54", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 503", "Auto Stand"],
+      "platforms": {
+        "Rapid": "1"
+      }
+    },
+    {
+      "id": "S4243",
+      "name": "Sector 42-43",
+      "nameHi": "सेक्टर 42-43",
+      "lines": ["Rapid"],
+      "lat": 28.4425,
+      "lng": 77.0890,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking", "atm"],
+      "firstTrain": "06:06",
+      "lastTrain": "23:06",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Sector 42", "distance": 120},
+        {"name": "Exit 2", "landmark": "Sector 43", "distance": 180}
+      ],
+      "nearbyTransport": ["Bus 504", "Auto Stand"],
+      "platforms": {
+        "Rapid": "1"
+      }
+    },
+    {
+      "id": "DLF1",
+      "name": "DLF Phase 1",
+      "nameHi": "डीएलएफ फेज 1",
+      "lines": ["Rapid"],
+      "lat": 28.4520,
+      "lng": 77.0920,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking", "atm", "security"],
+      "firstTrain": "06:08",
+      "lastTrain": "23:08",
+      "exits": [
+        {"name": "Exit 1", "landmark": "DLF Galleria Mall", "distance": 150},
+        {"name": "Exit 2", "landmark": "DLF Phase 1 Market", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 505", "Auto Stand"],
+      "platforms": {
+        "Rapid": "1"
+      }
+    },
+    {
+      "id": "DLF2",
+      "name": "DLF Phase 2",
+      "nameHi": "डीएलएफ फेज 2",
+      "lines": ["Rapid"],
+      "lat": 28.4652,
+      "lng": 77.0952,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking"],
+      "firstTrain": "06:12",
+      "lastTrain": "23:12",
+      "exits": [
+        {"name": "Exit 1", "landmark": "DLF Phase 2 Market", "distance": 150},
+        {"name": "Exit 2", "landmark": "Belvedere Park", "distance": 300}
+      ],
+      "nearbyTransport": ["Bus 506", "Auto Stand"],
+      "platforms": {
+        "Rapid": "1"
+      }
+    },
+    {
+      "id": "VBT",
+      "name": "Vodafone Belvedere Towers",
+      "nameHi": "वोडाफोन बेल्वेडियर टावर्स",
+      "lines": ["Rapid"],
+      "lat": 28.4698,
+      "lng": 77.0935,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "atm"],
+      "firstTrain": "06:14",
+      "lastTrain": "23:14",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Belvedere Towers", "distance": 100},
+        {"name": "Exit 2", "landmark": "Cyber City", "distance": 250}
+      ],
+      "nearbyTransport": ["Bus 507", "Auto Stand"],
+      "platforms": {
+        "Rapid": "1"
+      }
+    },
+    {
+      "id": "IBCC",
+      "name": "IndusInd Bank Cyber City",
+      "nameHi": "इंडसइंड बैंक साइबर सिटी",
+      "lines": ["Rapid"],
+      "lat": 28.4755,
+      "lng": 77.0915,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking", "atm", "security"],
+      "firstTrain": "06:16",
+      "lastTrain": "23:16",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Cyber City", "distance": 100},
+        {"name": "Exit 2", "landmark": "DLF Cyber Hub", "distance": 300}
+      ],
+      "nearbyTransport": ["Bus 508", "Auto Stand"],
+      "platforms": {
+        "Rapid": "1"
+      }
+    },
+    {
+      "id": "MA",
+      "name": "Moulsari Avenue",
+      "nameHi": "मौलसरी एवेन्यू",
+      "lines": ["Rapid"],
+      "lat": 28.4790,
+      "lng": 77.0895,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "06:18",
+      "lastTrain": "23:18",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Moulsari Avenue", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 509", "Auto Stand"],
+      "platforms": {
+        "Rapid": "1"
+      }
+    },
+    {
+      "id": "MMA",
+      "name": "Micromax Moulsari Avenue",
+      "nameHi": "माइक्रोमैक्स मौलसरी एवेन्यू",
+      "lines": ["Rapid"],
+      "lat": 28.4820,
+      "lng": 77.0880,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets", "parking"],
+      "firstTrain": "06:20",
+      "lastTrain": "23:20",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Micromax Office", "distance": 150},
+        {"name": "Exit 2", "landmark": "Moulsari Avenue", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus 510", "Auto Stand"],
+      "platforms": {
+        "Rapid": "1"
+      }
     }
   ],
   "lines": [
@@ -3854,6 +4057,13 @@
       "nameHi": "ब्लू लाइन शाखा (वैशाली)",
       "color": "metro-blue",
       "stations": ["YB", "LXN", "NV", "PV", "KKD", "AN", "KSH", "VA"]
+    },
+    {
+      "id": "Rapid",
+      "name": "Rapid Metro (Gurugram)",
+      "nameHi": "रैपिड मेट्रो (गुरुग्राम)",
+      "color": "metro-rapid",
+      "stations": ["S5556", "S54C", "S5354", "S4243", "DLF1", "SGP", "DLF2", "VBT", "IBCC", "MA", "MMA"]
     }
   ]
 }

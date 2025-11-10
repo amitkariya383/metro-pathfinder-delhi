@@ -13,12 +13,16 @@ export function LineBadge({ line, size = 'md' }: LineBadgeProps) {
     lg: 'text-sm px-4 py-1.5'
   };
 
+  // Use dark text for light-colored lines (Yellow, Rapid)
+  const textColor = line === 'Yellow' || line === 'Rapid' ? 'text-foreground' : 'text-white';
+
   return (
     <span
       className={cn(
         "metro-line-badge",
         getLineColor(line),
-        sizeClasses[size]
+        sizeClasses[size],
+        textColor
       )}
     >
       {line}

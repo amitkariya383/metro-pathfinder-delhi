@@ -49,7 +49,7 @@ All colors MUST be HSL.
     --line-grey: 240 5% 34%;
     --line-orange: 25 95% 53%;
     --line-aqua: 187 71% 50%;
-    --line-rapid: 340 82% 52%;
+    --line-rapid: 0 0% 75%;
     
     /* Custom design tokens */
     --success: 142 71% 45%;
