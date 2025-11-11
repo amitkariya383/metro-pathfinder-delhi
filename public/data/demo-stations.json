@@ -3992,6 +3992,74 @@
       "platforms": {
         "Rapid": "1"
       }
+    },
+    {
+      "id": "DWG",
+      "name": "Dwarka",
+      "nameHi": "द्वारका",
+      "lines": ["Grey"],
+      "lat": 28.5921,
+      "lng": 77.0460,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:45",
+      "lastTrain": "23:15",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Dwarka Main Market", "distance": 200},
+        {"name": "Exit 2", "landmark": "Sector 6", "distance": 300}
+      ],
+      "nearbyTransport": ["Bus 764", "Bus 777", "Auto Stand"]
+    },
+    {
+      "id": "NGL",
+      "name": "Nangli",
+      "nameHi": "नांगली",
+      "lines": ["Grey"],
+      "lat": 28.5850,
+      "lng": 77.0180,
+      "isInterchange": false,
+      "facilities": ["lifts", "toilets"],
+      "firstTrain": "05:50",
+      "lastTrain": "23:20",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Nangli Village", "distance": 150},
+        {"name": "Exit 2", "landmark": "Nangli Najafgarh Road", "distance": 100}
+      ],
+      "nearbyTransport": ["Bus 777", "Auto Stand"]
+    },
+    {
+      "id": "NJG",
+      "name": "Najafgarh",
+      "nameHi": "नजफगढ़",
+      "lines": ["Grey"],
+      "lat": 28.6092,
+      "lng": 76.9798,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets", "atm"],
+      "firstTrain": "05:55",
+      "lastTrain": "23:25",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Najafgarh Market", "distance": 100},
+        {"name": "Exit 2", "landmark": "Bus Stand", "distance": 150}
+      ],
+      "nearbyTransport": ["Bus 777", "Bus 886", "Auto Stand"]
+    },
+    {
+      "id": "DBS",
+      "name": "Dhansa Bus Stand",
+      "nameHi": "धनसा बस स्टैंड",
+      "lines": ["Grey"],
+      "lat": 28.6320,
+      "lng": 76.9512,
+      "isInterchange": false,
+      "facilities": ["parking", "lifts", "toilets"],
+      "firstTrain": "06:00",
+      "lastTrain": "23:30",
+      "exits": [
+        {"name": "Exit 1", "landmark": "Dhansa Bus Stand", "distance": 50},
+        {"name": "Exit 2", "landmark": "Dhansa Village", "distance": 200}
+      ],
+      "nearbyTransport": ["Bus Stand", "Auto Stand"]
     }
   ],
   "lines": [
@@ -4064,6 +4132,13 @@
       "nameHi": "रैपिड मेट्रो (गुरुग्राम)",
       "color": "metro-rapid",
       "stations": ["S5556", "S54C", "S5354", "S4243", "DLF1", "SGP", "DLF2", "VBT", "IBCC", "MA", "MMA"]
+    },
+    {
+      "id": "Grey",
+      "name": "Grey Line",
+      "nameHi": "ग्रे लाइन",
+      "color": "metro-grey",
+      "stations": ["DWG", "NGL", "NJG", "DBS"]
     }
   ]
 }
