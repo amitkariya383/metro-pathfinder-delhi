@@ -4011,7 +4011,7 @@
       "nearbyTransport": ["Bus 764", "Bus 777", "Auto Stand"]
     },
     {
-      "id": "NGL",
+      "id": "NNGL",
       "name": "Nangli",
       "nameHi": "नांगली",
       "lines": ["Grey"],
@@ -4138,7 +4138,7 @@
       "name": "Grey Line",
       "nameHi": "ग्रे लाइन",
       "color": "metro-grey",
-      "stations": ["DWG", "NGL", "NJG", "DBS"]
+      "stations": ["DWG", "NNGL", "NJG", "DBS"]
     }
   ]
 }
