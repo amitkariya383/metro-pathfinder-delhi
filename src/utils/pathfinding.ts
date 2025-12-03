@@ -1,15 +1,24 @@
 import { Station, Line, Route, RouteSegment } from '@/types/metro';
 
+interface EdgeInfo {
+  station: Station;
+  time: number;
+  line: string;
+}
+
 interface GraphNode {
   station: Station;
-  neighbors: Map<string, { station: Station; time: number; line: string }>;
+  // Map from neighborId to array of edges (multiple lines can connect same stations)
+  neighbors: Map<string, EdgeInfo[]>;
 }
 
 class MetroGraph {
   private nodes: Map<string, GraphNode> = new Map();
+  private lines: Line[];
 
   constructor(stations: Station[], lines: Line[]) {
     console.log('Building metro graph with', stations.length, 'stations and', lines.length, 'lines');
+    this.lines = lines;
     
     // Create nodes for all stations
     stations.forEach(station => {
@@ -21,7 +30,7 @@ class MetroGraph {
 
     console.log('Created nodes for', this.nodes.size, 'stations');
 
-    // Build connections based on lines
+    // Build connections based on lines - store ALL line connections
     lines.forEach(line => {
       console.log(`Building connections for ${line.name} (${line.id}) with ${line.stations.length} stations`);
       for (let i = 0; i < line.stations.length - 1; i++) {
@@ -31,21 +40,23 @@ class MetroGraph {
         // Average time between stations: 2-3 minutes
         const time = 2.5;
         
-        // Add bidirectional edges
         const fromNode = this.nodes.get(from);
         const toNode = this.nodes.get(to);
         
         if (fromNode && toNode) {
-          fromNode.neighbors.set(to, { 
-            station: toNode.station, 
-            time, 
-            line: line.id 
-          });
-          toNode.neighbors.set(from, { 
-            station: fromNode.station, 
-            time, 
-            line: line.id 
-          });
+          // Add edge from->to
+          const existingEdgesFrom = fromNode.neighbors.get(to) || [];
+          if (!existingEdgesFrom.some(e => e.line === line.id)) {
+            existingEdgesFrom.push({ station: toNode.station, time, line: line.id });
+            fromNode.neighbors.set(to, existingEdgesFrom);
+          }
+          
+          // Add edge to->from
+          const existingEdgesTo = toNode.neighbors.get(from) || [];
+          if (!existingEdgesTo.some(e => e.line === line.id)) {
+            existingEdgesTo.push({ station: fromNode.station, time, line: line.id });
+            toNode.neighbors.set(from, existingEdgesTo);
+          }
         } else {
           console.warn(`Missing station node: ${from} or ${to} on line ${line.id}`);
         }
@@ -55,11 +66,9 @@ class MetroGraph {
     // Log some key interchange stations for debugging
     const ndNode = this.nodes.get('ND');
     const cpNode = this.nodes.get('CP');
-    const nanNode = this.nodes.get('NAN');
     
     console.log('ND (New Delhi) neighbors:', ndNode ? Array.from(ndNode.neighbors.keys()) : 'NOT FOUND');
     console.log('CP (Rajiv Chowk) neighbors:', cpNode ? Array.from(cpNode.neighbors.keys()) : 'NOT FOUND');
-    console.log('NAN (New Ashok Nagar) neighbors:', nanNode ? Array.from(nanNode.neighbors.keys()) : 'NOT FOUND');
   }
 
   findRoutes(originId: string, destinationId: string): Route[] {
@@ -153,27 +162,34 @@ class MetroGraph {
       }
 
       // Check all neighbors
-      currentNode.neighbors.forEach((neighbor, neighborId) => {
+      currentNode.neighbors.forEach((edges, neighborId) => {
         if (!unvisited.has(neighborId)) return;
 
-        // Calculate distance to neighbor through current node
         const currentDistance = distances.get(currentId!) ?? Infinity;
-        const edgeWeight = neighbor.time;
-        
-        // Add transfer penalty if changing lines
         const prevInfo = previous.get(currentId!);
         const prevLine = prevInfo?.line;
-        const transferPenalty = prevLine && prevLine !== neighbor.line ? 3 : 0;
         
-        const newDistance = currentDistance + edgeWeight + transferPenalty;
+        // Find the best edge - prefer staying on the same line
+        let bestEdge = edges[0];
+        let bestDistance = Infinity;
+        
+        for (const edge of edges) {
+          const transferPenalty = prevLine && prevLine !== edge.line ? 5 : 0; // Higher penalty for transfers
+          const newDistance = currentDistance + edge.time + transferPenalty;
+          
+          if (newDistance < bestDistance) {
+            bestDistance = newDistance;
+            bestEdge = edge;
+          }
+        }
 
         // If this path is shorter, update it
         const neighborDistance = distances.get(neighborId) ?? Infinity;
-        if (newDistance < neighborDistance) {
-          distances.set(neighborId, newDistance);
+        if (bestDistance < neighborDistance) {
+          distances.set(neighborId, bestDistance);
           previous.set(neighborId, {
             stationId: currentId!,
-            line: neighbor.line
+            line: bestEdge.line
           });
         }
       });
@@ -248,22 +264,33 @@ class MetroGraph {
       const currentNode = this.nodes.get(currentId);
       if (!currentNode) continue;
 
-      currentNode.neighbors.forEach((neighbor, neighborId) => {
+      currentNode.neighbors.forEach((edges, neighborId) => {
         if (!unvisited.has(neighborId)) return;
 
         const currentDistance = distances.get(currentId!) ?? Infinity;
-        const edgeWeight = neighbor.time;
         const prevInfo = previous.get(currentId!);
         const prevLine = prevInfo?.line;
-        const transferPenalty = prevLine && prevLine !== neighbor.line ? 3 : 0;
-        const newDistance = currentDistance + edgeWeight + transferPenalty;
+        
+        // Find the best edge - prefer staying on the same line
+        let bestEdge = edges[0];
+        let bestDistance = Infinity;
+        
+        for (const edge of edges) {
+          const transferPenalty = prevLine && prevLine !== edge.line ? 5 : 0;
+          const newDistance = currentDistance + edge.time + transferPenalty;
+          
+          if (newDistance < bestDistance) {
+            bestDistance = newDistance;
+            bestEdge = edge;
+          }
+        }
 
         const neighborDistance = distances.get(neighborId) ?? Infinity;
-        if (newDistance < neighborDistance) {
-          distances.set(neighborId, newDistance);
+        if (bestDistance < neighborDistance) {
+          distances.set(neighborId, bestDistance);
           previous.set(neighborId, {
             stationId: currentId!,
-            line: neighbor.line
+            line: bestEdge.line
           });
         }
       });
