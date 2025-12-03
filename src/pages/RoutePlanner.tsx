@@ -141,8 +141,8 @@ export default function RoutePlanner() {
   const currentRoute = routes[selectedRoute];
 
   return (
-    <div className="container mx-auto px-4 py-6 pb-24 md:pb-8">
-      <h1 className="text-3xl font-bold mb-6">{t('nav.route')}</h1>
+    <div className="container mx-auto px-3 md:px-4 py-4 md:py-6 pb-24 md:pb-8">
+      <h1 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">{t('nav.route')}</h1>
 
       {/* Search Section */}
       <Card className="mb-6 shadow-lg">
@@ -233,27 +233,27 @@ export default function RoutePlanner() {
 
           {/* Route Summary */}
           <Card className="shadow-lg">
-            <CardContent className="pt-6">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                <div className="text-center p-4 bg-muted rounded-lg">
-                  <Clock className="h-6 w-6 mx-auto mb-2 text-primary" />
-                  <div className="text-2xl font-bold text-foreground">{currentRoute.totalTime}</div>
-                  <div className="text-sm text-muted-foreground">{t('route.minutes')}</div>
+            <CardContent className="p-3 md:pt-6 md:p-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 mb-4 md:mb-6">
+                <div className="text-center p-2 md:p-4 bg-muted rounded-lg">
+                  <Clock className="h-5 w-5 md:h-6 md:w-6 mx-auto mb-1 md:mb-2 text-primary" />
+                  <div className="text-xl md:text-2xl font-bold text-foreground">{currentRoute.totalTime}</div>
+                  <div className="text-xs md:text-sm text-muted-foreground">{t('route.minutes')}</div>
                 </div>
-                <div className="text-center p-4 bg-muted rounded-lg">
-                  <Navigation2 className="h-6 w-6 mx-auto mb-2 text-primary" />
-                  <div className="text-2xl font-bold text-foreground">{currentRoute.totalStops}</div>
-                  <div className="text-sm text-muted-foreground">{t('route.stops')}</div>
+                <div className="text-center p-2 md:p-4 bg-muted rounded-lg">
+                  <Navigation2 className="h-5 w-5 md:h-6 md:w-6 mx-auto mb-1 md:mb-2 text-primary" />
+                  <div className="text-xl md:text-2xl font-bold text-foreground">{currentRoute.totalStops}</div>
+                  <div className="text-xs md:text-sm text-muted-foreground">{t('route.stops')}</div>
                 </div>
-                <div className="text-center p-4 bg-muted rounded-lg">
-                  <RefreshCw className="h-6 w-6 mx-auto mb-2 text-primary" />
-                  <div className="text-2xl font-bold text-foreground">{currentRoute.transfers}</div>
-                  <div className="text-sm text-muted-foreground">{t('route.transfers')}</div>
+                <div className="text-center p-2 md:p-4 bg-muted rounded-lg">
+                  <RefreshCw className="h-5 w-5 md:h-6 md:w-6 mx-auto mb-1 md:mb-2 text-primary" />
+                  <div className="text-xl md:text-2xl font-bold text-foreground">{currentRoute.transfers}</div>
+                  <div className="text-xs md:text-sm text-muted-foreground">{t('route.transfers')}</div>
                 </div>
-                <div className="text-center p-4 bg-muted rounded-lg">
-                  <IndianRupee className="h-6 w-6 mx-auto mb-2 text-primary" />
-                  <div className="text-2xl font-bold text-foreground">₹{currentRoute.fare}</div>
-                  <div className="text-sm text-muted-foreground">{t('route.fare')}</div>
+                <div className="text-center p-2 md:p-4 bg-muted rounded-lg">
+                  <IndianRupee className="h-5 w-5 md:h-6 md:w-6 mx-auto mb-1 md:mb-2 text-primary" />
+                  <div className="text-xl md:text-2xl font-bold text-foreground">₹{currentRoute.fare}</div>
+                  <div className="text-xs md:text-sm text-muted-foreground">{t('route.fare')}</div>
                 </div>
               </div>
 
