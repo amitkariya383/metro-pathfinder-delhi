@@ -24,20 +24,20 @@ export function Layout({ children }: LayoutProps) {
     <div className="min-h-screen bg-background flex flex-col overflow-x-hidden">
       {/* Header */}
       <header className="border-b bg-card sticky top-0 z-50 shadow-sm">
-        <div className="px-4 py-3 md:py-4">
-          <div className="flex items-center justify-between max-w-7xl mx-auto">
-            <div className="flex-1 flex justify-center md:justify-center">
-              <Link to="/" className="flex items-center gap-2">
-                <div className="h-10 w-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center shrink-0">
-                  <TramFront className="h-6 w-6 text-white" />
+        <div className="px-3 py-3 md:px-4 md:py-4">
+          <div className="flex items-center justify-between max-w-7xl mx-auto gap-2">
+            <div className="flex-1 min-w-0 flex justify-center">
+              <Link to="/" className="flex items-center gap-2 min-w-0">
+                <div className="h-9 w-9 md:h-10 md:w-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center shrink-0">
+                  <TramFront className="h-5 w-5 md:h-6 md:w-6 text-white" />
                 </div>
-                <div>
-                  <h1 className="text-lg md:text-xl font-bold text-foreground">{t('app.title')}</h1>
+                <div className="min-w-0">
+                  <h1 className="text-base md:text-xl font-bold text-foreground truncate">{t('app.title')}</h1>
                   <p className="text-xs text-muted-foreground hidden sm:block">{t('app.subtitle')}</p>
                 </div>
               </Link>
             </div>
-            <div className="absolute right-4 md:relative md:right-0">
+            <div className="shrink-0">
               <LanguageToggle />
             </div>
           </div>
