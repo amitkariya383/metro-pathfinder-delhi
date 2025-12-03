@@ -75,8 +75,17 @@ class MetroGraph {
     console.log(`Finding routes from ${originId} to ${destinationId}`);
     const routes: Route[] = [];
     
-    // Find shortest path using Dijkstra's algorithm
-    const shortestPath = this.dijkstra(originId, destinationId);
+    // Check if both stations share a common line - prefer direct routes
+    const originStation = this.nodes.get(originId)?.station;
+    const destStation = this.nodes.get(destinationId)?.station;
+    const commonLines = originStation && destStation 
+      ? originStation.lines.filter(line => destStation.lines.includes(line))
+      : [];
+    
+    console.log(`Common lines between ${originId} and ${destinationId}:`, commonLines);
+    
+    // Find shortest path using Dijkstra's algorithm, passing common lines for preference
+    const shortestPath = this.dijkstra(originId, destinationId, commonLines);
     if (shortestPath) {
       routes.push(shortestPath);
     } else {
@@ -94,11 +103,12 @@ class MetroGraph {
     return routes;
   }
 
-  private dijkstra(originId: string, destinationId: string): Route | null {
+  private dijkstra(originId: string, destinationId: string, preferredLines: string[] = []): Route | null {
     const originNode = this.nodes.get(originId);
     const destNode = this.nodes.get(destinationId);
     
     console.log(`🔍 Dijkstra: Finding path from ${originId} to ${destinationId}`);
+    console.log(`🎯 Preferred lines:`, preferredLines);
     
     if (!originNode || !destNode) {
       console.error('❌ Origin or destination station not found in graph');
@@ -169,13 +179,32 @@ class MetroGraph {
         const prevInfo = previous.get(currentId!);
         const prevLine = prevInfo?.line;
         
-        // Find the best edge - prefer staying on the same line
+        // Find the best edge - prefer staying on the same line, especially preferred lines
         let bestEdge = edges[0];
         let bestDistance = Infinity;
         
         for (const edge of edges) {
-          const transferPenalty = prevLine && prevLine !== edge.line ? 5 : 0; // Higher penalty for transfers
-          const newDistance = currentDistance + edge.time + transferPenalty;
+          let penalty = 0;
+          
+          // If we have preferred lines (origin & destination share a line)
+          if (preferredLines.length > 0) {
+            const isOnPreferredLine = preferredLines.includes(edge.line);
+            const wasOnPreferredLine = prevLine ? preferredLines.includes(prevLine) : true;
+            
+            // Heavy penalty for leaving a preferred line
+            if (wasOnPreferredLine && !isOnPreferredLine) {
+              penalty = 100; // Very high penalty to discourage leaving preferred line
+            }
+            // Normal transfer penalty within non-preferred lines
+            else if (prevLine && prevLine !== edge.line) {
+              penalty = 10;
+            }
+          } else {
+            // No preferred lines - use normal transfer penalty
+            penalty = prevLine && prevLine !== edge.line ? 10 : 0;
+          }
+          
+          const newDistance = currentDistance + edge.time + penalty;
           
           if (newDistance < bestDistance) {
             bestDistance = newDistance;
