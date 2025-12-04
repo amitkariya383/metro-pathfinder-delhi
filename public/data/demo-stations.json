@@ -4068,7 +4068,7 @@
       "name": "Red Line",
       "nameHi": "लाल लाइन",
       "color": "metro-red",
-      "stations": ["RV", "RHW", "RHE", "PIT", "KE", "NSP", "SHB", "AZP", "MT", "GTB", "VV", "VS", "CL", "KA", "TH", "PB", "PRN", "SHN", "IL", "KP", "KAN", "MUK", "JM", "DG", "WE", "TNR", "MP", "SHD", "SL", "SS"]
+      "stations": ["RV", "RHW", "RHE", "PIT", "KE", "NSP", "KP", "KAN", "IL", "SHN", "PRN", "PB", "TH", "KA", "SHP", "SL", "WE", "SHD", "MP", "JM", "DG", "SS"]
     },
     {
       "id": "Yellow",
