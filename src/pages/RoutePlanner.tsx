@@ -289,9 +289,43 @@ export default function RoutePlanner() {
                           {(() => {
                             const firstStation = getStationById(metroData.stations, segment.stations[0]);
                             const lastStation = getStationById(metroData.stations, segment.stations[segment.stations.length - 1]);
-                            const platformInfo = firstStation?.platforms?.[segment.line];
                             
-                            if (platformInfo && lastStation) {
+                            // Calculate platform for Blue Line based on direction
+                            let platformInfo = firstStation?.platforms?.[segment.line];
+                            let terminalStation = lastStation;
+                            
+                            if (segment.line === 'Blue' || segment.line === 'Blue Branch') {
+                              const lineData = metroData.lines.find(l => l.id === segment.line);
+                              if (lineData) {
+                                const firstIdx = lineData.stations.indexOf(segment.stations[0]);
+                                const lastIdx = lineData.stations.indexOf(segment.stations[segment.stations.length - 1]);
+                                
+                                // For Blue Line: towards Noida/end = Platform 1, towards Dwarka/start = Platform 2
+                                if (segment.line === 'Blue') {
+                                  if (lastIdx > firstIdx) {
+                                    // Going towards Noida Electronic City
+                                    platformInfo = '1';
+                                    terminalStation = getStationById(metroData.stations, 'NEC'); // Noida Electronic City
+                                  } else {
+                                    // Going towards Dwarka Sec-21
+                                    platformInfo = '2';
+                                    terminalStation = getStationById(metroData.stations, 'DW'); // Dwarka Sec-21
+                                  }
+                                } else if (segment.line === 'Blue Branch') {
+                                  if (lastIdx > firstIdx) {
+                                    // Going towards Vaishali
+                                    platformInfo = '1';
+                                    terminalStation = getStationById(metroData.stations, 'VA'); // Vaishali
+                                  } else {
+                                    // Going towards Yamuna Bank
+                                    platformInfo = '2';
+                                    terminalStation = getStationById(metroData.stations, 'YB'); // Yamuna Bank
+                                  }
+                                }
+                              }
+                            }
+                            
+                            if (platformInfo && terminalStation) {
                               return (
                                 <div className="border-2 border-border rounded-lg p-3 bg-muted/30 mb-2">
                                   <div className="flex items-center gap-2 mb-1">
@@ -299,7 +333,7 @@ export default function RoutePlanner() {
                                     <LineBadge line={segment.line} />
                                   </div>
                                   <div className="text-sm text-destructive font-medium mb-1">
-                                    {i18n.language === 'hi' ? 'की ओर' : 'Towards'} {i18n.language === 'hi' ? lastStation.nameHi : lastStation.name}
+                                    {i18n.language === 'hi' ? 'की ओर' : 'Towards'} {i18n.language === 'hi' ? terminalStation.nameHi : terminalStation.name}
                                   </div>
                                   <div className="text-base text-destructive font-semibold">
                                     {i18n.language === 'hi' ? 'प्लेटफॉर्म' : 'Platform'} {platformInfo}
