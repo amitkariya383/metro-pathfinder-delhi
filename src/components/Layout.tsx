@@ -49,6 +49,30 @@ export function Layout({ children }: LayoutProps) {
         {children}
       </main>
 
+      {/* Mobile Footer Links */}
+      <div className="md:hidden border-t bg-card px-4 py-3">
+        <div className="flex justify-center gap-6 text-sm">
+          <Link
+            to="/about"
+            className={cn(
+              "transition-colors",
+              location.pathname === '/about' ? "text-primary" : "text-muted-foreground hover:text-foreground"
+            )}
+          >
+            {t('app.title').includes('दिल्ली') ? 'हमारे बारे में' : 'About'}
+          </Link>
+          <Link
+            to="/privacy"
+            className={cn(
+              "transition-colors",
+              location.pathname === '/privacy' ? "text-primary" : "text-muted-foreground hover:text-foreground"
+            )}
+          >
+            {t('app.title').includes('दिल्ली') ? 'गोपनीयता नीति' : 'Privacy Policy'}
+          </Link>
+        </div>
+      </div>
+
       {/* Bottom Navigation */}
       <nav className="border-t bg-card sticky bottom-0 z-50 shadow-lg md:hidden">
         <div className="container mx-auto px-4">
@@ -77,25 +101,52 @@ export function Layout({ children }: LayoutProps) {
 
       {/* Desktop Navigation Sidebar */}
       <nav className="hidden md:flex fixed left-0 top-[73px] bottom-0 w-64 border-r bg-card z-40 overflow-hidden">
-        <div className="flex flex-col gap-1 p-3 w-full">
-          {navItems.map(({ path, icon: Icon, label }) => {
-            const isActive = location.pathname === path;
-            return (
-              <Link
-                key={path}
-                to={path}
-                className={cn(
-                  "flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-medium",
-                  isActive 
-                    ? "bg-primary text-primary-foreground" 
-                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
-                )}
-              >
-                <Icon className="h-5 w-5" />
-                <span>{label}</span>
-              </Link>
-            );
-          })}
+        <div className="flex flex-col gap-1 p-3 w-full h-full">
+          <div className="flex-1">
+            {navItems.map(({ path, icon: Icon, label }) => {
+              const isActive = location.pathname === path;
+              return (
+                <Link
+                  key={path}
+                  to={path}
+                  className={cn(
+                    "flex items-center gap-3 px-4 py-3 rounded-lg transition-all font-medium",
+                    isActive 
+                      ? "bg-primary text-primary-foreground" 
+                      : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                  )}
+                >
+                  <Icon className="h-5 w-5" />
+                  <span>{label}</span>
+                </Link>
+              );
+            })}
+          </div>
+          {/* Footer Links */}
+          <div className="border-t pt-3 mt-auto space-y-1">
+            <Link
+              to="/about"
+              className={cn(
+                "block px-4 py-2 text-sm rounded-lg transition-colors",
+                location.pathname === '/about'
+                  ? "text-primary bg-primary/10"
+                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
+              )}
+            >
+              {t('app.title').includes('दिल्ली') ? 'हमारे बारे में' : 'About'}
+            </Link>
+            <Link
+              to="/privacy"
+              className={cn(
+                "block px-4 py-2 text-sm rounded-lg transition-colors",
+                location.pathname === '/privacy'
+                  ? "text-primary bg-primary/10"
+                  : "text-muted-foreground hover:text-foreground hover:bg-muted"
+              )}
+            >
+              {t('app.title').includes('दिल्ली') ? 'गोपनीयता नीति' : 'Privacy Policy'}
+            </Link>
+          </div>
         </div>
       </nav>
     </div>

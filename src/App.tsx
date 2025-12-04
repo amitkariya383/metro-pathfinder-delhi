@@ -10,6 +10,8 @@ import RoutePlanner from "./pages/RoutePlanner";
 import Lines from "./pages/Lines";
 import MapView from "./pages/MapView";
 import NotFound from "./pages/NotFound";
+import About from "./pages/About";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import "./i18n/config";
 
 const queryClient = new QueryClient();
@@ -27,6 +29,8 @@ const App = () => (
             <Route path="/route" element={<RoutePlanner />} />
             <Route path="/lines" element={<Lines />} />
             <Route path="/map" element={<MapView />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
