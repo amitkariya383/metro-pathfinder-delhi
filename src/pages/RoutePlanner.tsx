@@ -345,6 +345,36 @@ export default function RoutePlanner() {
                           })()}
                         </div>
                          <div className="space-y-1">
+                          {/* Show interchange station at start of non-first segments */}
+                          {segmentIndex > 0 && (() => {
+                            const prevSegment = currentRoute.segments[segmentIndex - 1];
+                            const interchangeStationId = prevSegment.stations[prevSegment.stations.length - 1];
+                            const interchangeStation = getStationById(metroData.stations, interchangeStationId);
+                            if (!interchangeStation) return null;
+                            
+                            return (
+                              <div key={`interchange-${interchangeStationId}`} className="flex items-center gap-3 py-1">
+                                <div className="flex flex-col items-center">
+                                  <div className="w-3 h-3 rounded-full border-2 bg-accent border-accent" />
+                                  <div className="w-0.5 h-6 bg-muted-foreground/50" />
+                                </div>
+                                <div className="flex-1">
+                                  <button
+                                    onClick={() => navigate(`/station/${interchangeStationId}`)}
+                                    className="text-left hover:text-primary transition-colors font-semibold text-base"
+                                  >
+                                    {i18n.language === 'hi' ? interchangeStation.nameHi : interchangeStation.name}
+                                  </button>
+                                  <div className="text-xs text-muted-foreground mt-0.5">
+                                    Interchange station
+                                  </div>
+                                </div>
+                                <div className="text-xs text-accent font-medium px-2 py-0.5 bg-accent/10 rounded">
+                                  {t('route.boardAt').split(' ')[0]}
+                                </div>
+                              </div>
+                            );
+                          })()}
                           {segment.stations.map((stationId, stationIndex) => {
                             const station = getStationById(metroData.stations, stationId);
                             if (!station) return null;
@@ -352,13 +382,16 @@ export default function RoutePlanner() {
                             const isFirst = stationIndex === 0;
                             const isLast = stationIndex === segment.stations.length - 1;
                             const isIntermediate = !isFirst && !isLast;
+                            
+                            // Skip first station if it's a transfer segment (already shown above)
+                            const showInterchangeAbove = segmentIndex > 0;
 
                             return (
                               <div key={stationId} className="flex items-center gap-3 py-1">
                                 <div className="flex flex-col items-center">
                                   <div
                                     className={`w-3 h-3 rounded-full border-2 ${
-                                      isFirst || isLast 
+                                      (isFirst && !showInterchangeAbove) || isLast 
                                         ? 'bg-accent border-accent' 
                                         : 'bg-background border-muted-foreground'
                                     }`}
@@ -371,7 +404,7 @@ export default function RoutePlanner() {
                                   <button
                                     onClick={() => navigate(`/station/${stationId}`)}
                                     className={`text-left hover:text-primary transition-colors ${
-                                      isFirst || isLast ? 'font-semibold text-base' : 'text-sm text-muted-foreground'
+                                      (isFirst && !showInterchangeAbove) || isLast ? 'font-semibold text-base' : 'text-sm text-muted-foreground'
                                     }`}
                                   >
                                     {i18n.language === 'hi' ? station.nameHi : station.name}
@@ -387,9 +420,9 @@ export default function RoutePlanner() {
                                     </div>
                                   )}
                                 </div>
-                                {(isFirst || isLast) && (
+                                {((isFirst && !showInterchangeAbove) || isLast) && (
                                   <div className="text-xs text-accent font-medium px-2 py-0.5 bg-accent/10 rounded">
-                                    {isFirst ? t('route.boardAt').split(' ')[0] : 'Exit'}
+                                    {isFirst && !showInterchangeAbove ? t('route.boardAt').split(' ')[0] : 'Exit'}
                                   </div>
                                 )}
                               </div>
