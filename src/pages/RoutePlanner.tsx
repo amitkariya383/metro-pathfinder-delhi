@@ -320,10 +320,10 @@ export default function RoutePlanner() {
                                 // Yellow Line: towards HUDA City Centre = Platform 1, towards Samaypur Badli = Platform 2
                                 if (lastIdx > firstIdx) {
                                   platformInfo = '1';
-                                  terminalStation = getStationById(metroData.stations, 'HUDA');
+                                  terminalStation = getStationById(metroData.stations, 'HZ');
                                 } else {
                                   platformInfo = '2';
-                                  terminalStation = getStationById(metroData.stations, 'SMB');
+                                  terminalStation = getStationById(metroData.stations, 'SB');
                                 }
                               }
                             }
