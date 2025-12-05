@@ -4075,7 +4075,7 @@
       "name": "Yellow Line",
       "nameHi": "पीली लाइन",
       "color": "metro-yellow",
-      "stations": ["SB", "RS1819", "HS", "JH", "ADN", "AZP", "MT", "GTB", "VV", "VS", "CL", "KA", "CH", "CW", "ND", "CP", "PC", "CS", "UB", "LKM", "JB", "INA", "AIIMS", "GP", "HK", "MN", "SK", "QM", "CHP", "SP", "GH", "AR", "GD", "SGP", "MGR", "IFC", "HZ"]
+      "stations": ["SB", "RS1819", "HS", "JH", "ADN", "AZP", "MT", "GTB", "VV", "VS", "CL", "KA", "CH", "CW", "ND", "CP", "PC", "CS", "UB", "LKM", "JB", "INA", "AIIMS", "GP", "HK", "MVN", "SK", "QM", "CHP", "SP", "GH", "AR", "GD", "SGP", "MGR", "IFC", "HZ"]
     },
     {
       "id": "Blue",
