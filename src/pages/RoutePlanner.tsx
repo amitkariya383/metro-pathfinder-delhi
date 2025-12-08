@@ -299,14 +299,14 @@ export default function RoutePlanner() {
                               const firstIdx = lineData.stations.indexOf(segment.stations[0]);
                               const lastIdx = lineData.stations.indexOf(segment.stations[segment.stations.length - 1]);
                               
-                              // Blue Line: towards Noida/end = Platform 1, towards Dwarka/start = Platform 2
+                              // Blue Line: towards Dwarka = Platform 2, towards Noida = Platform 1
                               if (segment.line === 'Blue') {
                                 if (lastIdx > firstIdx) {
                                   platformInfo = '1';
                                   terminalStation = getStationById(metroData.stations, 'NEC');
                                 } else {
                                   platformInfo = '2';
-                                  terminalStation = getStationById(metroData.stations, 'DW');
+                                  terminalStation = getStationById(metroData.stations, 'DS8'); // Dwarka Sec-21
                                 }
                               } else if (segment.line === 'Blue Branch') {
                                 if (lastIdx > firstIdx) {
@@ -324,6 +324,24 @@ export default function RoutePlanner() {
                                 } else {
                                   platformInfo = '2';
                                   terminalStation = getStationById(metroData.stations, 'SB');
+                                }
+                              } else if (segment.line === 'Violet') {
+                                // Violet Line: towards Kashmere Gate = Platform 4, towards Raja Nahar Singh = Platform 3
+                                if (firstIdx > lastIdx) {
+                                  platformInfo = '4';
+                                  terminalStation = getStationById(metroData.stations, 'KA'); // Kashmere Gate
+                                } else {
+                                  platformInfo = '3';
+                                  terminalStation = getStationById(metroData.stations, 'RNS'); // Raja Nahar Singh
+                                }
+                              } else if (segment.line === 'Red') {
+                                // Red Line: towards Rithala = Platform 3, towards Shaheed Sthal = Platform 4
+                                if (firstIdx > lastIdx) {
+                                  platformInfo = '3';
+                                  terminalStation = getStationById(metroData.stations, 'RV'); // Rithala
+                                } else {
+                                  platformInfo = '4';
+                                  terminalStation = getStationById(metroData.stations, 'SS'); // Shaheed Sthal
                                 }
                               }
                             }
