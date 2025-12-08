@@ -336,7 +336,8 @@ export default function RoutePlanner() {
                                 }
                               } else if (segment.line === 'Red') {
                                 // Red Line: towards Rithala = Platform 3, towards Shaheed Sthal = Platform 4
-                                if (firstIdx > lastIdx) {
+                                // Red Line order: RV(0) ... TH(12), KA(13) ... SS(21)
+                                if (lastIdx < firstIdx) {
                                   platformInfo = '3';
                                   terminalStation = getStationById(metroData.stations, 'RV'); // Rithala
                                 } else {
