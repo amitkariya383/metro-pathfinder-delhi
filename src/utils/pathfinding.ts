@@ -206,6 +206,10 @@ class MetroGraph {
         for (const edge of edges) {
           let penalty = 0;
           
+          // VERY HIGH transfer penalty to minimize transfers (50 mins equivalent penalty)
+          // This ensures routes with fewer transfers are always preferred
+          const TRANSFER_PENALTY = 50;
+          
           // If we have preferred lines (origin & destination share a line)
           if (preferredLines.length > 0) {
             const isOnPreferredLine = preferredLines.includes(edge.line);
@@ -213,20 +217,19 @@ class MetroGraph {
             
             // Heavy penalty for leaving a preferred line
             if (wasOnPreferredLine && !isOnPreferredLine) {
-              penalty = 100; // Very high penalty to discourage leaving preferred line
+              penalty = 200; // Very high penalty to discourage leaving preferred line
             }
             // Normal transfer penalty within non-preferred lines
             else if (prevLine && prevLine !== edge.line) {
-              penalty = 10;
+              penalty = TRANSFER_PENALTY;
             }
           } else {
-            // No preferred lines - use normal transfer penalty
-            // But give bonus for transferring at preferred interchange
+            // No preferred lines - use high transfer penalty to minimize transfers
             if (prevLine && prevLine !== edge.line) {
               if (preferredInterchange && currentId === preferredInterchange) {
-                penalty = 2; // Very low penalty for transferring at preferred interchange
+                penalty = TRANSFER_PENALTY - 10; // Slightly lower for preferred interchange
               } else {
-                penalty = 15; // Higher penalty for other interchanges
+                penalty = TRANSFER_PENALTY; // High penalty for all transfers
               }
             }
           }
