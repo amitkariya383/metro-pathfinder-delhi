@@ -83,9 +83,26 @@ class MetroGraph {
       : [];
     
     console.log(`Common lines between ${originId} and ${destinationId}:`, commonLines);
+
+    // If no common lines, find the best interchange station
+    // For Blue Line to Yellow Line, prefer CP (Rajiv Chowk) as it's the main interchange
+    let preferredInterchange: string | undefined;
+    if (commonLines.length === 0) {
+      const originLines = originStation?.lines || [];
+      const destLines = destStation?.lines || [];
+      
+      // If origin is on Blue Line and dest is on Yellow Line, prefer Rajiv Chowk
+      if (originLines.includes('Blue') && destLines.includes('Yellow')) {
+        preferredInterchange = 'CP'; // Rajiv Chowk
+      }
+      // If origin is on Yellow Line and dest is on Blue Line
+      if (originLines.includes('Yellow') && destLines.includes('Blue')) {
+        preferredInterchange = 'CP'; // Rajiv Chowk
+      }
+    }
     
     // Find shortest path using Dijkstra's algorithm, passing common lines for preference
-    const shortestPath = this.dijkstra(originId, destinationId, commonLines);
+    const shortestPath = this.dijkstra(originId, destinationId, commonLines, preferredInterchange);
     if (shortestPath) {
       routes.push(shortestPath);
     } else {
@@ -103,12 +120,13 @@ class MetroGraph {
     return routes;
   }
 
-  private dijkstra(originId: string, destinationId: string, preferredLines: string[] = []): Route | null {
+  private dijkstra(originId: string, destinationId: string, preferredLines: string[] = [], preferredInterchange?: string): Route | null {
     const originNode = this.nodes.get(originId);
     const destNode = this.nodes.get(destinationId);
     
     console.log(`🔍 Dijkstra: Finding path from ${originId} to ${destinationId}`);
     console.log(`🎯 Preferred lines:`, preferredLines);
+    console.log(`🔄 Preferred interchange:`, preferredInterchange);
     
     if (!originNode || !destNode) {
       console.error('❌ Origin or destination station not found in graph');
@@ -145,8 +163,10 @@ class MetroGraph {
 
       for (const id of unvisited) {
         const dist = distances.get(id) ?? Infinity;
-        if (dist < smallestDistance) {
-          smallestDistance = dist;
+        // Give bonus to preferred interchange station
+        const adjustedDist = (preferredInterchange && id === preferredInterchange) ? dist - 20 : dist;
+        if (adjustedDist < smallestDistance) {
+          smallestDistance = adjustedDist;
           currentId = id;
         }
       }
@@ -201,7 +221,14 @@ class MetroGraph {
             }
           } else {
             // No preferred lines - use normal transfer penalty
-            penalty = prevLine && prevLine !== edge.line ? 10 : 0;
+            // But give bonus for transferring at preferred interchange
+            if (prevLine && prevLine !== edge.line) {
+              if (preferredInterchange && currentId === preferredInterchange) {
+                penalty = 2; // Very low penalty for transferring at preferred interchange
+              } else {
+                penalty = 15; // Higher penalty for other interchanges
+              }
+            }
           }
           
           const newDistance = currentDistance + edge.time + penalty;
