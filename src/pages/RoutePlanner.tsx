@@ -337,17 +337,26 @@ export default function RoutePlanner() {
                               } else if (segment.line === 'Red') {
                                 // Red Line: towards Rithala = Platform 3, towards Shaheed Sthal = Platform 4
                                 // Red Line order: RV(0) ... TH(12), KA(13) ... SS(21)
-                                // Going from higher index to lower index = towards Rithala = Platform 3
+                                
+                                // When segment has only 1 station (destination), get direction from previous segment's last station
+                                let effectiveFirstIdx = firstIdx;
+                                if (firstIdx === lastIdx && segmentIndex > 0) {
+                                  const prevSegment = currentRoute.segments[segmentIndex - 1];
+                                  const prevLastStationId = prevSegment.stations[prevSegment.stations.length - 1];
+                                  effectiveFirstIdx = lineData.stations.indexOf(prevLastStationId);
+                                }
+                                
                                 console.log('Red Line debug:', {
                                   firstStationId: segment.stations[0],
                                   lastStationId: segment.stations[segment.stations.length - 1],
                                   firstIdx, 
-                                  lastIdx, 
-                                  'condition firstIdx > lastIdx': firstIdx > lastIdx,
-                                  lineStations: lineData.stations
+                                  lastIdx,
+                                  effectiveFirstIdx,
+                                  'condition effectiveFirstIdx > lastIdx': effectiveFirstIdx > lastIdx
                                 });
-                                // KA (13) to TH (12): firstIdx=13, lastIdx=12, 13>12=true = Platform 3
-                                if (firstIdx > lastIdx) {
+                                
+                                // KA (13) to TH (12): effectiveFirstIdx=13, lastIdx=12, 13>12=true = Platform 3
+                                if (effectiveFirstIdx > lastIdx) {
                                   // Going towards Rithala (lower indices)
                                   platformInfo = '3';
                                   terminalStation = getStationById(metroData.stations, 'RV'); // Rithala
