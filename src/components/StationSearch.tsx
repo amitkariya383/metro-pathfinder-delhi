@@ -100,7 +100,10 @@ export function StationSearch({ stations, onSelect, placeholder, value = '' }: S
             {results.map((station) => (
               <button
                 key={station.id}
-                onClick={() => handleSelect(station)}
+                onMouseDown={(e) => {
+                  e.preventDefault();
+                  handleSelect(station);
+                }}
                 className="w-full text-left p-3 rounded-lg hover:bg-muted transition-colors"
               >
                 <div className="font-medium text-foreground">
