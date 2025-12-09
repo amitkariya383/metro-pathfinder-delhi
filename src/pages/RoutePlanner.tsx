@@ -337,10 +337,14 @@ export default function RoutePlanner() {
                               } else if (segment.line === 'Red') {
                                 // Red Line: towards Rithala = Platform 3, towards Shaheed Sthal = Platform 4
                                 // Red Line order: RV(0) ... TH(12), KA(13) ... SS(21)
-                                if (lastIdx < firstIdx) {
+                                // Going from higher index to lower index = towards Rithala = Platform 3
+                                console.log('Red Line debug:', {firstIdx, lastIdx, 'firstIdx > lastIdx': firstIdx > lastIdx});
+                                if (firstIdx > lastIdx) {
+                                  // Going towards Rithala (lower indices)
                                   platformInfo = '3';
                                   terminalStation = getStationById(metroData.stations, 'RV'); // Rithala
                                 } else {
+                                  // Going towards Shaheed Sthal (higher indices)
                                   platformInfo = '4';
                                   terminalStation = getStationById(metroData.stations, 'SS'); // Shaheed Sthal
                                 }
