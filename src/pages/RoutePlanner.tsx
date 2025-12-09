@@ -338,7 +338,15 @@ export default function RoutePlanner() {
                                 // Red Line: towards Rithala = Platform 3, towards Shaheed Sthal = Platform 4
                                 // Red Line order: RV(0) ... TH(12), KA(13) ... SS(21)
                                 // Going from higher index to lower index = towards Rithala = Platform 3
-                                console.log('Red Line debug:', {firstIdx, lastIdx, 'firstIdx > lastIdx': firstIdx > lastIdx});
+                                console.log('Red Line debug:', {
+                                  firstStationId: segment.stations[0],
+                                  lastStationId: segment.stations[segment.stations.length - 1],
+                                  firstIdx, 
+                                  lastIdx, 
+                                  'condition firstIdx > lastIdx': firstIdx > lastIdx,
+                                  lineStations: lineData.stations
+                                });
+                                // KA (13) to TH (12): firstIdx=13, lastIdx=12, 13>12=true = Platform 3
                                 if (firstIdx > lastIdx) {
                                   // Going towards Rithala (lower indices)
                                   platformInfo = '3';
