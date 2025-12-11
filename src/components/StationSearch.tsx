@@ -41,18 +41,19 @@ export function StationSearch({ stations, onSelect, placeholder, value = '' }: S
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+      // Check if click is inside results or input - if so, don't close
       if (
-        resultsRef.current &&
-        !resultsRef.current.contains(event.target as Node) &&
-        inputRef.current &&
-        !inputRef.current.contains(event.target as Node)
+        resultsRef.current?.contains(event.target as Node) ||
+        inputRef.current?.contains(event.target as Node)
       ) {
-        setShowResults(false);
+        return;
       }
+      setShowResults(false);
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    // Use click instead of mousedown to allow onMouseDown selection to complete first
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
   }, []);
 
   const handleSelect = (station: Station) => {
