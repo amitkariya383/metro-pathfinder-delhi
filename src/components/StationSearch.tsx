@@ -20,15 +20,20 @@ export function StationSearch({ stations, onSelect, placeholder, value = '' }: S
   const [query, setQuery] = useState(value);
   const [results, setResults] = useState<Station[]>([]);
   const [showResults, setShowResults] = useState(false);
+  const [isSelected, setIsSelected] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
 
   // Sync internal query state with external value prop
   useEffect(() => {
     setQuery(value);
+    if (value) setIsSelected(true);
   }, [value]);
 
   useEffect(() => {
+    // Don't show results if a station was just selected
+    if (isSelected) return;
+    
     if (query.length > 0) {
       const searchResults = searchStations(stations, query, i18n.language);
       setResults(searchResults);
@@ -37,7 +42,7 @@ export function StationSearch({ stations, onSelect, placeholder, value = '' }: S
       setResults([]);
       setShowResults(false);
     }
-  }, [query, stations, i18n.language]);
+  }, [query, stations, i18n.language, isSelected]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -59,6 +64,7 @@ export function StationSearch({ stations, onSelect, placeholder, value = '' }: S
   const handleSelect = (station: Station) => {
     setQuery(i18n.language === 'hi' ? station.nameHi : station.name);
     setShowResults(false);
+    setIsSelected(true);
     onSelect(station);
   };
 
@@ -66,7 +72,13 @@ export function StationSearch({ stations, onSelect, placeholder, value = '' }: S
     setQuery('');
     setResults([]);
     setShowResults(false);
+    setIsSelected(false);
     inputRef.current?.focus();
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setIsSelected(false);
+    setQuery(e.target.value);
   };
 
   return (
@@ -77,8 +89,10 @@ export function StationSearch({ stations, onSelect, placeholder, value = '' }: S
           ref={inputRef}
           type="text"
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          onFocus={() => query.length > 0 && setShowResults(true)}
+          onChange={handleInputChange}
+          onFocus={() => {
+            if (query.length > 0 && !isSelected) setShowResults(true);
+          }}
           placeholder={placeholder || t('home.searchPlaceholder')}
           className="pl-10 pr-10 h-12 text-base"
         />
