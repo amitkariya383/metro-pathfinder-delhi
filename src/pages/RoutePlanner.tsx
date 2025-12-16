@@ -357,13 +357,16 @@ export default function RoutePlanner() {
                                   terminalStation = getStationById(metroData.stations, 'SS'); // Shaheed Sthal
                                 }
                               } else if (segment.line === 'Magenta') {
-                                // Magenta Line: towards Janakpuri West = Platform 4, towards Botanical Garden = Platform 3
+                                // Magenta Line order: BA(0) → ... → JPW(24)
+                                // towards Janakpuri West = Platform 4, towards Botanical Garden = Platform 3
                                 if (lastIdx > firstIdx) {
-                                  platformInfo = '3';
-                                  terminalStation = getStationById(metroData.stations, 'BA'); // Botanical Garden
-                                } else {
+                                  // Going towards Janakpuri West (higher indices)
                                   platformInfo = '4';
                                   terminalStation = getStationById(metroData.stations, 'JPW'); // Janakpuri West
+                                } else {
+                                  // Going towards Botanical Garden (lower indices)
+                                  platformInfo = '3';
+                                  terminalStation = getStationById(metroData.stations, 'BA'); // Botanical Garden
                                 }
                               }
                             }
