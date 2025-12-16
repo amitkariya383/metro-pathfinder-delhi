@@ -346,15 +346,6 @@ export default function RoutePlanner() {
                                   effectiveFirstIdx = lineData.stations.indexOf(prevLastStationId);
                                 }
                                 
-                                console.log('Red Line debug:', {
-                                  firstStationId: segment.stations[0],
-                                  lastStationId: segment.stations[segment.stations.length - 1],
-                                  firstIdx, 
-                                  lastIdx,
-                                  effectiveFirstIdx,
-                                  'condition effectiveFirstIdx > lastIdx': effectiveFirstIdx > lastIdx
-                                });
-                                
                                 // KA (13) to TH (12): effectiveFirstIdx=13, lastIdx=12, 13>12=true = Platform 3
                                 if (effectiveFirstIdx > lastIdx) {
                                   // Going towards Rithala (lower indices)
@@ -364,6 +355,15 @@ export default function RoutePlanner() {
                                   // Going towards Shaheed Sthal (higher indices)
                                   platformInfo = '4';
                                   terminalStation = getStationById(metroData.stations, 'SS'); // Shaheed Sthal
+                                }
+                              } else if (segment.line === 'Magenta') {
+                                // Magenta Line: towards Janakpuri West = Platform 4, towards Botanical Garden = Platform 3
+                                if (lastIdx > firstIdx) {
+                                  platformInfo = '3';
+                                  terminalStation = getStationById(metroData.stations, 'BA'); // Botanical Garden
+                                } else {
+                                  platformInfo = '4';
+                                  terminalStation = getStationById(metroData.stations, 'JPW'); // Janakpuri West
                                 }
                               }
                             }
