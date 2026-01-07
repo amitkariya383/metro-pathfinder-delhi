@@ -306,7 +306,7 @@ export default function RoutePlanner() {
                                   terminalStation = getStationById(metroData.stations, 'NEC');
                                 } else {
                                   platformInfo = '2';
-                                  terminalStation = getStationById(metroData.stations, 'DS21'); // Dwarka Sector 21
+                                  terminalStation = getStationById(metroData.stations, 'DW'); // Dwarka Sector 21
                                 }
                               } else if (segment.line === 'Blue Branch') {
                                 if (lastIdx > firstIdx) {
