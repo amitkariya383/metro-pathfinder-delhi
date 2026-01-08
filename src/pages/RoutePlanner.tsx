@@ -326,10 +326,13 @@ export default function RoutePlanner() {
                                   terminalStation = getStationById(metroData.stations, 'SB');
                                 }
                               } else if (segment.line === 'Violet') {
-                                // Violet Line: towards Kashmere Gate = Platform 2, towards Raja Nahar Singh = Platform 1 (or 5 from Kashmere Gate)
+                                // Violet Line: towards Kashmere Gate = Platform 4 (or 2 from Lal Quila onwards), towards Raja Nahar Singh = Platform 1 (or 5 from Kashmere Gate)
                                 const firstStationId = segment.stations[0];
+                                // Stations from Mandi House to ITO to Delhi Gate to Jama Masjid use Platform 4 for Kashmere Gate direction
+                                const platform4Stations = ['MH', 'ITO', 'DG', 'JM'];
                                 if (firstIdx > lastIdx) {
-                                  platformInfo = '2';
+                                  // Towards Kashmere Gate
+                                  platformInfo = platform4Stations.includes(firstStationId) ? '4' : '2';
                                   terminalStation = getStationById(metroData.stations, 'KA'); // Kashmere Gate
                                 } else {
                                   // Platform 5 from Kashmere Gate, Platform 1 from other stations
