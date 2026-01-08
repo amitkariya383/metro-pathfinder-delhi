@@ -326,12 +326,14 @@ export default function RoutePlanner() {
                                   terminalStation = getStationById(metroData.stations, 'SB');
                                 }
                               } else if (segment.line === 'Violet') {
-                                // Violet Line: towards Kashmere Gate = Platform 2, towards Raja Nahar Singh = Platform 1
+                                // Violet Line: towards Kashmere Gate = Platform 2, towards Raja Nahar Singh = Platform 1 (or 5 from Kashmere Gate)
+                                const firstStationId = segment.stations[0];
                                 if (firstIdx > lastIdx) {
                                   platformInfo = '2';
                                   terminalStation = getStationById(metroData.stations, 'KA'); // Kashmere Gate
                                 } else {
-                                  platformInfo = '1';
+                                  // Platform 5 from Kashmere Gate, Platform 1 from other stations
+                                  platformInfo = firstStationId === 'KA' ? '5' : '1';
                                   terminalStation = getStationById(metroData.stations, 'RNS'); // Raja Nahar Singh
                                 }
                               } else if (segment.line === 'Red') {
