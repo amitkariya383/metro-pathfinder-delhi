@@ -86,7 +86,7 @@ export default function StationDetail() {
   }
 
   return (
-    <div className="py-6 md:ml-64 md:pl-6 md:pr-12 px-4 pb-24 md:pb-8">
+    <div className="py-6 px-4 pb-24 md:pb-8">
       <Button
         variant="ghost"
         onClick={() => navigate(-1)}
