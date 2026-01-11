@@ -299,13 +299,20 @@ export default function RoutePlanner() {
                               const firstIdx = lineData.stations.indexOf(segment.stations[0]);
                               const lastIdx = lineData.stations.indexOf(segment.stations[segment.stations.length - 1]);
                               
-                              // Blue Line: towards Dwarka = Platform 2, towards Noida = Platform 1
+                              // Blue Line: towards Noida = Platform 1 (or 3 from Rajiv Chowk), towards Dwarka = Platform 2 (or 4 from Rajiv Chowk)
                               if (segment.line === 'Blue') {
+                                const firstStationId = segment.stations[0];
+                                // Check if this is a transfer segment from Rajiv Chowk
+                                const isFromRajivChowk = segmentIndex > 0 && 
+                                  currentRoute.segments[segmentIndex - 1].stations[currentRoute.segments[segmentIndex - 1].stations.length - 1] === 'CP';
+                                
                                 if (lastIdx > firstIdx) {
-                                  platformInfo = '1';
+                                  // Towards Noida - Platform 3 from Rajiv Chowk (interchange station)
+                                  platformInfo = (firstStationId === 'CP' || isFromRajivChowk) ? '3' : '1';
                                   terminalStation = getStationById(metroData.stations, 'NEC');
                                 } else {
-                                  platformInfo = '2';
+                                  // Towards Dwarka - Platform 4 from Rajiv Chowk (interchange station)
+                                  platformInfo = (firstStationId === 'CP' || isFromRajivChowk) ? '4' : '2';
                                   terminalStation = getStationById(metroData.stations, 'DW'); // Dwarka Sector 21
                                 }
                               } else if (segment.line === 'Blue Branch') {
