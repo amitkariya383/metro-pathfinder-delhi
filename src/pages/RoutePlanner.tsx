@@ -328,9 +328,13 @@ export default function RoutePlanner() {
                               } else if (segment.line === 'Violet') {
                                 // Violet Line: towards Kashmere Gate = Platform 2 (or 4 from Mandi House), towards Raja Nahar Singh = Platform 1 (or 5 from Kashmere Gate)
                                 const firstStationId = segment.stations[0];
+                                // Check if this is a transfer segment from Mandi House
+                                const isFromMandiHouse = segmentIndex > 0 && 
+                                  currentRoute.segments[segmentIndex - 1].stations[currentRoute.segments[segmentIndex - 1].stations.length - 1] === 'MH';
+                                
                                 if (firstIdx > lastIdx) {
-                                  // Towards Kashmere Gate - Platform 4 only from Mandi House (interchange station)
-                                  platformInfo = firstStationId === 'MH' ? '4' : '2';
+                                  // Towards Kashmere Gate - Platform 4 from Mandi House (interchange station)
+                                  platformInfo = (firstStationId === 'MH' || isFromMandiHouse) ? '4' : '2';
                                   terminalStation = getStationById(metroData.stations, 'KA'); // Kashmere Gate
                                 } else {
                                   // Platform 5 from Kashmere Gate, Platform 1 from other stations
