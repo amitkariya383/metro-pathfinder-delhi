@@ -394,6 +394,18 @@ export default function RoutePlanner() {
                                   platformInfo = '3';
                                   terminalStation = getStationById(metroData.stations, 'ND'); // New Delhi
                                 }
+                              } else if (segment.line === 'Pink') {
+                                // Pink Line: Majlis Park (MP) to Shiv Vihar (SV)
+                                // Towards Shiv Vihar = Platform 3, towards Majlis Park = Platform 4
+                                if (lastIdx > firstIdx) {
+                                  // Going towards Shiv Vihar (higher indices)
+                                  platformInfo = '3';
+                                  terminalStation = getStationById(metroData.stations, 'SV'); // Shiv Vihar
+                                } else {
+                                  // Going towards Majlis Park (lower indices)
+                                  platformInfo = '4';
+                                  terminalStation = getStationById(metroData.stations, 'MP'); // Majlis Park
+                                }
                               }
                             }
                             
