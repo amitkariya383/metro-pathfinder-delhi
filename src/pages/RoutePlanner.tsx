@@ -388,7 +388,7 @@ export default function RoutePlanner() {
                                 if (lastIdx > firstIdx) {
                                   // Going towards Dwarka Sector 21 (higher indices)
                                   platformInfo = '2';
-                                  terminalStation = getStationById(metroData.stations, 'YDS25'); // Dwarka Sector 21
+                                  terminalStation = getStationById(metroData.stations, 'DW'); // Dwarka Sector 21 (signage name)
                                 } else {
                                   // Going towards New Delhi (lower indices)
                                   platformInfo = '3';
