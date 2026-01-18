@@ -383,12 +383,12 @@ export default function RoutePlanner() {
                                   terminalStation = getStationById(metroData.stations, 'BA'); // Botanical Garden
                                 }
                               } else if (segment.line === 'Orange') {
-                                // Orange (Airport Express) Line: New Delhi (ND) → Dwarka Sector 21 (DW21)
+                                // Orange (Airport Express) Line order: ND(0) → SHS → DU → AP → IG → DW(5) → YDS25(6)
                                 // Towards Dwarka/IGI Airport = Platform 2, towards New Delhi = Platform 3
                                 if (lastIdx > firstIdx) {
                                   // Going towards Dwarka Sector 21 (higher indices)
                                   platformInfo = '2';
-                                  terminalStation = getStationById(metroData.stations, 'DW21'); // Dwarka Sector 21
+                                  terminalStation = getStationById(metroData.stations, 'YDS25'); // Dwarka Sector 21
                                 } else {
                                   // Going towards New Delhi (lower indices)
                                   platformInfo = '3';
