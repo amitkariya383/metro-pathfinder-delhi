@@ -397,14 +397,22 @@ export default function RoutePlanner() {
                               } else if (segment.line === 'Pink') {
                                 // Pink Line: Majlis Park (MP) to Shiv Vihar (SV)
                                 // Towards Shiv Vihar = Platform 3, towards Majlis Park = Platform 4
+                                // Special case: At Shiv Vihar, towards Majlis Park = Platform 2
+                                const firstStationId = segment.stations[0];
                                 if (lastIdx > firstIdx) {
                                   // Going towards Shiv Vihar (higher indices)
                                   platformInfo = '3';
                                   terminalStation = getStationById(metroData.stations, 'SV'); // Shiv Vihar
                                 } else {
                                   // Going towards Majlis Park (lower indices)
-                                  platformInfo = '4';
-                                  terminalStation = getStationById(metroData.stations, 'MP'); // Majlis Park
+                                  // At Shiv Vihar station, platform is 2 (Towards Trilokpuri)
+                                  if (firstStationId === 'SV') {
+                                    platformInfo = '2';
+                                    terminalStation = getStationById(metroData.stations, 'TRI'); // Trilokpuri
+                                  } else {
+                                    platformInfo = '4';
+                                    terminalStation = getStationById(metroData.stations, 'MP'); // Majlis Park
+                                  }
                                 }
                               }
                             }
