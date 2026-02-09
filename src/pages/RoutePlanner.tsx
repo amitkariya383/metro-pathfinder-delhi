@@ -395,23 +395,23 @@ export default function RoutePlanner() {
                                   terminalStation = getStationById(metroData.stations, 'ND'); // New Delhi
                                 }
                               } else if (segment.line === 'Pink') {
-                                // Pink Line: Majlis Park (MP) to Shiv Vihar (SHV)
-                                // Towards Shiv Vihar = Platform 3, towards Majlis Park = Platform 4
-                                // Special case: At Shiv Vihar, towards Majlis Park = Platform 2 (Towards Trilokpuri)
+                                // Pink Line: Majlis Park (MJP) to Shiv Vihar (SHV)
+                                // Towards Majlis Park = Platform 1, towards Shiv Vihar = Platform 2
+                                // Special case: At Shiv Vihar, towards Trilokpuri = Platform 2
                                 const firstStationId = segment.stations[0];
                                 if (lastIdx > firstIdx) {
                                   // Going towards Shiv Vihar (higher indices)
-                                  platformInfo = '3';
+                                  platformInfo = '2';
                                   terminalStation = getStationById(metroData.stations, 'SHV'); // Shiv Vihar
                                 } else {
                                   // Going towards Majlis Park (lower indices)
-                                  // At Shiv Vihar station, platform is 2 (Towards Trilokpuri)
                                   if (firstStationId === 'SHV') {
+                                    // At Shiv Vihar station, platform is 2 (Towards Trilokpuri)
                                     platformInfo = '2';
                                     terminalStation = getStationById(metroData.stations, 'TRI'); // Trilokpuri
                                   } else {
-                                    platformInfo = '4';
-                                    terminalStation = getStationById(metroData.stations, 'MP'); // Majlis Park
+                                    platformInfo = '1';
+                                    terminalStation = getStationById(metroData.stations, 'MJP'); // Majlis Park
                                   }
                                 }
                               }

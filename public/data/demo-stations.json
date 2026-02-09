@@ -732,10 +732,10 @@
       "id": "INA",
       "name": "Dilli Haat - INA",
       "nameHi": "दिल्ली हाट - आईएनए",
-      "lines": ["Yellow"],
+      "lines": ["Yellow", "Pink"],
       "lat": 28.5743,
       "lng": 77.2092,
-      "isInterchange": false,
+      "isInterchange": true,
       "facilities": ["parking", "lifts", "toilets", "atm", "security"],
       "firstTrain": "05:18",
       "lastTrain": "23:46",
@@ -744,7 +744,11 @@
         {"name": "Exit 2", "landmark": "INA Market", "distance": 200},
         {"name": "Exit 3", "landmark": "South Campus DU", "distance": 400}
       ],
-      "nearbyTransport": ["Bus 615", "Bus 620", "Auto Stand"]
+      "nearbyTransport": ["Bus 615", "Bus 620", "Auto Stand"],
+      "platforms": {
+        "Yellow": "1",
+        "Pink": "2"
+      }
     },
     {
       "id": "AIIMS",
@@ -3484,22 +3488,6 @@
       "nearbyTransport": ["Bus 615", "Auto Stand"]
     },
     {
-      "id": "DHI",
-      "name": "Dilli Haat INA",
-      "nameHi": "दिल्ली हाट आईएनए",
-      "lines": ["Pink"],
-      "lat": 28.5720,
-      "lng": 77.2105,
-      "isInterchange": false,
-      "facilities": ["lifts", "toilets", "parking"],
-      "firstTrain": "05:56",
-      "lastTrain": "23:56",
-      "exits": [
-        {"name": "Exit 1", "landmark": "Dilli Haat", "distance": 100}
-      ],
-      "nearbyTransport": ["Bus 615", "Auto Stand"]
-    },
-    {
       "id": "SEX",
       "name": "South Extension",
       "nameHi": "साउथ एक्सटेंशन",
@@ -4110,7 +4098,7 @@
       "name": "Pink Line",
       "nameHi": "गुलाबी लाइन",
       "color": "metro-pink",
-      "stations": ["MJP", "AZP", "SHB", "NSP", "SKP", "PBHW", "ESIB", "RG", "MYP", "NRV", "DLC", "DDS", "SMV", "BCP", "SRN", "DHI", "SEX", "LJN", "VNP", "ASH", "SKN", "MV1", "MVP1", "TSL", "EVM2", "MWV", "IPX", "AN", "KKD", "KKDC", "KRN", "EAN", "WE", "JFB", "MBP", "GKP", "JHE", "SHV"]
+      "stations": ["MJP", "AZP", "SHB", "NSP", "SKP", "PBHW", "ESIB", "RG", "MYP", "NRV", "DLC", "DDS", "SMV", "BCP", "SRN", "INA", "SEX", "LJN", "VNP", "ASH", "SKN", "MV1", "MVP1", "TSL", "EVM2", "MWV", "IPX", "AN", "KKD", "KKDC", "KRN", "EAN", "WE", "JFB", "MBP", "GKP", "JHE", "SHV"]
     },
     {
       "id": "Magenta",
