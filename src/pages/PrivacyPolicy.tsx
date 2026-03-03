@@ -102,7 +102,7 @@ const PrivacyPolicy = () => {
                 ? 'गोपनीयता संबंधी किसी भी प्रश्न के लिए हमसे संपर्क करें:'
                 : 'For any privacy-related questions, contact us at:'}
             </p>
-            <p className="text-primary mt-2">privacy@delhimetroplanner.com</p>
+            <p className="text-primary mt-2">amitkariya383@gmail.com</p>
           </CardContent>
         </Card>
       </div>
