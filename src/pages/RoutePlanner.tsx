@@ -349,8 +349,8 @@ export default function RoutePlanner() {
                                   terminalStation = getStationById(metroData.stations, 'RNS'); // Raja Nahar Singh
                                 }
                               } else if (segment.line === 'Red') {
-                                // Red Line: towards Rithala = Platform 3, towards Shaheed Sthal = Platform 4
-                                // Red Line order: RV(0) ... TH(12), KA(13) ... SS(21)
+                                // Red Line: towards Rithala = Platform 1, towards Dilshad Garden = Platform 2
+                                // Red Line order: RV(0) ... TH(12), KA(13) ... DG(20), SS(21)
                                 
                                 // When segment has only 1 station (destination), get direction from previous segment's last station
                                 let effectiveFirstIdx = firstIdx;
@@ -360,15 +360,14 @@ export default function RoutePlanner() {
                                   effectiveFirstIdx = lineData.stations.indexOf(prevLastStationId);
                                 }
                                 
-                                // KA (13) to TH (12): effectiveFirstIdx=13, lastIdx=12, 13>12=true = Platform 3
                                 if (effectiveFirstIdx > lastIdx) {
                                   // Going towards Rithala (lower indices)
-                                  platformInfo = '3';
+                                  platformInfo = '1';
                                   terminalStation = getStationById(metroData.stations, 'RV'); // Rithala
                                 } else {
-                                  // Going towards Shaheed Sthal (higher indices)
-                                  platformInfo = '4';
-                                  terminalStation = getStationById(metroData.stations, 'SS'); // Shaheed Sthal
+                                  // Going towards Dilshad Garden (higher indices)
+                                  platformInfo = '2';
+                                  terminalStation = getStationById(metroData.stations, 'DG'); // Dilshad Garden
                                 }
                               } else if (segment.line === 'Magenta') {
                                 // Magenta Line order: BA(0) → ... → JPW(24)
@@ -418,6 +417,16 @@ export default function RoutePlanner() {
                             }
                             
                             if (platformInfo && terminalStation) {
+                              // Override terminal display names for signage accuracy
+                              const terminalDisplayOverrides: Record<string, { en: string; hi: string }> = {
+                                'RNS': { en: 'Escorts Mujesar/ Raja Nahar Singh', hi: 'एस्कॉर्ट्स मुजेसर/ राजा नाहर सिंह' },
+                                'NEC': { en: 'Noida', hi: 'नोएडा' },
+                              };
+                              const displayOverride = terminalDisplayOverrides[terminalStation.id];
+                              const terminalDisplayName = displayOverride 
+                                ? (i18n.language === 'hi' ? displayOverride.hi : displayOverride.en)
+                                : (i18n.language === 'hi' ? terminalStation.nameHi : terminalStation.name);
+                              
                               return (
                                 <div className="border-2 border-border rounded-lg p-3 bg-muted/30 mb-2">
                                   <div className="flex items-center gap-2 mb-1">
@@ -425,7 +434,7 @@ export default function RoutePlanner() {
                                     <LineBadge line={segment.line} />
                                   </div>
                                   <div className="text-sm text-destructive font-medium mb-1">
-                                    {i18n.language === 'hi' ? 'की ओर' : 'Towards'} {i18n.language === 'hi' ? terminalStation.nameHi : terminalStation.name}
+                                    {i18n.language === 'hi' ? 'की ओर' : 'Towards'} {terminalDisplayName}
                                   </div>
                                   <div className="text-base text-destructive font-semibold">
                                     {i18n.language === 'hi' ? 'प्लेटफॉर्म' : 'Platform'} {platformInfo}
