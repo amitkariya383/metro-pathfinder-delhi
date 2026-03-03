@@ -83,7 +83,7 @@ const About = () => {
                 ? 'किसी भी सुझाव या प्रतिक्रिया के लिए हमसे संपर्क करें।'
                 : 'Contact us for any suggestions or feedback.'}
             </p>
-            <p className="text-primary mt-2">support@delhimetroplanner.com</p>
+            <p className="text-primary mt-2">amitkariya383@gmail.com</p>
           </CardContent>
         </Card>
       </div>
