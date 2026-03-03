@@ -99,6 +99,14 @@ class MetroGraph {
       if (originLines.includes('Yellow') && destLines.includes('Blue')) {
         preferredInterchange = 'CP'; // Rajiv Chowk
       }
+      // If origin is on Red Line and dest is on Blue Line, prefer Kashmere Gate (via Violet)
+      if (originLines.includes('Red') && destLines.includes('Blue')) {
+        preferredInterchange = 'KA'; // Kashmere Gate
+      }
+      // If origin is on Blue Line and dest is on Red Line, prefer Kashmere Gate (via Violet)
+      if (originLines.includes('Blue') && destLines.includes('Red')) {
+        preferredInterchange = 'KA'; // Kashmere Gate
+      }
     }
     
     // Find shortest path using Dijkstra's algorithm, passing common lines for preference
