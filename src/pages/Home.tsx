@@ -49,7 +49,7 @@ export default function Home() {
   };
 
   const popularStations = metroData?.stations.filter(s => 
-    ['CP', 'ND', 'KA', 'DW', 'HZ', 'NO', 'BA', 'AN'].includes(s.id)
+    ['CP', 'ND', 'KA', 'DW', 'HZ'].includes(s.id)
   ) || [];
 
   if (loading) {
