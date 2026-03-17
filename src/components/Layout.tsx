@@ -45,12 +45,12 @@ export function Layout({ children }: LayoutProps) {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 md:ml-64 md:pr-4 overflow-x-hidden">
+      <main className="flex-1 md:ml-64 md:pr-4 overflow-x-hidden pb-[100px] md:pb-0">
         {children}
       </main>
 
-      {/* Mobile Footer Links */}
-      <div className="md:hidden border-t bg-card px-4 py-3">
+      {/* Mobile Footer Links - Fixed above bottom nav */}
+      <div className="md:hidden fixed bottom-[56px] left-0 right-0 z-50 border-t bg-card px-4 py-2">
         <div className="flex justify-center gap-6 text-sm">
           <Link
             to="/about"
