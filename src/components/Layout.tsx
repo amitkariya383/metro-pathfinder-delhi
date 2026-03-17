@@ -49,8 +49,8 @@ export function Layout({ children }: LayoutProps) {
         {children}
       </main>
 
-      {/* Mobile Footer Links */}
-      <div className="md:hidden border-t bg-card px-4 py-2">
+      {/* Mobile Footer Links - Fixed above bottom nav */}
+      <div className="md:hidden fixed bottom-[56px] left-0 right-0 z-50 border-t bg-card px-4 py-2">
         <div className="flex justify-center gap-6 text-sm">
           <Link
             to="/about"
