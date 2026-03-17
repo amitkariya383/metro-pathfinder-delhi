@@ -203,28 +203,6 @@ export default function StationDetail() {
           </CardContent>
         </Card>
 
-        {/* Nearby Transport */}
-        <Card className="card-hover">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Bus className="h-5 w-5 text-primary" />
-              {t('station.nearbyTransport')}
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="flex flex-wrap gap-2">
-              {station.nearbyTransport.map((transport, index) => (
-                <div
-                  key={index}
-                  className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-secondary text-secondary-foreground text-sm font-medium"
-                >
-                  <Bus className="h-3 w-3" />
-                  {transport}
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </div>
   );
