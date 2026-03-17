@@ -49,8 +49,8 @@ export function Layout({ children }: LayoutProps) {
         {children}
       </main>
 
-      {/* Mobile Footer Links - Fixed above bottom nav */}
-      <div className="md:hidden fixed bottom-[56px] left-0 right-0 z-50 border-t bg-card px-4 py-2">
+      {/* Mobile Footer Links */}
+      <div className="md:hidden border-t bg-card px-4 py-2">
         <div className="flex justify-center gap-6 text-sm">
           <Link
             to="/about"
@@ -73,8 +73,8 @@ export function Layout({ children }: LayoutProps) {
         </div>
       </div>
 
-      {/* Bottom Navigation */}
-      <nav className="border-t bg-card sticky bottom-0 z-50 shadow-lg md:hidden">
+      {/* Bottom Navigation - Fixed */}
+      <nav className="border-t bg-card fixed bottom-0 left-0 right-0 z-50 shadow-lg md:hidden">
         <div className="container mx-auto px-4">
           <div className="flex justify-around py-2">
             {navItems.map(({ path, icon: Icon, label }) => {
