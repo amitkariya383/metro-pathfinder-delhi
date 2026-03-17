@@ -77,21 +77,21 @@ export default function Home() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8 pb-24 md:pb-8">
+    <div className="container mx-auto px-3 py-3 md:py-8 md:pb-8 h-[calc(100vh-56px-32px-56px)] md:h-auto overflow-hidden md:overflow-auto flex flex-col">
       {/* Hero Section */}
-      <div className="mb-8">
+      <div className="mb-3 md:mb-8">
         <div className="max-w-2xl mx-auto">
-          <div className="bg-gradient-to-br from-primary to-accent rounded-2xl p-8 text-white shadow-xl mb-6">
-            <h2 className="text-3xl md:text-4xl font-bold mb-2">
+          <div className="bg-gradient-to-br from-primary to-accent rounded-xl md:rounded-2xl p-4 md:p-8 text-white shadow-xl mb-3 md:mb-6">
+            <h2 className="text-xl md:text-4xl font-bold mb-1 md:mb-2">
               {t('app.title')}
             </h2>
-            <p className="text-white/90 text-lg">
+            <p className="text-white/90 text-sm md:text-lg">
               {t('app.subtitle')}
             </p>
           </div>
 
           {/* Search Box */}
-          <div className="bg-card rounded-xl shadow-lg p-6">
+          <div className="bg-card rounded-xl shadow-lg p-3 md:p-6">
             <StationSearch
               stations={metroData.stations}
               onSelect={handleStationSelect}
@@ -101,13 +101,13 @@ export default function Home() {
       </div>
 
       {/* Live Status */}
-      <div className="max-w-2xl mx-auto mb-8">
+      <div className="max-w-2xl mx-auto mb-3 md:mb-8 w-full">
         <Card className="border-l-4 border-l-success">
-          <CardContent className="flex items-center gap-3 py-4">
-            <CheckCircle className="h-6 w-6 text-success" />
+          <CardContent className="flex items-center gap-2 md:gap-3 py-2 md:py-4">
+            <CheckCircle className="h-5 w-5 md:h-6 md:w-6 text-success" />
             <div>
-              <p className="font-semibold text-foreground">{t('status.allNormal')}</p>
-              <p className="text-sm text-muted-foreground">
+              <p className="font-semibold text-foreground text-sm md:text-base">{t('status.allNormal')}</p>
+              <p className="text-xs md:text-sm text-muted-foreground">
                 Last updated: {new Date().toLocaleTimeString()}
               </p>
             </div>
@@ -115,28 +115,28 @@ export default function Home() {
         </Card>
       </div>
 
-      <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+      <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-3 md:gap-6 flex-1 min-h-0 overflow-hidden md:overflow-visible w-full">
         {/* Recent Searches */}
         {recentSearches.length > 0 && (
-          <Card className="card-hover">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Clock className="h-5 w-5 text-primary" />
+          <Card className="card-hover overflow-hidden">
+            <CardHeader className="py-2 px-3 md:p-6">
+              <CardTitle className="flex items-center gap-2 text-sm md:text-base">
+                <Clock className="h-4 w-4 md:h-5 md:w-5 text-primary" />
                 {t('home.recentSearches')}
               </CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="space-y-2">
+            <CardContent className="px-3 pb-2 md:p-6 md:pt-0">
+              <div className="space-y-1">
                 {recentSearches.map((station) => (
                   <button
                     key={station.id}
                     onClick={() => handleStationSelect(station)}
-                    className="w-full text-left p-3 rounded-lg hover:bg-muted transition-colors"
+                    className="w-full text-left p-2 rounded-lg hover:bg-muted transition-colors"
                   >
-                    <div className="font-medium text-foreground">
+                    <div className="font-medium text-foreground text-sm">
                       {i18n.language === 'hi' ? station.nameHi : station.name}
                     </div>
-                    <div className="flex gap-1 mt-1 flex-wrap">
+                    <div className="flex gap-1 mt-0.5 flex-wrap">
                       {station.lines.map((line) => (
                         <LineBadge key={line} line={line} size="sm" />
                       ))}
@@ -149,28 +149,28 @@ export default function Home() {
         )}
 
         {/* Popular Stations */}
-        <Card className="card-hover">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <TrendingUp className="h-5 w-5 text-accent" />
+        <Card className="card-hover overflow-hidden">
+          <CardHeader className="py-2 px-3 md:p-6">
+            <CardTitle className="flex items-center gap-2 text-sm md:text-base">
+              <TrendingUp className="h-4 w-4 md:h-5 md:w-5 text-accent" />
               {t('home.popularStations')}
             </CardTitle>
           </CardHeader>
-          <CardContent>
-            <div className="space-y-2">
+          <CardContent className="px-3 pb-2 md:p-6 md:pt-0">
+            <div className="space-y-1">
               {popularStations.map((station) => (
                 <button
                   key={station.id}
                   onClick={() => handleStationSelect(station)}
-                  className="w-full text-left p-3 rounded-lg hover:bg-muted transition-colors"
+                  className="w-full text-left p-2 rounded-lg hover:bg-muted transition-colors"
                 >
                   <div className="flex items-start gap-2">
-                    <MapPin className="h-4 w-4 text-muted-foreground mt-0.5 flex-shrink-0" />
+                    <MapPin className="h-3.5 w-3.5 text-muted-foreground mt-0.5 flex-shrink-0" />
                     <div className="flex-1">
-                      <div className="font-medium text-foreground">
+                      <div className="font-medium text-foreground text-sm">
                         {i18n.language === 'hi' ? station.nameHi : station.name}
                       </div>
-                      <div className="flex gap-1 mt-1 flex-wrap">
+                      <div className="flex gap-1 mt-0.5 flex-wrap">
                         {station.lines.map((line) => (
                           <LineBadge key={line} line={line} size="sm" />
                         ))}
